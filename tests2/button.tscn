@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbw52brc363ty"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12ft0"]
+bg_color = Color(0, 0, 0.427451, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.686275, 0.529412, 0.0431373, 1)
+shadow_color = Color(0, 0, 0, 0.23)
+shadow_size = 4
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4hc1"]
+bg_color = Color(0, 0, 0.560784, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.984314, 0.768627, 0.168627, 1)
+shadow_color = Color(0, 0, 0, 0.23)
+shadow_size = 4
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruqpi"]
+bg_color = Color(0, 0, 0.427451, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.686275, 0.529412, 0.0431373, 1)
+shadow_color = Color(0, 0, 0, 0.23)
+shadow_size = 1
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="Theme" id="Theme_cmwdc"]
+Button/styles/focus = SubResource("StyleBoxFlat_12ft0")
+Button/styles/hover = SubResource("StyleBoxFlat_12ft0")
+Button/styles/normal = SubResource("StyleBoxFlat_m4hc1")
+Button/styles/pressed = SubResource("StyleBoxFlat_ruqpi")
+
+[node name="Start" type="Button"]
+theme = SubResource("Theme_cmwdc")
+text = "Start"
