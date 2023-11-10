@@ -1,0 +1,9 @@
+theme:
+	Cats!
+wildcards:
+	- to travel is to live
+		- take the player to multiple distinct locations
+	- like the old days
+		- implement 5+ cheat codes in your game
+	- arch nemesis
+		- have a main antagonist who opposes the Theme!
