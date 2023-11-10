@@ -1,9 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://e0ar5qrufxf7"]
+[gd_scene load_steps=4 format=3 uid="uid://e0ar5qrufxf7"]
 
 [ext_resource type="Texture2D" uid="uid://bkyheey1yhxpt" path="res://menu/opt.png" id="1_wqrkj"]
+[ext_resource type="Script" path="res://menu/back_to_menu.gd" id="1_yx8ot"]
+[ext_resource type="Texture2D" uid="uid://bdm3e1ry3voj3" path="res://menu/back-arrow-svgrepo-com.svg" id="2_efwqg"]
 
 [node name="Opt" type="Node2D"]
 
 [node name="Opt" type="Sprite2D" parent="."]
 position = Vector2(420, 199)
 texture = ExtResource("1_wqrkj")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 105.0
+offset_bottom = 105.0
+script = ExtResource("1_yx8ot")
+
+[node name="Button" type="Button" parent="Control"]
+offset_right = 104.0
+offset_bottom = 104.0
+
+[node name="Back-arrow-svgrepo-com" type="Sprite2D" parent="Control/Button"]
+position = Vector2(54, 52)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_efwqg")
+
+[connection signal="button_down" from="Control/Button" to="Control" method="_on_back_pressed"]
