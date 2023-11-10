@@ -6,10 +6,10 @@ static func load_game():
 	var fullscreen = false;
 	if not FileAccess.file_exists("user://.gamesettings"):
 		fullscreen = false
-		return
-	var file = FileAccess.open("user://.gamesettings", FileAccess.READ)
-	var _fullscreen = file.get_line()
-	fullscreen = _fullscreen == "true"
+	else:
+		var file = FileAccess.open("user://.gamesettings", FileAccess.READ)
+		var _fullscreen = file.get_line()
+		fullscreen = _fullscreen == "true"
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED if fullscreen else DisplayServer.WINDOW_MODE_WINDOWED)
 
 	
