@@ -39,6 +39,7 @@ offset_bottom = 192.0
 text = "Enable fullscreen"
 
 [node name="Back" parent="Control" instance=ExtResource("3_s7x0p")]
+layout_mode = 0
 offset_right = 137.0
 offset_bottom = 71.0
 text = "BACK"
