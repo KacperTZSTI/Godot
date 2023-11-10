@@ -7,6 +7,7 @@
 [node name="Opt" type="Node2D"]
 
 [node name="Opt" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(420, 199)
 texture = ExtResource("1_wqrkj")
 

@@ -87,11 +87,6 @@ position = Vector2(1332, 211)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("5_uu7qc")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(599, 150)
-scale = Vector2(1.89062, 1.89062)
-texture = ExtResource("5_hi0ml")
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -122,6 +117,11 @@ layout_mode = 2
 focus_neighbor_bottom = NodePath("../Start")
 theme = SubResource("Theme_g815f")
 text = "Quit"
+
+[node name="Icon" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(71, -158)
+scale = Vector2(1.89062, 1.89062)
+texture = ExtResource("5_hi0ml")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
