@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://dy0jynva2type"]
 
 [ext_resource type="Texture2D" uid="uid://c1at84egr32w" path="res://menu/start.png" id="1_nbas2"]
-[ext_resource type="Script" path="res://menu/back_to_menu.gd" id="2_w8p3s"]
+[ext_resource type="Script" path="res://menu/level_select.gd" id="2_7qjaf"]
 [ext_resource type="Texture2D" uid="uid://bdm3e1ry3voj3" path="res://menu/back-arrow-svgrepo-com.svg" id="3_p6xx1"]
 
 [node name="stage_select" type="Node2D"]
 
 [node name="Start" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(606, 354)
 texture = ExtResource("1_nbas2")
 
@@ -15,7 +16,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 105.0
 offset_bottom = 105.0
-script = ExtResource("2_w8p3s")
+script = ExtResource("2_7qjaf")
 
 [node name="Button" type="Button" parent="Control"]
 offset_right = 104.0
@@ -26,4 +27,20 @@ position = Vector2(54, 52)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_p6xx1")
 
+[node name="level-1" type="Button" parent="Control"]
+offset_left = 141.0
+offset_top = 145.0
+offset_right = 245.0
+offset_bottom = 249.0
+
+[node name="Label" type="Label" parent="Control/level-1"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 60
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="button_down" from="Control/Button" to="Control" method="_on_back_pressed"]
+[connection signal="button_down" from="Control/level-1" to="Control" method="_on_l1_pressed"]
