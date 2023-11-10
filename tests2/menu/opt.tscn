@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://e0ar5qrufxf7"]
+[gd_scene load_steps=5 format=3 uid="uid://e0ar5qrufxf7"]
 
 [ext_resource type="Texture2D" uid="uid://bkyheey1yhxpt" path="res://menu/opt.png" id="1_wqrkj"]
 [ext_resource type="Script" path="res://menu/options.gd" id="2_cjh0d"]
+[ext_resource type="Texture2D" uid="uid://bdm3e1ry3voj3" path="res://menu/back-arrow-svgrepo-com.svg" id="2_efwqg"]
 [ext_resource type="PackedScene" uid="uid://bbw52brc363ty" path="res://button.tscn" id="3_s7x0p"]
 
 [node name="Opt" type="Node2D"]
@@ -18,12 +19,30 @@ offset_right = 105.0
 offset_bottom = 105.0
 script = ExtResource("2_cjh0d")
 
-[node name="Back" parent="Control" instance=ExtResource("3_s7x0p")]
+[node name="Button" type="Button" parent="Control"]
+visible = false
 layout_mode = 0
-offset_left = 14.0
-offset_top = 436.0
-offset_right = 135.0
-offset_bottom = 500.0
+offset_right = 104.0
+offset_bottom = 104.0
+
+[node name="Back-arrow-svgrepo-com" type="Sprite2D" parent="Control/Button"]
+position = Vector2(54, 52)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_efwqg")
+
+[node name="CheckButton" type="CheckButton" parent="Control" groups=["Settings"]]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 151.0
+offset_right = 385.0
+offset_bottom = 192.0
+text = "Enable fullscreen"
+
+[node name="Back" parent="Control" instance=ExtResource("3_s7x0p")]
+offset_right = 137.0
+offset_bottom = 71.0
 text = "BACK"
 
+[connection signal="button_down" from="Control/Button" to="Control" method="_on_back_pressed"]
+[connection signal="toggled" from="Control/CheckButton" to="Control" method="_on_fullscreen_toggled"]
 [connection signal="pressed" from="Control/Back" to="Control" method="_on_back_pressed"]
