@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
 	$VBoxContainer/Start.grab_focus()
+	var settings = GameLoader.load_game()
 
 
 func _on_start_pressed():
@@ -15,3 +16,4 @@ func _on_options_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+

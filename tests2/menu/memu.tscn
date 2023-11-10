@@ -110,7 +110,7 @@ text = "Start"
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_hb68v")
-text = "Opt"
+text = "Options"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
