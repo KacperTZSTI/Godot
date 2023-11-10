@@ -15,3 +15,7 @@ config/description="Our try at Godot Wild Jam 63"
 run/main_scene="res://menu/memu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
