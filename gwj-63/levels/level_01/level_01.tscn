@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://37viv4qcybul"]
 
-[ext_resource type="PackedScene" path="res://player.tscn" id="1_pvhon"]
+[ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="1_pvhon"]
 [ext_resource type="Texture2D" uid="uid://jn6wnpabg4so" path="res://levels/level_01/stage1_sketch.png" id="1_yayab"]
 [ext_resource type="Script" path="res://levels/level_01/koteł.gd" id="2_2erab"]
-[ext_resource type="Texture2D" uid="uid://d3vyxph328yej" path="res://images/kotel1.png" id="3_8mus5"]
+[ext_resource type="Texture2D" uid="uid://d3vyxph328yej" path="res://levels/level_01/images/kotel1.png" id="3_rj26e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0txn"]
-size = Vector2(125.5, 100)
+size = Vector2(274.75, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ida00"]
-size = Vector2(57, 62)
+size = Vector2(99, 88)
 
 [node name="level_01" type="Node2D"]
 y_sort_enabled = true
@@ -18,13 +18,14 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="world"]
-position = Vector2(-120, 655)
+position = Vector2(-285.392, 1377)
+scale = Vector2(2.1583, 2.1583)
 texture = ExtResource("1_yayab")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="world"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="world/StaticBody2D"]
-position = Vector2(-126.75, -40)
+position = Vector2(-308.625, -54)
 shape = SubResource("RectangleShape2D_h0txn")
 
 [node name="koteł" type="Node2D" parent="world"]
@@ -34,21 +35,21 @@ script = ExtResource("2_2erab")
 [node name="Area2D" type="Area2D" parent="world/koteł"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="world/koteł/Area2D"]
-position = Vector2(5.5, 5)
+position = Vector2(-1463.5, -27)
 shape = SubResource("RectangleShape2D_ida00")
 
 [node name="Sprite2D" type="Sprite2D" parent="world/koteł"]
-position = Vector2(4, 1)
-scale = Vector2(0.0971959, 0.0971959)
-texture = ExtResource("3_8mus5")
+position = Vector2(-1461.59, -23.8972)
+scale = Vector2(0.229061, 0.229061)
+texture = ExtResource("3_rj26e")
 
 [node name="Player" parent="." instance=ExtResource("1_pvhon")]
 
 [node name="BottomRight" parent="Player/Camera2D/Limits" index="0"]
-position = Vector2(1325, 1790)
+position = Vector2(3003, 3968)
 
 [node name="TopLeft" parent="Player/Camera2D/Limits" index="1"]
-position = Vector2(-1552, -540)
+position = Vector2(-3498, -1265)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
