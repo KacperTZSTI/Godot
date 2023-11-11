@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds2ahvqrlklt"]
+
+[ext_resource type="Script" path="res://levels/level_01/CharacterBody2D.gd" id="1_fujts"]
+[ext_resource type="Texture2D" uid="uid://bms0s4eay8o4g" path="res://player_single.png" id="2_d38s7"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="3_y12fn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmxiy"]
+size = Vector2(34, 38)
+
+[node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_fujts")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -58)
+scale = Vector2(2.10938, 2.10938)
+texture = ExtResource("2_d38s7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_bmxiy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("3_y12fn")
+
+[node name="Limits" type="Node" parent="Camera2D"]
+
+[node name="BottomRight" type="Marker2D" parent="Camera2D/Limits"]
+position = Vector2(576, 324)
+
+[node name="TopLeft" type="Marker2D" parent="Camera2D/Limits"]
+position = Vector2(-576, -324)
