@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy0jynva2type"]
+[gd_scene load_steps=6 format=3 uid="uid://dy0jynva2type"]
 
 [ext_resource type="Script" path="res://menu/level_select.gd" id="2_7qjaf"]
+[ext_resource type="Texture2D" uid="uid://co0g68atl06uc" path="res://images/kotel2.png" id="2_cmryf"]
 [ext_resource type="FontFile" uid="uid://rns72cc0te0r" path="res://fonts/Oswald-SemiBold.ttf" id="3_h00bo"]
 [ext_resource type="PackedScene" uid="uid://bbw52brc363ty" path="res://button.tscn" id="3_v6j1u"]
 
@@ -34,6 +35,12 @@ theme_override_font_sizes/font_size = 60
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Kotel1" type="Sprite2D" parent="Control/level-1"]
+z_index = -1
+position = Vector2(61, -9)
+scale = Vector2(0.0893185, 0.0893185)
+texture = ExtResource("2_cmryf")
 
 [node name="Back" parent="Control" instance=ExtResource("3_v6j1u")]
 layout_mode = 0

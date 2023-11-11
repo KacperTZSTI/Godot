@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://e0ar5qrufxf7"]
+[gd_scene load_steps=7 format=3 uid="uid://e0ar5qrufxf7"]
 
 [ext_resource type="Texture2D" uid="uid://bkyheey1yhxpt" path="res://menu/opt.png" id="1_wqrkj"]
 [ext_resource type="Script" path="res://menu/options.gd" id="2_cjh0d"]
 [ext_resource type="Texture2D" uid="uid://bdm3e1ry3voj3" path="res://menu/back-arrow-svgrepo-com.svg" id="2_efwqg"]
 [ext_resource type="PackedScene" uid="uid://bbw52brc363ty" path="res://button.tscn" id="3_s7x0p"]
+[ext_resource type="Texture2D" uid="uid://d3vyxph328yej" path="res://images/kotel1.png" id="4_hl8v0"]
 [ext_resource type="FontFile" uid="uid://rns72cc0te0r" path="res://fonts/Oswald-SemiBold.ttf" id="5_bny0v"]
 
 [node name="Opt" type="Node2D"]
@@ -44,6 +45,13 @@ layout_mode = 0
 offset_right = 137.0
 offset_bottom = 71.0
 text = "BACK"
+
+[node name="Kotel1" type="Sprite2D" parent="Control"]
+z_index = -1
+position = Vector2(88, 75)
+rotation = 2.66816
+scale = Vector2(0.0893185, 0.0893185)
+texture = ExtResource("4_hl8v0")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 164.0
