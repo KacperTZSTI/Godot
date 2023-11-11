@@ -42,4 +42,34 @@ offset_bottom = 24.0
 theme_override_font_sizes/font_size = 20
 text = "adsgsadg"
 
+[node name="game over" type="Label" parent="CanvasLayer" groups=["Game over items"]]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cats" type="Label" parent="CanvasLayer" groups=["Game over items"]]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 40
+text = "Collected cats: undefined"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [editable path="Player"]

@@ -4,23 +4,32 @@ var FRICTION = 50
 var ACCELERATION = 40
 var MAX_SPEED = 250
 var input_vector = Vector2.ZERO
-var MAX_TIME = 20
+var MAX_TIME = 2
+
+var koteły = 0
+
 @export
 var time = MAX_TIME
+var game = true;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	time = MAX_TIME;
-	pass # Replace with function body.
+	game = true;
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	time -= delta
-	get_tree().get_nodes_in_group("Global indicators")[0].text = "Time left: "+str(int(time))
+	
 	if time<0:
-		get_tree().change_scene_to_file("res://menu/stage_select.tscn")
-	movement(delta)
+		game = false
+		for item in get_tree().get_nodes_in_group("Game over items"):
+			item.visible = true
+		get_tree().get_nodes_in_group("Game over items")[1].text  = "Collected cats: "+str(int(koteły))
+	if game:
+		movement(delta)
+		get_tree().get_nodes_in_group("Global indicators")[0].text = "Time left: "+str(int(time))
+		time -= delta
 	
 	
 
