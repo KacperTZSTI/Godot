@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=4 format=3 uid="uid://37viv4qcybul"]
+
+[ext_resource type="Script" path="res://levels/level_01/player.gd" id="1_paa0h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxtsu"]
+size = Vector2(100, 100)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0lipu"]
+size = Vector2(100, 100)
 
 [node name="level_01" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+linear_damp = 2.806
+script = ExtResource("1_paa0h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_cxtsu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(0.499996, -1.90735e-06)
+scale = Vector2(0.99, 1)
+texture = SubResource("PlaceholderTexture2D_0lipu")
