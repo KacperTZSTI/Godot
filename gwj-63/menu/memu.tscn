@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://menu/memu.gd" id="1_ygedg"]
 [ext_resource type="Shader" path="res://menu/memu.gdshader" id="3_4roty"]
 [ext_resource type="Texture2D" uid="uid://by76l70bi733y" path="res://menu/menu_clouds1.png" id="3_s07af"]
+[ext_resource type="Texture2D" uid="uid://cf6ut3jkmqnn5" path="res://icon.svg" id="5_hi0ml"]
 [ext_resource type="Texture2D" uid="uid://c167atal1yniu" path="res://menu/menu_clouds2.png" id="5_uu7qc"]
-[ext_resource type="Texture2D" uid="uid://dllntpbqrmo25" path="res://images/GWJ-Half-Logo-Orange.svg" id="6_82p4b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5m850"]
 shader = ExtResource("1_kf7xq")
@@ -89,15 +89,15 @@ texture = ExtResource("5_uu7qc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.522
-anchor_top = 0.475
-anchor_right = 0.522
-anchor_bottom = 0.475
-offset_left = -73.344
-offset_top = 117.2
-offset_right = 72.656
-offset_bottom = 380.2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -16.0
+offset_right = 98.0
+offset_bottom = 247.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -119,43 +119,9 @@ theme = SubResource("Theme_g815f")
 text = "Quit"
 
 [node name="Icon" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(73, -264)
-texture = ExtResource("6_82p4b")
-
-[node name="Label" type="Label" parent="VBoxContainer/Icon"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -156.5
-offset_top = -16.0
-offset_right = 28.5
-offset_bottom = 29.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-text = "Cats!"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="VBoxContainer/Icon"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -166.0
-offset_top = 37.0
-offset_right = 38.0
-offset_bottom = 161.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 20
-text = "Authors:
-Bartosz Geodecki
-Kacper Trzop
-ZSTI GLWICE klasa 2P"
-horizontal_alignment = 1
+position = Vector2(71, -158)
+scale = Vector2(1.89062, 1.89062)
+texture = ExtResource("5_hi0ml")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
