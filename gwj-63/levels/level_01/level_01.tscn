@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=8 format=3 uid="uid://37viv4qcybul"]
 
 [ext_resource type="PackedScene" path="res://player.tscn" id="1_pvhon"]
 [ext_resource type="Texture2D" uid="uid://jn6wnpabg4so" path="res://levels/level_01/stage1_sketch.png" id="1_yayab"]
 [ext_resource type="Script" path="res://levels/level_01/koteł.gd" id="2_2erab"]
 [ext_resource type="Texture2D" uid="uid://d3vyxph328yej" path="res://levels/level_01/images/kotel1.png" id="3_rj26e"]
+[ext_resource type="FontFile" uid="uid://rns72cc0te0r" path="res://fonts/Oswald-SemiBold.ttf" id="5_0rayw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0txn"]
 size = Vector2(274.75, 100)
@@ -70,6 +71,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("5_0rayw")
 theme_override_font_sizes/font_size = 50
 text = "Game Over"
 horizontal_alignment = 1
