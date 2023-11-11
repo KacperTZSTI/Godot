@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=6 format=3 uid="uid://37viv4qcybul"]
 
 [ext_resource type="Script" path="res://levels/level_01/player.gd" id="1_paa0h"]
 
@@ -8,9 +8,12 @@ size = Vector2(100, 100)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0lipu"]
 size = Vector2(100, 100)
 
-[node name="level_01" type="Node2D"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7hu5b"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0txn"]
+size = Vector2(608, 152)
+
+[node name="level_01" type="Node2D"]
 
 [node name="Player" type="RigidBody2D" parent="."]
 gravity_scale = 0.0
@@ -24,3 +27,18 @@ shape = SubResource("RectangleShape2D_cxtsu")
 position = Vector2(0.499996, -1.90735e-06)
 scale = Vector2(0.99, 1)
 texture = SubResource("PlaceholderTexture2D_0lipu")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="world" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="world"]
+position = Vector2(1.52588e-05, -209)
+scale = Vector2(606, -150)
+texture = SubResource("PlaceholderTexture2D_7hu5b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="world"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/StaticBody2D"]
+position = Vector2(0, -207)
+shape = SubResource("RectangleShape2D_h0txn")
