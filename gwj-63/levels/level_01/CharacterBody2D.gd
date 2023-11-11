@@ -4,7 +4,7 @@ var FRICTION = 50
 var ACCELERATION = 40
 var MAX_SPEED = 250
 var input_vector = Vector2.ZERO
-var MAX_TIME = 2
+var MAX_TIME = 300
 
 var koteły = 0
 
