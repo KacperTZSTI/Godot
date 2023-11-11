@@ -1,15 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://dy0jynva2type"]
 
-[ext_resource type="Texture2D" uid="uid://c1at84egr32w" path="res://menu/start.png" id="1_nbas2"]
 [ext_resource type="Script" path="res://menu/level_select.gd" id="2_7qjaf"]
 [ext_resource type="PackedScene" uid="uid://bbw52brc363ty" path="res://button.tscn" id="3_v6j1u"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ribkm"]
+load_path = "res://.godot/imported/start.png-153807481df1508ea42cfb83860bb1bf.ctex"
 
 [node name="stage_select" type="Node2D"]
 
 [node name="Start" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(606, 354)
-texture = ExtResource("1_nbas2")
+texture = SubResource("CompressedTexture2D_ribkm")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
