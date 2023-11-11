@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://8ap6pysvfqm4"]
+[gd_scene load_steps=16 format=3 uid="uid://8ap6pysvfqm4"]
 
 [ext_resource type="Shader" path="res://menu/memu2.gdshader" id="1_kf7xq"]
 [ext_resource type="Script" path="res://menu/memu.gd" id="1_ygedg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://by76l70bi733y" path="res://menu/menu_clouds1.png" id="3_s07af"]
 [ext_resource type="Texture2D" uid="uid://c167atal1yniu" path="res://menu/menu_clouds2.png" id="5_uu7qc"]
 [ext_resource type="Texture2D" uid="uid://dllntpbqrmo25" path="res://images/GWJ-Half-Logo-Orange.svg" id="6_82p4b"]
+[ext_resource type="Texture2D" uid="uid://d3vyxph328yej" path="res://images/kotel1.png" id="6_sc5bx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5m850"]
 shader = ExtResource("1_kf7xq")
@@ -95,9 +96,9 @@ anchor_top = 0.475
 anchor_right = 0.522
 anchor_bottom = 0.475
 offset_left = -73.344
-offset_top = 117.2
+offset_top = 192.2
 offset_right = 72.656
-offset_bottom = 380.2
+offset_bottom = 455.2
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -119,22 +120,23 @@ theme = SubResource("Theme_g815f")
 text = "Quit"
 
 [node name="Icon" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(73, -264)
+position = Vector2(73, -351)
 texture = ExtResource("6_82p4b")
 
 [node name="Label" type="Label" parent="VBoxContainer/Icon"]
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -156.5
-offset_top = -16.0
-offset_right = 28.5
-offset_bottom = 29.0
+offset_left = -170.5
+offset_top = -20.0
+offset_right = 42.5
+offset_bottom = 107.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 120
 text = "Cats!"
 horizontal_alignment = 1
 
@@ -145,9 +147,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -166.0
-offset_top = 37.0
+offset_top = 139.0
 offset_right = 38.0
-offset_bottom = 161.0
+offset_bottom = 263.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 20
@@ -156,6 +158,11 @@ Bartosz Geodecki
 Kacper Trzop
 ZSTI GLWICE klasa 2P"
 horizontal_alignment = 1
+
+[node name="Kotel1" type="Sprite2D" parent="VBoxContainer/Icon"]
+position = Vector2(-101, 59)
+scale = Vector2(0.0893185, 0.0893185)
+texture = ExtResource("6_sc5bx")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
