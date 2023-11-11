@@ -14,8 +14,6 @@ texture = ExtResource("1_nbas2")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 105.0
-offset_bottom = 105.0
 script = ExtResource("2_7qjaf")
 
 [node name="level-1" type="Button" parent="Control"]
@@ -39,6 +37,15 @@ layout_mode = 0
 offset_right = 137.0
 offset_bottom = 71.0
 text = "BACK"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 13.0
+offset_right = 336.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 30
+text = "Select stage"
 
 [connection signal="button_down" from="Control/level-1" to="Control" method="_on_l1_pressed"]
 [connection signal="pressed" from="Control/Back" to="Control" method="_on_back_pressed"]

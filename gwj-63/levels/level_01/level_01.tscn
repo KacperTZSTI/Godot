@@ -72,4 +72,20 @@ text = "Collected cats: undefined"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="esc" type="Label" parent="CanvasLayer" groups=["Game over items"]]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 130.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 20
+text = "Press <escape> to go back to stage select screen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [editable path="Player"]
