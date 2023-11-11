@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://37viv4qcybul"]
 
-[ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="1_pvhon"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="1_pvhon"]
 [ext_resource type="Texture2D" uid="uid://jn6wnpabg4so" path="res://levels/level_01/stage1_sketch.png" id="1_yayab"]
 [ext_resource type="Script" path="res://levels/level_01/koteł.gd" id="2_2erab"]
 [ext_resource type="Texture2D" uid="uid://d3vyxph328yej" path="res://levels/level_01/images/kotel1.png" id="3_rj26e"]
