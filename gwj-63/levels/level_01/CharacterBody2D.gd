@@ -21,7 +21,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene_to_file("res://menu/stage_select.tscn")
+		if time>0:
+			time = -1
+		else:
+			get_tree().change_scene_to_file("res://menu/stage_select.tscn")
 	if time<0:
 		game = false
 		for item in get_tree().get_nodes_in_group("Game over items"):
