@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c167atal1yniu" path="res://menu/menu_clouds2.png" id="5_uu7qc"]
 [ext_resource type="Texture2D" uid="uid://dllntpbqrmo25" path="res://images/GWJ-Half-Logo-Orange.svg" id="6_82p4b"]
 [ext_resource type="FontFile" uid="uid://rns72cc0te0r" path="res://fonts/Oswald-SemiBold.ttf" id="7_kvi2l"]
-[ext_resource type="Texture2D" uid="uid://d3vyxph328yej" path="res://images/kotel1.png" id="7_mg5i3"]
+[ext_resource type="Texture2D" uid="uid://d3vyxph328yej" path="res://images/kotel1.png" id="8_xk1ib"]
 [ext_resource type="Texture2D" uid="uid://co0g68atl06uc" path="res://images/kotel2.png" id="9_i04qi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5m850"]
@@ -165,7 +165,7 @@ horizontal_alignment = 1
 [node name="Kotel1" type="Sprite2D" parent="VBoxContainer/Icon"]
 position = Vector2(-95, 58)
 scale = Vector2(0.0893185, 0.0893185)
-texture = ExtResource("7_mg5i3")
+texture = ExtResource("8_xk1ib")
 
 [node name="Kotel2" type="Sprite2D" parent="VBoxContainer/Icon"]
 position = Vector2(124, 87)
@@ -184,7 +184,7 @@ z_index = -1
 position = Vector2(76, 403)
 rotation = 0.758761
 scale = Vector2(0.0893185, 0.0893185)
-texture = ExtResource("7_mg5i3")
+texture = ExtResource("8_xk1ib")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
