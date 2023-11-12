@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=8 format=3 uid="uid://37viv4qcybul"]
 
 [ext_resource type="PackedScene" path="res://player.tscn" id="1_pvhon"]
 [ext_resource type="Texture2D" uid="uid://jn6wnpabg4so" path="res://levels/level_01/stage1_sketch.png" id="1_yayab"]
 [ext_resource type="Script" path="res://levels/level_01/koteł.gd" id="2_2erab"]
-[ext_resource type="Texture2D" uid="uid://d3vyxph328yej" path="res://images/kotel1.png" id="3_qdei3"]
 [ext_resource type="Texture2D" uid="uid://co0g68atl06uc" path="res://images/kotel2.png" id="4_pnjkf"]
 [ext_resource type="FontFile" uid="uid://rns72cc0te0r" path="res://fonts/Oswald-SemiBold.ttf" id="5_0rayw"]
 
@@ -31,8 +30,8 @@ position = Vector2(-308.625, -54)
 shape = SubResource("RectangleShape2D_h0txn")
 
 [node name="koteł" type="Node2D" parent="world"]
-position = Vector2(-2679, -1)
-scale = Vector2(0.404172, 0.404172)
+position = Vector2(571, 368)
+scale = Vector2(0.487073, 0.487073)
 script = ExtResource("2_2erab")
 
 [node name="Area2D" type="Area2D" parent="world/koteł"]
@@ -42,22 +41,6 @@ position = Vector2(1.25, -3.5)
 shape = SubResource("RectangleShape2D_ida00")
 
 [node name="Sprite2D" type="Sprite2D" parent="world/koteł"]
-position = Vector2(9.89648, -4.94839)
-scale = Vector2(0.229061, 0.229061)
-texture = ExtResource("3_qdei3")
-
-[node name="koteł2" type="Node2D" parent="world"]
-position = Vector2(571, 368)
-scale = Vector2(0.487073, 0.487073)
-script = ExtResource("2_2erab")
-
-[node name="Area2D" type="Area2D" parent="world/koteł2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/koteł2/Area2D"]
-position = Vector2(1.25, -3.5)
-shape = SubResource("RectangleShape2D_ida00")
-
-[node name="Sprite2D" type="Sprite2D" parent="world/koteł2"]
 position = Vector2(3.99951, -11)
 scale = Vector2(0.229061, 0.229061)
 texture = ExtResource("4_pnjkf")
@@ -128,6 +111,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="body_entered" from="world/koteł/Area2D" to="world/koteł" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="world/koteł2/Area2D" to="world/koteł2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="world/koteł/Area2D" to="world/koteł" method="_on_area_2d_body_exited"]
 
 [editable path="Player"]

@@ -8,10 +8,16 @@ func _ready():
 
 func _process(delta):
 	pass
+	
+func delete():
+	hide()
+	get_tree().queue_delete(self)
 
 
 func _on_area_2d_body_entered(body):
-	body.koteły += 1;
-	hide()
-	get_tree().queue_delete(self)
+	body.kotek = self
 	
+
+
+func _on_area_2d_body_exited(body):
+	body.kotek = null

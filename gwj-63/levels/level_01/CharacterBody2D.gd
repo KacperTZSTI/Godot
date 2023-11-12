@@ -7,6 +7,7 @@ var input_vector = Vector2.ZERO
 var MAX_TIME = 300
 
 var koteły = 0
+var kotek = null
 
 @export
 var time = MAX_TIME
@@ -20,6 +21,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Input.is_action_just_pressed("interact"):
+		if kotek:
+			kotek.delete()
+			koteły +=1
+	
 	if Input.is_action_just_pressed("ui_cancel"):
 		if time>0:
 			time = -1
