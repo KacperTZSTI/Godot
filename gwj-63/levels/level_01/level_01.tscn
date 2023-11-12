@@ -1,16 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=6 format=3 uid="uid://37viv4qcybul"]
 
 [ext_resource type="PackedScene" path="res://player.tscn" id="1_pvhon"]
 [ext_resource type="Texture2D" uid="uid://jn6wnpabg4so" path="res://levels/level_01/stage1_sketch.png" id="1_yayab"]
-[ext_resource type="Script" path="res://levels/level_01/koteł.gd" id="2_2erab"]
-[ext_resource type="Texture2D" uid="uid://co0g68atl06uc" path="res://images/kotel2.png" id="4_pnjkf"]
+[ext_resource type="PackedScene" uid="uid://kk1s4gkevom8" path="res://assets/koteł.tscn" id="2_3mtuv"]
 [ext_resource type="FontFile" uid="uid://rns72cc0te0r" path="res://fonts/Oswald-SemiBold.ttf" id="5_0rayw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0txn"]
 size = Vector2(274.75, 100)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ida00"]
-size = Vector2(107.5, 103)
 
 [node name="level_01" type="Node2D"]
 y_sort_enabled = true
@@ -29,21 +25,18 @@ texture = ExtResource("1_yayab")
 position = Vector2(-308.625, -54)
 shape = SubResource("RectangleShape2D_h0txn")
 
-[node name="koteł" type="Node2D" parent="world"]
-position = Vector2(571, 368)
-scale = Vector2(0.487073, 0.487073)
-script = ExtResource("2_2erab")
+[node name="koteł" parent="world" instance=ExtResource("2_3mtuv")]
+position = Vector2(176, 256)
 
-[node name="Area2D" type="Area2D" parent="world/koteł"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/koteł/Area2D"]
-position = Vector2(1.25, -3.5)
-shape = SubResource("RectangleShape2D_ida00")
-
-[node name="Sprite2D" type="Sprite2D" parent="world/koteł"]
-position = Vector2(3.99951, -11)
-scale = Vector2(0.229061, 0.229061)
-texture = ExtResource("4_pnjkf")
+[node name="Label" type="Label" parent="world/koteł"]
+offset_left = -32.8493
+offset_top = -123.185
+offset_right = 392.151
+offset_bottom = -97.1848
+theme_override_font_sizes/font_size = 20
+text = "Pick up this lonely cat by coming near
+and pressing <Z>
+"
 
 [node name="Player" parent="." instance=ExtResource("1_pvhon")]
 
@@ -109,8 +102,5 @@ theme_override_font_sizes/font_size = 20
 text = "Press <escape> to go back to stage select screen"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="body_entered" from="world/koteł/Area2D" to="world/koteł" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="world/koteł/Area2D" to="world/koteł" method="_on_area_2d_body_exited"]
 
 [editable path="Player"]
