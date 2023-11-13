@@ -9,6 +9,9 @@ var MAX_TIME = 300
 var koteły = 0
 var kotek = null
 
+var time_since_last_interaction = 0;
+var code = ''
+
 var time = MAX_TIME
 var game = true;
 
@@ -23,10 +26,57 @@ func teleport(x,y):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	time_since_last_interaction += delta;
+	if time_since_last_interaction > 2:
+		code = ''
+		time_since_last_interaction = 0
+	if Input.is_action_just_pressed("ui_down"):
+		code += 'd'
+		time_since_last_interaction = 0
+	if Input.is_action_just_pressed("ui_up"):
+		code += 'u'
+		time_since_last_interaction = 0
+	if Input.is_action_just_pressed("ui_left"):
+		code += 'l'
+		time_since_last_interaction = 0
+	if Input.is_action_just_pressed("ui_right"):
+		code += 'r'
+		time_since_last_interaction = 0
+		
 	if Input.is_action_just_pressed("interact"):
+		code += 'a'
+		time_since_last_interaction = 0
 		if kotek:
 			kotek.delete()
 			koteły +=1
+			
+	if code == 'uuddlrlra':
+		# konami code, without the 'b'
+		time += 999
+		code = ''
+	if code == 'ududa':
+		# simpler code
+		time = MAX_TIME
+		code = ''
+	if code == 'uudduudda':
+		# infinite cats
+		koteły = 999
+		time = -1
+		code = ''
+	if code == 'uaaa':
+		# spawn cat
+		koteły += 1
+		code = ''
+	if code == 'uuuulra':
+		# kodzik na szybkość
+		MAX_SPEED *=2
+		ACCELERATION *=2
+		code = ''
+	if code == 'ddddlra':
+		# kodzik na reset szybkości
+		MAX_SPEED =250
+		ACCELERATION = 40
+		code = ''
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		if time>0:
