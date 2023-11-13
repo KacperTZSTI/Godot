@@ -143,25 +143,6 @@ theme_override_font_sizes/font_size = 120
 text = "Cats!"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="VBoxContainer/Icon"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -166.0
-offset_top = 139.0
-offset_right = 38.0
-offset_bottom = 263.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 20
-text = "Authors:
-Bartosz Geodecki - programmer, team lead
-Kacper Trzop - art, graphics designer
-Jakub Kuś - music, soundtrack designer"
-horizontal_alignment = 1
-
 [node name="Kotel2" type="Sprite2D" parent="VBoxContainer/Icon"]
 position = Vector2(124, 87)
 rotation = 1.2083

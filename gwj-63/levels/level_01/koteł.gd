@@ -1,6 +1,7 @@
 extends Node2D 
 # koteł :D :D :3
 
+@onready var anim = $AnimationPlayer
 
 func _ready():
 	pass

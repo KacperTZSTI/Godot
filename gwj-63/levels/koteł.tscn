@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://kk1s4gkevom8"]
+
+[ext_resource type="Script" path="res://levels/level_01/koteł.gd" id="1_bipnd"]
+[ext_resource type="Texture2D" uid="uid://b4a7652vkfhqo" path="res://assets/cat.png" id="2_stm1c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ida00"]
+size = Vector2(61.5924, 53.3803)
+
+[node name="koteł" type="Node2D"]
+position = Vector2(571, 368)
+scale = Vector2(0.487073, 0.487073)
+script = ExtResource("1_bipnd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.0531, -8.2124)
+shape = SubResource("RectangleShape2D_ida00")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10.2654, -26.69)
+scale = Vector2(4.07707, 4.07707)
+texture = ExtResource("2_stm1c")
+hframes = 35
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
