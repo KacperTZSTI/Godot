@@ -18,6 +18,9 @@ func _ready():
 	time = MAX_TIME;
 	game = true;
 
+func teleport(x,y):
+	position.x = x
+	position.y = y
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

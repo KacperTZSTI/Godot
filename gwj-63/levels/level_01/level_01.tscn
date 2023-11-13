@@ -1,12 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=11 format=3 uid="uid://37viv4qcybul"]
 
 [ext_resource type="PackedScene" path="res://player.tscn" id="1_pvhon"]
 [ext_resource type="Texture2D" uid="uid://jn6wnpabg4so" path="res://levels/level_01/stage1_sketch.png" id="1_yayab"]
 [ext_resource type="PackedScene" uid="uid://kk1s4gkevom8" path="res://assets/koteł.tscn" id="2_3mtuv"]
+[ext_resource type="Script" path="res://levels/level_01/scripts/elevator.gd" id="2_tbe64"]
 [ext_resource type="FontFile" uid="uid://rns72cc0te0r" path="res://fonts/Oswald-SemiBold.ttf" id="5_0rayw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anmqw"]
+size = Vector2(51.4294, 60.6963)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qwf8"]
+size = Vector2(30.1163, 19.4595)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0txn"]
 size = Vector2(274.75, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wq58t"]
+size = Vector2(1964, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksj0r"]
+size = Vector2(254.405, 100.356)
 
 [node name="level_01" type="Node2D"]
 y_sort_enabled = true
@@ -19,11 +32,60 @@ position = Vector2(-285.392, 1377)
 scale = Vector2(2.1583, 2.1583)
 texture = ExtResource("1_yayab")
 
+[node name="elevator" type="Node2D" parent="world/Sprite2D"]
+position = Vector2(-11.8649, -655.609)
+
+[node name="elevator_bottom" type="Node2D" parent="world/Sprite2D/elevator" node_paths=PackedStringArray("dest")]
+script = ExtResource("2_tbe64")
+dest = NodePath("../elevator_top/dest")
+
+[node name="Area2D" type="Area2D" parent="world/Sprite2D/elevator/elevator_bottom"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/Sprite2D/elevator/elevator_bottom/Area2D"]
+position = Vector2(0.694962, -9.49802)
+shape = SubResource("RectangleShape2D_anmqw")
+
+[node name="dest" type="Node2D" parent="world/Sprite2D/elevator/elevator_bottom"]
+position = Vector2(0.926651, 50.966)
+
+[node name="elevator_top" type="Node2D" parent="world/Sprite2D/elevator" node_paths=PackedStringArray("dest")]
+position = Vector2(0, -240.467)
+script = ExtResource("2_tbe64")
+dest = NodePath("../elevator_bottom/dest")
+
+[node name="Area2D" type="Area2D" parent="world/Sprite2D/elevator/elevator_top"]
+position = Vector2(-0.926666, -11.1195)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/Sprite2D/elevator/elevator_top/Area2D"]
+position = Vector2(-1.85332, -1.38962)
+shape = SubResource("RectangleShape2D_8qwf8")
+
+[node name="dest" type="Node2D" parent="world/Sprite2D/elevator/elevator_top"]
+position = Vector2(0.926651, -40.7725)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="world"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="world/StaticBody2D"]
 position = Vector2(-308.625, -54)
 shape = SubResource("RectangleShape2D_h0txn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="world/StaticBody2D"]
+position = Vector2(-281, -734)
+shape = SubResource("RectangleShape2D_wq58t")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="world/StaticBody2D"]
+position = Vector2(-103.061, -620.871)
+rotation = -1.3488
+shape = SubResource("RectangleShape2D_ksj0r")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="world/StaticBody2D"]
+position = Vector2(-534, -504)
+shape = SubResource("RectangleShape2D_wq58t")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="world/StaticBody2D"]
+position = Vector2(-478, -646)
+rotation = -1.3488
+shape = SubResource("RectangleShape2D_ksj0r")
 
 [node name="koteł" parent="world" instance=ExtResource("2_3mtuv")]
 position = Vector2(176, 256)
@@ -37,6 +99,9 @@ theme_override_font_sizes/font_size = 20
 text = "Pick up this lonely cat by coming near
 and pressing <Z>
 "
+
+[node name="koteł2" parent="world" instance=ExtResource("2_3mtuv")]
+position = Vector2(-210, -587)
 
 [node name="Player" parent="." instance=ExtResource("1_pvhon")]
 
@@ -102,5 +167,8 @@ theme_override_font_sizes/font_size = 20
 text = "Press <escape> to go back to stage select screen"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="body_entered" from="world/Sprite2D/elevator/elevator_bottom/Area2D" to="world/Sprite2D/elevator/elevator_bottom" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/Sprite2D/elevator/elevator_top/Area2D" to="world/Sprite2D/elevator/elevator_top" method="_on_area_2d_body_entered"]
 
 [editable path="Player"]
