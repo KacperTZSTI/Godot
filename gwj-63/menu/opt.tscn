@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://e0ar5qrufxf7"]
+[gd_scene load_steps=7 format=3 uid="uid://e0ar5qrufxf7"]
 
 [ext_resource type="Texture2D" uid="uid://bkyheey1yhxpt" path="res://menu/opt.png" id="1_wqrkj"]
 [ext_resource type="Script" path="res://menu/options.gd" id="2_cjh0d"]
 [ext_resource type="Texture2D" uid="uid://bdm3e1ry3voj3" path="res://menu/back-arrow-svgrepo-com.svg" id="2_efwqg"]
 [ext_resource type="PackedScene" uid="uid://bbw52brc363ty" path="res://button.tscn" id="3_s7x0p"]
 [ext_resource type="FontFile" uid="uid://rns72cc0te0r" path="res://fonts/Oswald-SemiBold.ttf" id="5_bny0v"]
+[ext_resource type="Texture2D" uid="uid://eou7pakhnpv2" path="res://images/kotel1.png" id="6_tln5u"]
 
 [node name="Opt" type="Node2D"]
 
@@ -53,6 +54,13 @@ offset_bottom = 58.0
 theme_override_fonts/font = ExtResource("5_bny0v")
 theme_override_font_sizes/font_size = 30
 text = "Options"
+
+[node name="Kotel4" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(81, 72)
+rotation = 2.74101
+scale = Vector2(0.0893185, 0.0893185)
+texture = ExtResource("6_tln5u")
 
 [connection signal="button_down" from="Control/Button" to="Control" method="_on_back_pressed"]
 [connection signal="toggled" from="Control/CheckButton" to="Control" method="_on_fullscreen_toggled"]
