@@ -15,9 +15,11 @@ func delete():
 
 
 func _on_area_2d_body_entered(body):
-	body.kotek = self
+	if 'kotek' in body:
+		body.kotek = self
 	
 
 
 func _on_area_2d_body_exited(body):
-	body.kotek = null
+	if 'kotek' in body:
+		body.kotek = null

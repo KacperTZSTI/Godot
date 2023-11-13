@@ -9,7 +9,6 @@ var MAX_TIME = 300
 var koteły = 0
 var kotek = null
 
-@export
 var time = MAX_TIME
 var game = true;
 

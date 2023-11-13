@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=14 format=3 uid="uid://37viv4qcybul"]
 
+[ext_resource type="Script" path="res://levels/level_01/scripts/world.gd" id="1_71vqr"]
 [ext_resource type="PackedScene" path="res://player.tscn" id="1_pvhon"]
 [ext_resource type="Texture2D" uid="uid://jn6wnpabg4so" path="res://levels/level_01/stage1_sketch.png" id="1_yayab"]
 [ext_resource type="PackedScene" uid="uid://kk1s4gkevom8" path="res://assets/koteł.tscn" id="2_3mtuv"]
@@ -21,11 +22,18 @@ size = Vector2(1964, 92)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksj0r"]
 size = Vector2(254.405, 100.356)
 
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_m2q8q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qiqxo"]
+size = Vector2(509, 513)
+
 [node name="level_01" type="Node2D"]
 y_sort_enabled = true
 
-[node name="world" type="Node2D" parent="."]
+[node name="world" type="Node2D" parent="." node_paths=PackedStringArray("bus")]
 y_sort_enabled = true
+script = ExtResource("1_71vqr")
+bus = NodePath("../Bus")
 
 [node name="Sprite2D" type="Sprite2D" parent="world"]
 position = Vector2(-285.392, 1377)
@@ -110,6 +118,21 @@ position = Vector2(3003, 3968)
 
 [node name="TopLeft" parent="Player/Camera2D/Limits" index="1"]
 position = Vector2(-3498, -1265)
+
+[node name="Bus" type="RigidBody2D" parent="."]
+visible = false
+position = Vector2(-208, 220)
+mass = 128.36
+gravity_scale = 0.0
+
+[node name="sprite" type="Sprite2D" parent="Bus"]
+scale = Vector2(1, 0.5)
+texture = SubResource("NoiseTexture2D_m2q8q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bus"]
+position = Vector2(-0.5, -0.5)
+scale = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_qiqxo")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
