@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bbw52brc363ty"]
 
-[ext_resource type="FontFile" uid="uid://rns72cc0te0r" path="res://fonts/Oswald-SemiBold.ttf" id="1_a777j"]
+[ext_resource type="FontFile" uid="uid://b4cn0jmcso7gx" path="res://fonts/joystix monospace.otf" id="1_3d2c3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12ft0"]
 bg_color = Color(0, 0, 0.427451, 1)
@@ -43,5 +43,5 @@ Button/styles/pressed = SubResource("StyleBoxFlat_ruqpi")
 
 [node name="Start" type="Button"]
 theme = SubResource("Theme_cmwdc")
-theme_override_fonts/font = ExtResource("1_a777j")
+theme_override_fonts/font = ExtResource("1_3d2c3")
 text = "Start"

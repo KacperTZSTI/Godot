@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy0jynva2type"]
+[gd_scene load_steps=7 format=3 uid="uid://dy0jynva2type"]
 
 [ext_resource type="Script" path="res://menu/level_select.gd" id="2_7qjaf"]
 [ext_resource type="Texture2D" uid="uid://co0g68atl06uc" path="res://images/kotel2.png" id="2_cmryf"]
 [ext_resource type="FontFile" uid="uid://rns72cc0te0r" path="res://fonts/Oswald-SemiBold.ttf" id="3_h00bo"]
 [ext_resource type="PackedScene" uid="uid://bbw52brc363ty" path="res://button.tscn" id="3_v6j1u"]
+[ext_resource type="Texture2D" uid="uid://dwfjvxkryoi51" path="res://levels/level_01/images/pink_back.png" id="5_6lsy4"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ribkm"]
 load_path = "res://.godot/imported/start.png-153807481df1508ea42cfb83860bb1bf.ctex"
@@ -57,6 +58,12 @@ offset_bottom = 58.0
 theme_override_fonts/font = ExtResource("3_h00bo")
 theme_override_font_sizes/font_size = 30
 text = "Select stage"
+
+[node name="PinkBack" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(698, 48.9998)
+scale = Vector2(410.5, 356)
+texture = ExtResource("5_6lsy4")
 
 [connection signal="button_down" from="Control/level-1" to="Control" method="_on_l1_pressed"]
 [connection signal="pressed" from="Control/Back" to="Control" method="_on_back_pressed"]

@@ -6,11 +6,11 @@
 [ext_resource type="Script" path="res://levels/level_01/scripts/elevator.gd" id="2_tbe64"]
 [ext_resource type="Texture2D" uid="uid://b4a7652vkfhqo" path="res://levels/level_01/images/cat.png" id="3_tue0s"]
 [ext_resource type="Script" path="res://levels/level_01/look_cat.gd" id="4_cnvd3"]
-[ext_resource type="FontFile" uid="uid://rns72cc0te0r" path="res://fonts/Oswald-SemiBold.ttf" id="5_0rayw"]
 [ext_resource type="Texture2D" uid="uid://bcwg16pjcmkqi" path="res://levels/level_01/images/bus.png" id="6_avdft"]
 [ext_resource type="Texture2D" uid="uid://bypo8ux44m572" path="res://levels/level_01/images/1building.png" id="7_ateww"]
 [ext_resource type="Script" path="res://levels/level_01/bus.gd" id="7_xs1cg"]
 [ext_resource type="Texture2D" uid="uid://butu6u6j3iaa4" path="res://levels/level_01/images/road.png" id="8_6a6ls"]
+[ext_resource type="FontFile" uid="uid://b4cn0jmcso7gx" path="res://fonts/joystix monospace.otf" id="9_3xjb8"]
 [ext_resource type="Texture2D" uid="uid://bg4ognuionoao" path="res://levels/level_01/images/tree1.png" id="9_71bi7"]
 [ext_resource type="Texture2D" uid="uid://btfoob5p327ch" path="res://levels/level_01/images/tree2.png" id="10_gppus"]
 [ext_resource type="Texture2D" uid="uid://bngnyjsc2u2m3" path="res://levels/level_01/images/bus_stop1.png" id="11_q1dt2"]
@@ -81,6 +81,21 @@ size = Vector2(25.0197, 24.0933)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qwf8"]
 size = Vector2(42.3945, 19.4595)
 
+[sub_resource type="Animation" id="Animation_3m0i0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_6m1ky"]
 resource_name = "bus"
 loop_mode = 1
@@ -95,21 +110,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
-}
-
-[sub_resource type="Animation" id="Animation_3m0i0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wxa3n"]
@@ -138,10 +138,10 @@ y_sort_enabled = true
 script = ExtResource("1_71vqr")
 bus = NodePath("bus")
 
-[node name="koteł1" parent="world" instance=ExtResource("2_3mtuv")]
+[node name="cat1" parent="world" instance=ExtResource("2_3mtuv")]
 position = Vector2(-517, -2638)
 
-[node name="Label" type="Label" parent="world/koteł1"]
+[node name="Label" type="Label" parent="world/cat1"]
 offset_left = -51.327
 offset_top = -160.14
 offset_right = 32.673
@@ -150,7 +150,7 @@ theme_override_font_sizes/font_size = 20
 text = "PRESS Z
 "
 
-[node name="look_cat" type="Sprite2D" parent="world/koteł1"]
+[node name="look_cat" type="Sprite2D" parent="world/cat1"]
 z_index = 1
 position = Vector2(110.866, 4017.88)
 scale = Vector2(4.26397, 4.26397)
@@ -159,158 +159,154 @@ hframes = 35
 frame = 30
 script = ExtResource("4_cnvd3")
 
-[node name="look_anim" type="AnimationPlayer" parent="world/koteł1/look_cat"]
+[node name="look_anim" type="AnimationPlayer" parent="world/cat1/look_cat"]
 libraries = {
 "": SubResource("AnimationLibrary_jvtf2")
 }
 
-[node name="koteł2" parent="world" instance=ExtResource("2_3mtuv")]
-z_index = 1
-position = Vector2(-2756, 2)
-
-[node name="elevator" type="Node2D" parent="world"]
+[node name="transitions" type="Node2D" parent="world"]
 position = Vector2(-311, -38.0009)
 scale = Vector2(2.1583, 2.1583)
 
-[node name="entrance" type="Node2D" parent="world/elevator" node_paths=PackedStringArray("dest")]
+[node name="entrance" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
 position = Vector2(-131.122, -1.38959)
 script = ExtResource("2_tbe64")
 dest = NodePath("../exit/dest")
 
-[node name="Area2D" type="Area2D" parent="world/elevator/entrance"]
+[node name="Area2D" type="Area2D" parent="world/transitions/entrance"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/elevator/entrance/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/entrance/Area2D"]
 position = Vector2(1.15833, -0.463327)
 shape = SubResource("RectangleShape2D_anmqw")
 
-[node name="dest" type="Node2D" parent="world/elevator/entrance"]
+[node name="dest" type="Node2D" parent="world/transitions/entrance"]
 position = Vector2(0.926926, 34.7496)
 
-[node name="floor2" type="Node2D" parent="world/elevator" node_paths=PackedStringArray("dest")]
+[node name="floor2" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
 position = Vector2(-1235.7, -2560.81)
 script = ExtResource("2_tbe64")
 dest = NodePath("../floor1/dest")
 
-[node name="Area2D" type="Area2D" parent="world/elevator/floor2"]
+[node name="Area2D" type="Area2D" parent="world/transitions/floor2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/elevator/floor2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/floor2/Area2D"]
 position = Vector2(1.15833, -0.463327)
 shape = SubResource("RectangleShape2D_anmqw")
 
-[node name="dest" type="Node2D" parent="world/elevator/floor2"]
+[node name="dest" type="Node2D" parent="world/transitions/floor2"]
 position = Vector2(0.926804, -25.9464)
 
-[node name="floor1" type="Node2D" parent="world/elevator" node_paths=PackedStringArray("dest")]
+[node name="floor1" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
 position = Vector2(-1013.76, -3653.8)
 script = ExtResource("2_tbe64")
 dest = NodePath("../floor2/dest")
 
-[node name="Area2D" type="Area2D" parent="world/elevator/floor1"]
+[node name="Area2D" type="Area2D" parent="world/transitions/floor1"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/elevator/floor1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/floor1/Area2D"]
 position = Vector2(-7.87659, -0.463379)
 shape = SubResource("RectangleShape2D_anmqw")
 
-[node name="dest" type="Node2D" parent="world/elevator/floor1"]
+[node name="dest" type="Node2D" parent="world/transitions/floor1"]
 position = Vector2(-7.41328, 38.4566)
 
-[node name="floor3" type="Node2D" parent="world/elevator" node_paths=PackedStringArray("dest")]
+[node name="floor3" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
 position = Vector2(616.689, -3575.04)
 script = ExtResource("2_tbe64")
 dest = NodePath("../floor2_1/dest")
 
-[node name="Area2D" type="Area2D" parent="world/elevator/floor3"]
+[node name="Area2D" type="Area2D" parent="world/transitions/floor3"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/elevator/floor3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/floor3/Area2D"]
 position = Vector2(-11.5833, 20.3862)
 shape = SubResource("RectangleShape2D_anmqw")
 
-[node name="dest" type="Node2D" parent="world/elevator/floor3"]
+[node name="dest" type="Node2D" parent="world/transitions/floor3"]
 position = Vector2(-11.5833, -11.1198)
 
-[node name="floor4" type="Node2D" parent="world/elevator" node_paths=PackedStringArray("dest")]
+[node name="floor4" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
 position = Vector2(669.045, -2594.63)
 script = ExtResource("2_tbe64")
 dest = NodePath("../floor3_1/dest")
 
-[node name="Area2D" type="Area2D" parent="world/elevator/floor4"]
+[node name="Area2D" type="Area2D" parent="world/transitions/floor4"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/elevator/floor4/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/floor4/Area2D"]
 position = Vector2(-7.41321, 16.6797)
 shape = SubResource("RectangleShape2D_anmqw")
 
-[node name="dest" type="Node2D" parent="world/elevator/floor4"]
+[node name="dest" type="Node2D" parent="world/transitions/floor4"]
 position = Vector2(-7.87654, -15.7531)
 
-[node name="roof" type="Node2D" parent="world/elevator" node_paths=PackedStringArray("dest")]
+[node name="roof" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
 position = Vector2(-174.211, -1266.27)
 script = ExtResource("2_tbe64")
 dest = NodePath("../floor4_1/dest")
 
-[node name="Area2D" type="Area2D" parent="world/elevator/roof"]
+[node name="Area2D" type="Area2D" parent="world/transitions/roof"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/elevator/roof/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/roof/Area2D"]
 position = Vector2(-12.5099, -0.463623)
 shape = SubResource("RectangleShape2D_anmqw")
 
-[node name="dest" type="Node2D" parent="world/elevator/roof"]
+[node name="dest" type="Node2D" parent="world/transitions/roof"]
 position = Vector2(13.8999, 43.5526)
 
-[node name="floor2_1" type="Node2D" parent="world/elevator" node_paths=PackedStringArray("dest")]
+[node name="floor2_1" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
 position = Vector2(-1100.4, -2691.47)
 script = ExtResource("2_tbe64")
 dest = NodePath("../floor3/dest")
 
-[node name="Area2D" type="Area2D" parent="world/elevator/floor2_1"]
+[node name="Area2D" type="Area2D" parent="world/transitions/floor2_1"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/elevator/floor2_1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/floor2_1/Area2D"]
 position = Vector2(-6.94971, -8.80347)
 shape = SubResource("RectangleShape2D_anmqw")
 
-[node name="dest" type="Node2D" parent="world/elevator/floor2_1"]
+[node name="dest" type="Node2D" parent="world/transitions/floor2_1"]
 position = Vector2(-8.80318, 25.9461)
 
-[node name="floor3_1" type="Node2D" parent="world/elevator" node_paths=PackedStringArray("dest")]
+[node name="floor3_1" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
 position = Vector2(736.691, -3669.09)
 script = ExtResource("2_tbe64")
 dest = NodePath("../floor4/dest")
 
-[node name="Area2D" type="Area2D" parent="world/elevator/floor3_1"]
+[node name="Area2D" type="Area2D" parent="world/transitions/floor3_1"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/elevator/floor3_1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/floor3_1/Area2D"]
 position = Vector2(-6.02332, -18.9966)
 shape = SubResource("RectangleShape2D_anmqw")
 
-[node name="dest" type="Node2D" parent="world/elevator/floor3_1"]
+[node name="dest" type="Node2D" parent="world/transitions/floor3_1"]
 position = Vector2(-6.48665, 11.5829)
 
-[node name="floor4_1" type="Node2D" parent="world/elevator" node_paths=PackedStringArray("dest")]
+[node name="floor4_1" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
 position = Vector2(794.144, -2702.13)
 script = ExtResource("2_tbe64")
 dest = NodePath("../roof/dest")
 
-[node name="Area2D" type="Area2D" parent="world/elevator/floor4_1"]
+[node name="Area2D" type="Area2D" parent="world/transitions/floor4_1"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/elevator/floor4_1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/floor4_1/Area2D"]
 position = Vector2(-7.41327, -14.363)
 shape = SubResource("RectangleShape2D_anmqw")
 
-[node name="dest" type="Node2D" parent="world/elevator/floor4_1"]
+[node name="dest" type="Node2D" parent="world/transitions/floor4_1"]
 position = Vector2(-7.87663, 34.7494)
 
-[node name="exit" type="Node2D" parent="world/elevator" node_paths=PackedStringArray("dest")]
+[node name="exit" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
 position = Vector2(-0.926666, -235.833)
 script = ExtResource("2_tbe64")
 dest = NodePath("../entrance/dest")
 
-[node name="Area2D" type="Area2D" parent="world/elevator/exit"]
+[node name="Area2D" type="Area2D" parent="world/transitions/exit"]
 position = Vector2(-0.926666, -11.1195)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/elevator/exit/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/exit/Area2D"]
 position = Vector2(-1084.19, -3267.39)
 shape = SubResource("RectangleShape2D_8qwf8")
 
-[node name="dest" type="Node2D" parent="world/elevator/exit"]
+[node name="dest" type="Node2D" parent="world/transitions/exit"]
 position = Vector2(-1085.11, -3291.02)
 
 [node name="bus" type="Sprite2D" parent="world"]
@@ -334,17 +330,18 @@ position = Vector2(3881, 3312)
 [node name="TopLeft" parent="Player/Camera2D/Limits" index="1"]
 position = Vector2(-3686, -9002)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Timer" type="Label" parent="CanvasLayer" groups=["Global indicators"]]
+[node name="Timer" type="Label" parent="UI" groups=["Global indicators"]]
 offset_left = 2.0
 offset_top = -2.0
 offset_right = 74.0
 offset_bottom = 24.0
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("9_3xjb8")
+theme_override_font_sizes/font_size = 50
 text = "adsgsadg"
 
-[node name="game over" type="Label" parent="CanvasLayer" groups=["Game over items"]]
+[node name="game over" type="Label" parent="UI" groups=["Game over items"]]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -353,13 +350,13 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("5_0rayw")
+theme_override_fonts/font = ExtResource("9_3xjb8")
 theme_override_font_sizes/font_size = 50
 text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="cats" type="Label" parent="CanvasLayer" groups=["Game over items"]]
+[node name="cats" type="Label" parent="UI" groups=["Game over items"]]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -370,12 +367,13 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("9_3xjb8")
 theme_override_font_sizes/font_size = 40
 text = "Collected cats: undefined"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="esc" type="Label" parent="CanvasLayer" groups=["Game over items"]]
+[node name="esc" type="Label" parent="UI" groups=["Game over items"]]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -386,6 +384,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("9_3xjb8")
 theme_override_font_sizes/font_size = 20
 text = "Press <escape> to go back to stage select screen"
 horizontal_alignment = 1
@@ -393,10 +392,10 @@ vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
-offset_left = -12663.0
-offset_top = -4397.0
-offset_right = 13390.0
-offset_bottom = 6211.0
+offset_left = -12673.0
+offset_top = -4442.0
+offset_right = 13380.0
+offset_bottom = 6166.0
 color = Color(1, 1, 0.101961, 1)
 
 [node name="building1" type="StaticBody2D" parent="."]
@@ -500,8 +499,8 @@ hframes = 2
 
 [node name="BusStop1" type="Sprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(-2369, -165)
-scale = Vector2(2.595, 2.595)
+position = Vector2(-2427.79, -93.25)
+scale = Vector2(1.8175, 1.8175)
 texture = ExtResource("11_q1dt2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="BusStop1"]
@@ -512,8 +511,8 @@ position = Vector2(4.23889, 8.09248)
 shape = SubResource("RectangleShape2D_73dwv")
 
 [node name="BusStop2" type="Sprite2D" parent="."]
-position = Vector2(2539, 391)
-scale = Vector2(2.555, 2.555)
+position = Vector2(2684, 383)
+scale = Vector2(1.9125, 1.9125)
 texture = ExtResource("12_o8fub")
 
 [node name="2Building" type="Sprite2D" parent="."]
@@ -708,16 +707,15 @@ position = Vector2(-2182, 1989)
 scale = Vector2(1.47535, 1.47535)
 texture = ExtResource("35_vtc0n")
 
-[connection signal="body_entered" from="world/elevator/entrance/Area2D" to="world/elevator/entrance" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="world/elevator/floor2/Area2D" to="world/elevator/floor2" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="world/elevator/floor1/Area2D" to="world/elevator/floor1" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="world/elevator/floor3/Area2D" to="world/elevator/floor3" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="world/elevator/floor4/Area2D" to="world/elevator/floor4" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="world/elevator/roof/Area2D" to="world/elevator/roof" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="world/elevator/floor2_1/Area2D" to="world/elevator/floor2_1" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="world/elevator/floor3_1/Area2D" to="world/elevator/floor3_1" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="world/elevator/floor4_1/Area2D" to="world/elevator/floor4_1" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="world/elevator/exit/Area2D" to="world/elevator/exit" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/entrance/Area2D" to="world/transitions/entrance" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/floor2/Area2D" to="world/transitions/floor2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/floor1/Area2D" to="world/transitions/floor1" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/floor3/Area2D" to="world/transitions/floor3" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/floor4/Area2D" to="world/transitions/floor4" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/roof/Area2D" to="world/transitions/roof" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/floor2_1/Area2D" to="world/transitions/floor2_1" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/floor3_1/Area2D" to="world/transitions/floor3_1" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/floor4_1/Area2D" to="world/transitions/floor4_1" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/exit/Area2D" to="world/transitions/exit" method="_on_area_2d_body_entered"]
 
-[editable path="world/koteł2"]
 [editable path="Player"]

@@ -1,18 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://e0ar5qrufxf7"]
+[gd_scene load_steps=9 format=3 uid="uid://e0ar5qrufxf7"]
 
-[ext_resource type="Texture2D" uid="uid://bkyheey1yhxpt" path="res://menu/opt.png" id="1_wqrkj"]
 [ext_resource type="Script" path="res://menu/options.gd" id="2_cjh0d"]
-[ext_resource type="Texture2D" uid="uid://bdm3e1ry3voj3" path="res://menu/back-arrow-svgrepo-com.svg" id="2_efwqg"]
 [ext_resource type="PackedScene" uid="uid://bbw52brc363ty" path="res://button.tscn" id="3_s7x0p"]
-[ext_resource type="FontFile" uid="uid://rns72cc0te0r" path="res://fonts/Oswald-SemiBold.ttf" id="5_bny0v"]
+[ext_resource type="FontFile" uid="uid://b4cn0jmcso7gx" path="res://fonts/joystix monospace.otf" id="4_wy2jc"]
+[ext_resource type="Texture2D" uid="uid://dwfjvxkryoi51" path="res://levels/level_01/images/pink_back.png" id="5_7q17q"]
 [ext_resource type="Texture2D" uid="uid://eou7pakhnpv2" path="res://images/kotel1.png" id="6_tln5u"]
+[ext_resource type="Script" path="res://menu/label_opt.gd" id="8_gpjwv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kvhvi"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_st8cx"]
 
 [node name="Opt" type="Node2D"]
 
 [node name="Opt" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(420, 199)
-texture = ExtResource("1_wqrkj")
+texture = SubResource("CompressedTexture2D_kvhvi")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -30,7 +34,7 @@ offset_bottom = 104.0
 [node name="Back-arrow-svgrepo-com" type="Sprite2D" parent="Control/Button"]
 position = Vector2(54, 52)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_efwqg")
+texture = SubResource("CompressedTexture2D_st8cx")
 
 [node name="CheckButton" type="CheckButton" parent="Control" groups=["Settings"]]
 layout_mode = 0
@@ -38,6 +42,7 @@ offset_left = 204.0
 offset_top = 151.0
 offset_right = 385.0
 offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("4_wy2jc")
 text = "Enable fullscreen"
 
 [node name="Back" parent="Control" instance=ExtResource("3_s7x0p")]
@@ -46,21 +51,29 @@ offset_right = 137.0
 offset_bottom = 71.0
 text = "BACK"
 
-[node name="Label" type="Label" parent="."]
-offset_left = 164.0
-offset_top = 13.0
-offset_right = 336.0
-offset_bottom = 58.0
-theme_override_fonts/font = ExtResource("5_bny0v")
-theme_override_font_sizes/font_size = 30
-text = "Options"
-
 [node name="Kotel4" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(81, 72)
 rotation = 2.74101
 scale = Vector2(0.0893185, 0.0893185)
 texture = ExtResource("6_tln5u")
+
+[node name="PinkBack" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(594, 246)
+scale = Vector2(436.1, 235.9)
+texture = ExtResource("5_7q17q")
+
+[node name="title" type="Node2D" parent="."]
+position = Vector2(160, 25)
+
+[node name="Label" type="Label" parent="title"]
+offset_right = 175.1
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("4_wy2jc")
+theme_override_font_sizes/font_size = 30
+text = "Options"
+script = ExtResource("8_gpjwv")
 
 [connection signal="button_down" from="Control/Button" to="Control" method="_on_back_pressed"]
 [connection signal="toggled" from="Control/CheckButton" to="Control" method="_on_fullscreen_toggled"]

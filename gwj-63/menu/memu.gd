@@ -9,7 +9,7 @@ func _on_start_pressed():
 	get_tree().change_scene_to_file("res://menu/stage_select.tscn")
 
 
-func _on_options_pressed():
+func _on_opt_pressed():
 	
 	get_tree().change_scene_to_file("res://menu/opt.tscn")
 

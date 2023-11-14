@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm51knbixyui6"
-path="res://.godot/imported/tree1.png-5ce797198e3ffe75db98e649ec75530a.ctex"
+uid="uid://dwfjvxkryoi51"
+path="res://.godot/imported/pink_back.png-68dec7c2a3c09085669df36bcffebbcd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tree1.png"
-dest_files=["res://.godot/imported/tree1.png-5ce797198e3ffe75db98e649ec75530a.ctex"]
+source_file="res://levels/level_01/images/pink_back.png"
+dest_files=["res://.godot/imported/pink_back.png-68dec7c2a3c09085669df36bcffebbcd.ctex"]
 
 [params]
 

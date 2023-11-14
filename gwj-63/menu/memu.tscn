@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://8ap6pysvfqm4"]
+[gd_scene load_steps=14 format=3 uid="uid://8ap6pysvfqm4"]
 
 [ext_resource type="Shader" path="res://menu/memu2.gdshader" id="1_kf7xq"]
 [ext_resource type="Script" path="res://menu/memu.gd" id="1_ygedg"]
@@ -9,63 +9,14 @@
 [ext_resource type="FontFile" uid="uid://rns72cc0te0r" path="res://fonts/Oswald-SemiBold.ttf" id="7_kvi2l"]
 [ext_resource type="Texture2D" uid="uid://eou7pakhnpv2" path="res://images/kotel1.png" id="9_eeyyo"]
 [ext_resource type="Texture2D" uid="uid://co0g68atl06uc" path="res://images/kotel2.png" id="9_i04qi"]
+[ext_resource type="PackedScene" uid="uid://bbw52brc363ty" path="res://button.tscn" id="10_mdhwr"]
+[ext_resource type="Texture2D" uid="uid://dwfjvxkryoi51" path="res://levels/level_01/images/pink_back.png" id="11_dhnaw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5m850"]
 shader = ExtResource("1_kf7xq")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a2ix7"]
 shader = ExtResource("3_4roty")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12ft0"]
-bg_color = Color(0, 0, 0.427451, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.686275, 0.529412, 0.0431373, 1)
-shadow_color = Color(0, 0, 0, 0.23)
-shadow_size = 4
-shadow_offset = Vector2(3, 3)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4hc1"]
-bg_color = Color(0, 0, 0.560784, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.984314, 0.768627, 0.168627, 1)
-shadow_color = Color(0, 0, 0, 0.23)
-shadow_size = 4
-shadow_offset = Vector2(3, 3)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruqpi"]
-bg_color = Color(0, 0, 0.427451, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.686275, 0.529412, 0.0431373, 1)
-shadow_color = Color(0, 0, 0, 0.23)
-shadow_size = 1
-shadow_offset = Vector2(3, 3)
-
-[sub_resource type="Theme" id="Theme_cmwdc"]
-Button/styles/focus = SubResource("StyleBoxFlat_12ft0")
-Button/styles/hover = SubResource("StyleBoxFlat_12ft0")
-Button/styles/normal = SubResource("StyleBoxFlat_m4hc1")
-Button/styles/pressed = SubResource("StyleBoxFlat_ruqpi")
-
-[sub_resource type="Theme" id="Theme_hb68v"]
-Button/styles/focus = SubResource("StyleBoxFlat_12ft0")
-Button/styles/hover = SubResource("StyleBoxFlat_12ft0")
-Button/styles/normal = SubResource("StyleBoxFlat_m4hc1")
-Button/styles/pressed = SubResource("StyleBoxFlat_ruqpi")
-
-[sub_resource type="Theme" id="Theme_g815f"]
-Button/styles/focus = SubResource("StyleBoxFlat_12ft0")
-Button/styles/hover = SubResource("StyleBoxFlat_12ft0")
-Button/styles/normal = SubResource("StyleBoxFlat_m4hc1")
-Button/styles/pressed = SubResource("StyleBoxFlat_ruqpi")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -79,14 +30,21 @@ script = ExtResource("1_ygedg")
 [node name="MenuClouds1" type="Sprite2D" parent="."]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_5m850")
-position = Vector2(1409, 369)
+position = Vector2(1369, 426)
+scale = Vector2(2.58594, 2.58594)
+texture = ExtResource("3_s07af")
+
+[node name="MenuClouds3" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_5m850")
+position = Vector2(1409, 828)
 scale = Vector2(2.58594, 2.58594)
 texture = ExtResource("3_s07af")
 
 [node name="MenuClouds2" type="Sprite2D" parent="."]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_a2ix7")
-position = Vector2(1332, 211)
+position = Vector2(1152, 448)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("5_uu7qc")
 
@@ -97,29 +55,12 @@ anchor_left = 0.522
 anchor_top = 0.475
 anchor_right = 0.522
 anchor_bottom = 0.475
-offset_left = -73.344
-offset_top = 192.2
-offset_right = 72.656
-offset_bottom = 455.2
+offset_left = -92.344
+offset_top = 180.2
+offset_right = 53.656
+offset_bottom = 443.2
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Start" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-focus_neighbor_top = NodePath("../Quit")
-theme = SubResource("Theme_cmwdc")
-text = "Start"
-
-[node name="Options" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_hb68v")
-text = "Options"
-
-[node name="Quit" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-focus_neighbor_bottom = NodePath("../Start")
-theme = SubResource("Theme_g815f")
-text = "Quit"
 
 [node name="Icon" type="Sprite2D" parent="VBoxContainer"]
 position = Vector2(73, -351)
@@ -161,13 +102,23 @@ rotation = -0.114535
 scale = Vector2(0.0893185, 0.0893185)
 texture = ExtResource("9_eeyyo")
 
-[node name="Kotel5" type="Sprite2D" parent="VBoxContainer/Icon"]
-z_index = -3
-position = Vector2(77, 401)
-rotation = 1.43791
-scale = Vector2(0.0893185, 0.0893185)
-texture = ExtResource("9_eeyyo")
+[node name="Start" parent="VBoxContainer" instance=ExtResource("10_mdhwr")]
+layout_mode = 2
+
+[node name="Opt" parent="VBoxContainer" instance=ExtResource("10_mdhwr")]
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" parent="VBoxContainer" instance=ExtResource("10_mdhwr")]
+layout_mode = 2
+text = "Quit"
+
+[node name="PinkBack" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(384, 161.708)
+scale = Vector2(269.1, 224.939)
+texture = ExtResource("11_dhnaw")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Opt" to="." method="_on_opt_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
