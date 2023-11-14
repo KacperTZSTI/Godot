@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=47 format=3 uid="uid://37viv4qcybul"]
 
 [ext_resource type="Script" path="res://levels/level_01/scripts/world.gd" id="1_71vqr"]
 [ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="1_pvhon"]
@@ -11,8 +11,6 @@
 [ext_resource type="Script" path="res://levels/level_01/bus.gd" id="7_xs1cg"]
 [ext_resource type="Texture2D" uid="uid://butu6u6j3iaa4" path="res://levels/level_01/images/road.png" id="8_6a6ls"]
 [ext_resource type="FontFile" uid="uid://b4cn0jmcso7gx" path="res://fonts/joystix monospace.otf" id="9_3xjb8"]
-[ext_resource type="Texture2D" uid="uid://bg4ognuionoao" path="res://levels/level_01/images/tree1.png" id="9_71bi7"]
-[ext_resource type="Texture2D" uid="uid://btfoob5p327ch" path="res://levels/level_01/images/tree2.png" id="10_gppus"]
 [ext_resource type="Texture2D" uid="uid://bngnyjsc2u2m3" path="res://levels/level_01/images/bus_stop1.png" id="11_q1dt2"]
 [ext_resource type="Texture2D" uid="uid://daxn6u5kae2vn" path="res://levels/level_01/images/bus_stop2.png" id="12_o8fub"]
 [ext_resource type="Texture2D" uid="uid://dq71bclbfgcxg" path="res://levels/level_01/images/2building.png" id="13_nw5o5"]
@@ -392,10 +390,10 @@ vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
-offset_left = -12673.0
-offset_top = -4442.0
-offset_right = 13380.0
-offset_bottom = 6166.0
+offset_left = -12364.0
+offset_top = -4235.0
+offset_right = 13689.0
+offset_bottom = 6373.0
 color = Color(1, 1, 0.101961, 1)
 
 [node name="building1" type="StaticBody2D" parent="."]
@@ -424,78 +422,6 @@ z_index = -1
 position = Vector2(-882, 283)
 scale = Vector2(1.78, 1.78)
 texture = ExtResource("8_6a6ls")
-
-[node name="Tree1" type="Sprite2D" parent="."]
-position = Vector2(-1042, -42)
-scale = Vector2(3.17105, 3.17105)
-texture = ExtResource("9_71bi7")
-hframes = 2
-
-[node name="Tree7" type="Sprite2D" parent="."]
-position = Vector2(1336, 2393)
-scale = Vector2(3.17105, 3.17105)
-texture = ExtResource("9_71bi7")
-hframes = 2
-
-[node name="Tree9" type="Sprite2D" parent="."]
-position = Vector2(1343, 1814)
-scale = Vector2(3.17105, 3.17105)
-texture = ExtResource("9_71bi7")
-hframes = 2
-
-[node name="Tree12" type="Sprite2D" parent="."]
-position = Vector2(3352, 1273)
-scale = Vector2(3.17105, 3.17105)
-texture = ExtResource("9_71bi7")
-hframes = 2
-
-[node name="Tree6" type="Sprite2D" parent="."]
-position = Vector2(273, -52)
-scale = Vector2(3.17105, 3.17105)
-texture = ExtResource("9_71bi7")
-hframes = 2
-
-[node name="Tree2" type="Sprite2D" parent="."]
-position = Vector2(-1450, -45)
-scale = Vector2(3.30482, 3.30482)
-texture = ExtResource("10_gppus")
-hframes = 2
-
-[node name="Tree8" type="Sprite2D" parent="."]
-position = Vector2(1343, 1256)
-scale = Vector2(3.30482, 3.30482)
-texture = ExtResource("10_gppus")
-hframes = 2
-
-[node name="Tree10" type="Sprite2D" parent="."]
-position = Vector2(1987, 1274)
-scale = Vector2(3.30482, 3.30482)
-texture = ExtResource("10_gppus")
-hframes = 2
-
-[node name="Tree11" type="Sprite2D" parent="."]
-position = Vector2(2683, 1270)
-scale = Vector2(3.30482, 3.30482)
-texture = ExtResource("10_gppus")
-hframes = 2
-
-[node name="Tree3" type="Sprite2D" parent="."]
-position = Vector2(-3448, -57)
-scale = Vector2(3.30482, 3.30482)
-texture = ExtResource("10_gppus")
-hframes = 2
-
-[node name="Tree4" type="Sprite2D" parent="."]
-position = Vector2(682, -51)
-scale = Vector2(3.30482, 3.30482)
-texture = ExtResource("10_gppus")
-hframes = 2
-
-[node name="Tree5" type="Sprite2D" parent="."]
-position = Vector2(-154, -55)
-scale = Vector2(3.30482, 3.30482)
-texture = ExtResource("10_gppus")
-hframes = 2
 
 [node name="BusStop1" type="Sprite2D" parent="."]
 y_sort_enabled = true
