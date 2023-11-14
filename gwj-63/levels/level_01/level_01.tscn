@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=49 format=3 uid="uid://37viv4qcybul"]
 
 [ext_resource type="Script" path="res://levels/level_01/scripts/world.gd" id="1_71vqr"]
 [ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="1_pvhon"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://rns72cc0te0r" path="res://fonts/Oswald-SemiBold.ttf" id="5_0rayw"]
 [ext_resource type="Texture2D" uid="uid://bcwg16pjcmkqi" path="res://levels/level_01/images/bus.png" id="6_avdft"]
 [ext_resource type="Texture2D" uid="uid://bypo8ux44m572" path="res://levels/level_01/images/1building.png" id="7_ateww"]
+[ext_resource type="Script" path="res://levels/level_01/bus.gd" id="7_xs1cg"]
 [ext_resource type="Texture2D" uid="uid://butu6u6j3iaa4" path="res://levels/level_01/images/road.png" id="8_6a6ls"]
 [ext_resource type="Texture2D" uid="uid://bg4ognuionoao" path="res://levels/level_01/images/tree1.png" id="9_71bi7"]
 [ext_resource type="Texture2D" uid="uid://btfoob5p327ch" path="res://levels/level_01/images/tree2.png" id="10_gppus"]
@@ -79,6 +80,43 @@ size = Vector2(25.0197, 24.0933)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qwf8"]
 size = Vector2(42.3945, 19.4595)
+
+[sub_resource type="Animation" id="Animation_6m1ky"]
+resource_name = "bus"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_3m0i0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wxa3n"]
+_data = {
+"RESET": SubResource("Animation_3m0i0"),
+"bus": SubResource("Animation_6m1ky")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r1xk"]
 size = Vector2(128, 311.125)
@@ -281,6 +319,12 @@ position = Vector2(4723, 65)
 scale = Vector2(-6, 5.875)
 texture = ExtResource("6_avdft")
 hframes = 2
+script = ExtResource("7_xs1cg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="world/bus"]
+libraries = {
+"": SubResource("AnimationLibrary_wxa3n")
+}
 
 [node name="Player" parent="." instance=ExtResource("1_pvhon")]
 
