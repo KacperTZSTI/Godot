@@ -1,40 +1,55 @@
-[gd_scene load_steps=44 format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=46 format=3 uid="uid://37viv4qcybul"]
 
 [ext_resource type="Script" path="res://levels/level_01/scripts/world.gd" id="1_71vqr"]
-[ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="1_pvhon"]
-[ext_resource type="PackedScene" uid="uid://kk1s4gkevom8" path="res://levels/koteł.tscn" id="2_3mtuv"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="1_pvhon"]
+[ext_resource type="PackedScene" uid="uid://kk1s4gkevom8" path="res://assets/koteł.tscn" id="2_3mtuv"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/elevator.gd" id="2_tbe64"]
-[ext_resource type="Texture2D" uid="uid://b4a7652vkfhqo" path="res://assets/cat.png" id="3_tue0s"]
+[ext_resource type="Texture2D" uid="uid://b4a7652vkfhqo" path="res://levels/level_01/images/cat.png" id="3_tue0s"]
 [ext_resource type="Script" path="res://levels/level_01/look_cat.gd" id="4_cnvd3"]
 [ext_resource type="FontFile" uid="uid://rns72cc0te0r" path="res://fonts/Oswald-SemiBold.ttf" id="5_0rayw"]
-[ext_resource type="Texture2D" uid="uid://bcwg16pjcmkqi" path="res://assets/bus.png" id="6_avdft"]
-[ext_resource type="Texture2D" uid="uid://bypo8ux44m572" path="res://assets/1building.png" id="7_ateww"]
-[ext_resource type="Texture2D" uid="uid://butu6u6j3iaa4" path="res://assets/road.png" id="8_6a6ls"]
-[ext_resource type="Texture2D" uid="uid://bg4ognuionoao" path="res://assets/tree1.png" id="9_71bi7"]
-[ext_resource type="Texture2D" uid="uid://btfoob5p327ch" path="res://assets/tree2.png" id="10_gppus"]
-[ext_resource type="Texture2D" uid="uid://bngnyjsc2u2m3" path="res://assets/bus_stop1.png" id="11_q1dt2"]
-[ext_resource type="Texture2D" uid="uid://daxn6u5kae2vn" path="res://assets/bus_stop2.png" id="12_o8fub"]
-[ext_resource type="Texture2D" uid="uid://dq71bclbfgcxg" path="res://assets/2building.png" id="13_nw5o5"]
-[ext_resource type="Texture2D" uid="uid://dw5vsgajn6pp0" path="res://assets/3building.png" id="14_qi864"]
-[ext_resource type="Texture2D" uid="uid://ckr8xr514mkyd" path="res://assets/11building.png" id="15_10aa5"]
-[ext_resource type="Texture2D" uid="uid://deggbdyjql181" path="res://assets/6building.png" id="16_fbhiy"]
-[ext_resource type="Texture2D" uid="uid://bhl7ppm33mon6" path="res://assets/5building.png" id="17_qlbkm"]
-[ext_resource type="Texture2D" uid="uid://dv2y0n5h8c0gm" path="res://assets/10building.png" id="18_l0hd1"]
-[ext_resource type="Texture2D" uid="uid://bfa2fqotp2aqv" path="res://assets/9building.png" id="19_cw4p2"]
-[ext_resource type="Texture2D" uid="uid://blw3njhejyr7v" path="res://assets/8building.png" id="20_0xmap"]
-[ext_resource type="Texture2D" uid="uid://d0qvg75bo2iet" path="res://assets/12building.png" id="21_7cw56"]
-[ext_resource type="Texture2D" uid="uid://c4tr5wkeoa0mp" path="res://assets/7building.png" id="22_u0v87"]
-[ext_resource type="Texture2D" uid="uid://2qy474t4n1yi" path="res://assets/floor1.png" id="23_nn6u3"]
-[ext_resource type="Texture2D" uid="uid://drmrahjxksdr8" path="res://assets/floor2.png" id="24_s3l6g"]
-[ext_resource type="Texture2D" uid="uid://du1noxy8oy2m4" path="res://assets/floor3.png" id="25_3shkk"]
-[ext_resource type="Texture2D" uid="uid://bko2khsnjay5r" path="res://assets/floor4.png" id="26_naud1"]
+[ext_resource type="Texture2D" uid="uid://bcwg16pjcmkqi" path="res://levels/level_01/images/bus.png" id="6_avdft"]
+[ext_resource type="Texture2D" uid="uid://bypo8ux44m572" path="res://levels/level_01/images/1building.png" id="7_ateww"]
+[ext_resource type="Texture2D" uid="uid://butu6u6j3iaa4" path="res://levels/level_01/images/road.png" id="8_6a6ls"]
+[ext_resource type="Texture2D" uid="uid://bg4ognuionoao" path="res://levels/level_01/images/tree1.png" id="9_71bi7"]
+[ext_resource type="Texture2D" uid="uid://btfoob5p327ch" path="res://levels/level_01/images/tree2.png" id="10_gppus"]
+[ext_resource type="Texture2D" uid="uid://bngnyjsc2u2m3" path="res://levels/level_01/images/bus_stop1.png" id="11_q1dt2"]
+[ext_resource type="Texture2D" uid="uid://daxn6u5kae2vn" path="res://levels/level_01/images/bus_stop2.png" id="12_o8fub"]
+[ext_resource type="Texture2D" uid="uid://dq71bclbfgcxg" path="res://levels/level_01/images/2building.png" id="13_nw5o5"]
+[ext_resource type="Texture2D" uid="uid://dw5vsgajn6pp0" path="res://levels/level_01/images/3building.png" id="14_qi864"]
+[ext_resource type="Texture2D" uid="uid://ckr8xr514mkyd" path="res://levels/level_01/images/11building.png" id="15_10aa5"]
+[ext_resource type="Texture2D" uid="uid://deggbdyjql181" path="res://levels/level_01/images/6building.png" id="16_fbhiy"]
+[ext_resource type="Texture2D" uid="uid://bhl7ppm33mon6" path="res://levels/level_01/images/5building.png" id="17_qlbkm"]
+[ext_resource type="Texture2D" uid="uid://dv2y0n5h8c0gm" path="res://levels/level_01/images/10building.png" id="18_l0hd1"]
+[ext_resource type="Texture2D" uid="uid://bfa2fqotp2aqv" path="res://levels/level_01/images/9building.png" id="19_cw4p2"]
+[ext_resource type="Texture2D" uid="uid://blw3njhejyr7v" path="res://levels/level_01/images/8building.png" id="20_0xmap"]
+[ext_resource type="Texture2D" uid="uid://d0qvg75bo2iet" path="res://levels/level_01/images/12building.png" id="21_7cw56"]
+[ext_resource type="Texture2D" uid="uid://c4tr5wkeoa0mp" path="res://levels/level_01/images/7building.png" id="22_u0v87"]
+[ext_resource type="Texture2D" uid="uid://2qy474t4n1yi" path="res://levels/level_01/images/floor1.png" id="23_nn6u3"]
+[ext_resource type="Texture2D" uid="uid://drmrahjxksdr8" path="res://levels/level_01/images/floor2.png" id="24_s3l6g"]
+[ext_resource type="Texture2D" uid="uid://du1noxy8oy2m4" path="res://levels/level_01/images/floor3.png" id="25_3shkk"]
+[ext_resource type="Texture2D" uid="uid://bko2khsnjay5r" path="res://levels/level_01/images/floor4.png" id="26_naud1"]
 [ext_resource type="Shader" path="res://menu/memu2.gdshader" id="27_pu214"]
 [ext_resource type="Texture2D" uid="uid://by76l70bi733y" path="res://menu/menu_clouds1.png" id="28_sqfvc"]
-[ext_resource type="Texture2D" uid="uid://bh5wxhgm5040m" path="res://assets/gate.png" id="31_iwgy2"]
-[ext_resource type="Texture2D" uid="uid://ck1dfwid8qwrl" path="res://assets/rathaus.png" id="32_30e8b"]
-[ext_resource type="Texture2D" uid="uid://cptwxgda851k3" path="res://assets/4building.png" id="33_0h7p8"]
-[ext_resource type="Texture2D" uid="uid://c4tggor5jdemf" path="res://assets/smol_gate.png" id="34_qivq4"]
-[ext_resource type="Texture2D" uid="uid://dynqeebqfljhd" path="res://assets/maze.png" id="35_vtc0n"]
+[ext_resource type="Texture2D" uid="uid://bh5wxhgm5040m" path="res://levels/level_01/images/gate.png" id="31_iwgy2"]
+[ext_resource type="Texture2D" uid="uid://ck1dfwid8qwrl" path="res://levels/level_01/images/rathaus.png" id="32_30e8b"]
+[ext_resource type="Texture2D" uid="uid://cptwxgda851k3" path="res://levels/level_01/images/4building.png" id="33_0h7p8"]
+[ext_resource type="Texture2D" uid="uid://c4tggor5jdemf" path="res://levels/level_01/images/smol_gate.png" id="34_qivq4"]
+[ext_resource type="Texture2D" uid="uid://dynqeebqfljhd" path="res://levels/level_01/images/maze.png" id="35_vtc0n"]
+
+[sub_resource type="Animation" id="Animation_jfmy3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [30]
+}
 
 [sub_resource type="Animation" id="Animation_qa2jn"]
 resource_name = "anim"
@@ -53,21 +68,6 @@ tracks/0/keys = {
 "values": [30, 31, 30, 31, 32, 30, 31, 30, 31, 30, 31]
 }
 
-[sub_resource type="Animation" id="Animation_jfmy3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [30]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jvtf2"]
 _data = {
 "RESET": SubResource("Animation_jfmy3"),
@@ -81,10 +81,16 @@ size = Vector2(25.0197, 24.0933)
 size = Vector2(42.3945, 19.4595)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qiqxo"]
-size = Vector2(509, 513)
+size = Vector2(608, 513)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r1xk"]
 size = Vector2(128, 311.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k86j2"]
+size = Vector2(324, 299)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73dwv"]
+size = Vector2(236.224, 8.47784)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ebjgg"]
 shader = ExtResource("27_pu214")
@@ -126,9 +132,6 @@ libraries = {
 [node name="koteł2" parent="world" instance=ExtResource("2_3mtuv")]
 z_index = 1
 position = Vector2(-2756, 2)
-
-[node name="Sprite2D" parent="world/koteł2" index="1"]
-frame = 6
 
 [node name="elevator" type="Node2D" parent="world"]
 position = Vector2(-311, -38.0009)
@@ -284,18 +287,17 @@ position = Vector2(3881, 3312)
 position = Vector2(-3686, -9002)
 
 [node name="Bus" type="RigidBody2D" parent="."]
-visible = false
-position = Vector2(-208, 220)
-mass = 128.36
+position = Vector2(-3559, 218)
+mass = 1000.0
 gravity_scale = 0.0
 
 [node name="sprite" type="Sprite2D" parent="Bus"]
-scale = Vector2(1, 0.5)
+scale = Vector2(6, 5.875)
 texture = ExtResource("6_avdft")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bus"]
-position = Vector2(-0.5, -0.5)
+position = Vector2(36, -0.5)
 scale = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_qiqxo")
 
@@ -382,8 +384,8 @@ position = Vector2(-692, -150.563)
 shape = SubResource("RectangleShape2D_3r1xk")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="building1"]
-position = Vector2(-592, -233.875)
-shape = SubResource("RectangleShape2D_3r1xk")
+position = Vector2(-593, -230.5)
+shape = SubResource("RectangleShape2D_k86j2")
 
 [node name="Road" type="Sprite2D" parent="."]
 z_index = -1
@@ -464,9 +466,17 @@ texture = ExtResource("10_gppus")
 hframes = 2
 
 [node name="BusStop1" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(-2369, -165)
 scale = Vector2(2.595, 2.595)
 texture = ExtResource("11_q1dt2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BusStop1"]
+position = Vector2(-58.1888, 67.4374)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BusStop1/StaticBody2D"]
+position = Vector2(4.23889, 8.09248)
+shape = SubResource("RectangleShape2D_73dwv")
 
 [node name="BusStop2" type="Sprite2D" parent="."]
 position = Vector2(2539, 391)

@@ -4,8 +4,8 @@ extends Node2D
 var time = 0;
 var bus_exists = true;
 
-var BUS_EVENT_START = 5;
-var BUS_EVENT_END = 7;
+var BUS_EVENT_START = 20;
+var BUS_EVENT_END = 100;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
