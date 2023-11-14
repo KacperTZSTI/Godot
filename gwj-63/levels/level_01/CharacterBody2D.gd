@@ -97,8 +97,15 @@ func _process(delta):
 
 func movement(delta):
 	input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	var mp = get_viewport().get_mouse_position()
+	var res = get_viewport_rect().size
+	
+	var left  = 1 if (mp.x <= res.x*0.2) or Input.get_action_strength('ui_left') else 0
+	var right = 1 if (mp.x >= res.x*0.8) or Input.get_action_strength('ui_left') else 0
+	var top   = 1 if (mp.y <= res.y*0.2) or Input.get_action_strength('ui_left') else 0
+	var bot   = 1 if (mp.y >= res.y*0.8) or Input.get_action_strength('ui_left') else 0
+	input_vector.x = right - left
+	input_vector.y = bot - top
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
@@ -107,3 +114,12 @@ func movement(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
 		
 	move_and_slide()
+
+func _input(event):
+	if event is InputEventMouseButton:
+			var res = get_viewport_rect().size
+			if event.position.x > res.x * 0.3 and event.position.x < res.x * 0.7 and event.position.y > res.y * 0.3 and event.position.y < res.y * 0.7:
+				if kotek:
+					kotek.delete()
+					koteły += 1
+		

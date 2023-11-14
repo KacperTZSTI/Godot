@@ -1,8 +1,8 @@
 [gd_scene load_steps=46 format=3 uid="uid://37viv4qcybul"]
 
 [ext_resource type="Script" path="res://levels/level_01/scripts/world.gd" id="1_71vqr"]
-[ext_resource type="PackedScene" path="res://player.tscn" id="1_pvhon"]
-[ext_resource type="PackedScene" uid="uid://kk1s4gkevom8" path="res://assets/koteł.tscn" id="2_3mtuv"]
+[ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="1_pvhon"]
+[ext_resource type="PackedScene" uid="uid://kk1s4gkevom8" path="res://levels/koteł.tscn" id="2_3mtuv"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/elevator.gd" id="2_tbe64"]
 [ext_resource type="Texture2D" uid="uid://b4a7652vkfhqo" path="res://levels/level_01/images/cat.png" id="3_tue0s"]
 [ext_resource type="Script" path="res://levels/level_01/look_cat.gd" id="4_cnvd3"]
