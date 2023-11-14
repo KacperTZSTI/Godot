@@ -276,8 +276,9 @@ shape = SubResource("RectangleShape2D_8qwf8")
 position = Vector2(-1085.11, -3291.02)
 
 [node name="bus" type="Sprite2D" parent="world"]
-position = Vector2(-3559, 218)
-scale = Vector2(6, 5.875)
+z_index = 1
+position = Vector2(4723, 65)
+scale = Vector2(-6, 5.875)
 texture = ExtResource("6_avdft")
 hframes = 2
 
@@ -569,6 +570,7 @@ position = Vector2(-970, -814)
 texture = ExtResource("22_u0v87")
 
 [node name="Road2" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(4592, 283)
 scale = Vector2(1.78, 1.78)
 texture = ExtResource("8_6a6ls")

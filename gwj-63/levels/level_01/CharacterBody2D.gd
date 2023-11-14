@@ -101,9 +101,9 @@ func movement(delta):
 	var res = get_viewport_rect().size
 	
 	var left  = 1 if (mp.x <= res.x*0.2) or Input.get_action_strength('ui_left') else 0
-	var right = 1 if (mp.x >= res.x*0.8) or Input.get_action_strength('ui_left') else 0
-	var top   = 1 if (mp.y <= res.y*0.2) or Input.get_action_strength('ui_left') else 0
-	var bot   = 1 if (mp.y >= res.y*0.8) or Input.get_action_strength('ui_left') else 0
+	var right = 1 if (mp.x >= res.x*0.8) or Input.get_action_strength('ui_right') else 0
+	var top   = 1 if (mp.y <= res.y*0.2) or Input.get_action_strength('ui_up') else 0
+	var bot   = 1 if (mp.y >= res.y*0.8) or Input.get_action_strength('ui_down') else 0
 	input_vector.x = right - left
 	input_vector.y = bot - top
 	input_vector = input_vector.normalized()
