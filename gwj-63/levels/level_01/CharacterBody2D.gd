@@ -117,9 +117,9 @@ func movement(delta):
 
 func _input(event):
 	if event is InputEventMouseButton:
-			var res = get_viewport_rect().size
-			if event.position.x > res.x * 0.3 and event.position.x < res.x * 0.7 and event.position.y > res.y * 0.3 and event.position.y < res.y * 0.7:
-				if kotek:
-					kotek.delete()
-					koteły += 1
+		var res = get_viewport_rect().size
+		if event.position.x > res.x * 0.3 and event.position.x < res.x * 0.7 and event.position.y > res.y * 0.3 and event.position.y < res.y * 0.7:
+			if kotek:
+				kotek.delete()
+				koteły += 1
 		
