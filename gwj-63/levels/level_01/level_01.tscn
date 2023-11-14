@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=45 format=3 uid="uid://37viv4qcybul"]
 
 [ext_resource type="Script" path="res://levels/level_01/scripts/world.gd" id="1_71vqr"]
 [ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="1_pvhon"]
@@ -80,9 +80,6 @@ size = Vector2(25.0197, 24.0933)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qwf8"]
 size = Vector2(42.3945, 19.4595)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qiqxo"]
-size = Vector2(608, 513)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r1xk"]
 size = Vector2(128, 311.125)
 
@@ -101,7 +98,7 @@ y_sort_enabled = true
 [node name="world" type="Node2D" parent="." node_paths=PackedStringArray("bus")]
 y_sort_enabled = true
 script = ExtResource("1_71vqr")
-bus = NodePath("../Bus")
+bus = NodePath("bus")
 
 [node name="koteł1" parent="world" instance=ExtResource("2_3mtuv")]
 position = Vector2(-517, -2638)
@@ -278,6 +275,12 @@ shape = SubResource("RectangleShape2D_8qwf8")
 [node name="dest" type="Node2D" parent="world/elevator/exit"]
 position = Vector2(-1085.11, -3291.02)
 
+[node name="bus" type="Sprite2D" parent="world"]
+position = Vector2(-3559, 218)
+scale = Vector2(6, 5.875)
+texture = ExtResource("6_avdft")
+hframes = 2
+
 [node name="Player" parent="." instance=ExtResource("1_pvhon")]
 
 [node name="BottomRight" parent="Player/Camera2D/Limits" index="0"]
@@ -285,21 +288,6 @@ position = Vector2(3881, 3312)
 
 [node name="TopLeft" parent="Player/Camera2D/Limits" index="1"]
 position = Vector2(-3686, -9002)
-
-[node name="Bus" type="RigidBody2D" parent="."]
-position = Vector2(-3559, 218)
-mass = 1000.0
-gravity_scale = 0.0
-
-[node name="sprite" type="Sprite2D" parent="Bus"]
-scale = Vector2(6, 5.875)
-texture = ExtResource("6_avdft")
-hframes = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bus"]
-position = Vector2(36, -0.5)
-scale = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_qiqxo")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

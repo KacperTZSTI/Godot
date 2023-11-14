@@ -17,7 +17,7 @@ func _process(delta):
 	time += delta;
 	if time >BUS_EVENT_START and time < BUS_EVENT_END:
 		bus.visible = true;
-		bus.linear_velocity.x = 70;
+		bus.position.x += 70*delta;
 	if time >BUS_EVENT_END and bus_exists:
 		bus.get_tree().queue_delete(bus)
 		bus_exists = false;
