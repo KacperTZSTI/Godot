@@ -42,7 +42,7 @@ jobs:
         run: mkdir -v -p gwj63/build/web
 
       - name: Build
-        run: cd gwj-63 && godot -v --headless --export-release "Web" build/web/index.html
+        run: cd gwj-63 && godot -v --headless --export-release "HTML5" build/web/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
