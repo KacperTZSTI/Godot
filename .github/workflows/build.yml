@@ -41,6 +41,9 @@ jobs:
       - name: Create staging directory
         run: mkdir -v -p gwj63/build/web
 
+      - name: test
+        run: ls -lah /github/home/.local/share/godot/export_templates/4.1.3.stable
+
       - name: Build
         run: cd gwj-63 && godot -v --headless --export-release "HTML5" build/web/index.html
 
