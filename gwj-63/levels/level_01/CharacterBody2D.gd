@@ -11,6 +11,7 @@ var input_vector = Vector2.ZERO
 var MAX_TIME = 150
 
 var koteły = 0
+var MAX_CATS = 1
 var kotek = null
 
 var time_since_last_interaction = 0;
@@ -82,7 +83,7 @@ func _process(delta):
 		code = ''
 	
 	if Input.is_action_just_pressed("ui_cancel"):
-		if time>0:
+		if time>0 and game:
 			time = -1
 		else:
 			get_tree().change_scene_to_file("res://menu/stage_select.tscn")
@@ -91,6 +92,13 @@ func _process(delta):
 		for item in get_tree().get_nodes_in_group("Game over items"):
 			item.visible = true
 		get_tree().get_nodes_in_group("Game over items")[1].text  = "Collected cats: "+str(int(koteły))
+	if koteły>=MAX_CATS:
+		game = false
+		for item in get_tree().get_nodes_in_group("Game over items"):
+			item.visible = true
+		get_tree().get_nodes_in_group("Game over items")[0].position.y = -100
+		get_tree().get_nodes_in_group("Game over items")[0].text  = "YOU CRAZY SON OF A BITCH\n YOU DID IT"
+		get_tree().get_nodes_in_group("Game over items")[1].text  = "ALL "+str(int(koteły)) + " CATS COLLECTED"
 	if game:
 		movement(delta)
 		get_tree().get_nodes_in_group("Global indicators")[0].text = "Time left: "+str(int(time))
