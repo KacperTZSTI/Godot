@@ -1,5 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://e0ar5qrufxf7"]
 
+[ext_resource type="Script" path="res://menu/opt.gd" id="1_734qp"]
 [ext_resource type="Script" path="res://menu/options.gd" id="2_cjh0d"]
 [ext_resource type="PackedScene" uid="uid://bbw52brc363ty" path="res://button.tscn" id="3_s7x0p"]
 [ext_resource type="FontFile" uid="uid://b4cn0jmcso7gx" path="res://fonts/joystix monospace.otf" id="4_wy2jc"]
@@ -9,9 +10,8 @@
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kvhvi"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_st8cx"]
-
 [node name="Opt" type="Node2D"]
+script = ExtResource("1_734qp")
 
 [node name="Opt" type="Sprite2D" parent="."]
 visible = false
@@ -25,30 +25,23 @@ offset_right = 105.0
 offset_bottom = 105.0
 script = ExtResource("2_cjh0d")
 
-[node name="Button" type="Button" parent="Control"]
-visible = false
-layout_mode = 0
-offset_right = 104.0
-offset_bottom = 104.0
-
-[node name="Back-arrow-svgrepo-com" type="Sprite2D" parent="Control/Button"]
-position = Vector2(54, 52)
-scale = Vector2(0.1, 0.1)
-texture = SubResource("CompressedTexture2D_st8cx")
-
 [node name="CheckButton" type="CheckButton" parent="Control" groups=["Settings"]]
 layout_mode = 0
 offset_left = 204.0
 offset_top = 151.0
 offset_right = 385.0
 offset_bottom = 192.0
+focus_neighbor_bottom = NodePath("../Back")
 theme_override_fonts/font = ExtResource("4_wy2jc")
 text = "Enable fullscreen"
 
 [node name="Back" parent="Control" instance=ExtResource("3_s7x0p")]
 layout_mode = 0
-offset_right = 137.0
-offset_bottom = 71.0
+offset_left = 168.0
+offset_top = 174.0
+offset_right = 305.0
+offset_bottom = 245.0
+focus_neighbor_top = NodePath("../CheckButton")
 text = "BACK"
 
 [node name="Kotel4" type="Sprite2D" parent="."]
@@ -75,6 +68,5 @@ theme_override_font_sizes/font_size = 30
 text = "Options"
 script = ExtResource("8_gpjwv")
 
-[connection signal="button_down" from="Control/Button" to="Control" method="_on_back_pressed"]
 [connection signal="toggled" from="Control/CheckButton" to="Control" method="_on_fullscreen_toggled"]
 [connection signal="pressed" from="Control/Back" to="Control" method="_on_back_pressed"]

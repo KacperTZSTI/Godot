@@ -1,10 +1,14 @@
 extends CharacterBody2D
 
+@onready var animation : AnimationTree = $AnimationTree
+@onready var sprite : Sprite2D = $Sprite2D
+@onready var animation_state = animation.get("parameters/playback")
+
 var FRICTION = 50
 var ACCELERATION = 40
 var MAX_SPEED = 250
 var input_vector = Vector2.ZERO
-var MAX_TIME = 300
+var MAX_TIME = 150
 
 var koteły = 0
 var kotek = null
@@ -15,8 +19,8 @@ var code = ''
 var time = MAX_TIME
 var game = true;
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	animation.active = true
 	time = MAX_TIME;
 	game = true;
 
@@ -24,7 +28,6 @@ func teleport(x,y):
 	position.x = x
 	position.y = y
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time_since_last_interaction += delta;
 	if time_since_last_interaction > 2:
@@ -97,20 +100,19 @@ func _process(delta):
 
 func movement(delta):
 	input_vector = Vector2.ZERO
-	var mp = get_viewport().get_mouse_position()
-	var res = get_viewport_rect().size
-	
-	var left  = 1 if (mp.x <= res.x*0.2) or Input.get_action_strength('ui_left') else 0
-	var right = 1 if (mp.x >= res.x*0.8) or Input.get_action_strength('ui_right') else 0
-	var top   = 1 if (mp.y <= res.y*0.2) or Input.get_action_strength('ui_up') else 0
-	var bot   = 1 if (mp.y >= res.y*0.8) or Input.get_action_strength('ui_down') else 0
-	input_vector.x = right - left
-	input_vector.y = bot - top
+	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
+		animation.set("parameters/Idle/blend_position", input_vector)
+		animation.set("parameters/Walk/blend_position", input_vector)
+		animation["parameters/conditions/moving"] = true
+		animation["parameters/conditions/idle"] = false
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION)
 	else:
+		animation["parameters/conditions/idle"] = true
+		animation["parameters/conditions/moving"] = false
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
 		
 	move_and_slide()

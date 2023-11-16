@@ -4,18 +4,16 @@ extends Node2D
 var time = 0;
 var bus_exists = true;
 
-var BUS_EVENT_START = 10;
-var BUS_STOP = 31;
-var BUS_START_AGAIN = 38;
-var BUS_EVENT_END = 180
+var BUS_EVENT_START = 100;
+var BUS_STOP = 121;
+var BUS_START_AGAIN = 128;
+var BUS_EVENT_END = 140
 var BUS_SPEED = 350;
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time += delta;
 	if time >BUS_EVENT_START and time < BUS_STOP:

@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://kk1s4gkevom8"]
+[gd_scene load_steps=8 format=3 uid="uid://cq5gv1tr8bf6m"]
 
 [ext_resource type="Script" path="res://levels/level_01/koteł.gd" id="1_bipnd"]
-[ext_resource type="Texture2D" uid="uid://b4a7652vkfhqo" path="res://levels/level_01/images/cat.png" id="2_stm1c"]
+[ext_resource type="Texture2D" uid="uid://ds0uy3fa6maco" path="res://levels/cat_yellow.png" id="2_u540s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ida00"]
 size = Vector2(75.964, 108.813)
@@ -75,7 +75,7 @@ shape = SubResource("RectangleShape2D_ida00")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(10.2654, -26.69)
 scale = Vector2(4.07707, 4.07707)
-texture = ExtResource("2_stm1c")
+texture = ExtResource("2_u540s")
 hframes = 41
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

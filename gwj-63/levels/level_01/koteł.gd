@@ -4,7 +4,7 @@ extends Node2D
 @onready var anim = $AnimationPlayer
 
 func _ready():
-	pass
+	anim.play("idle")
 
 
 func _process(delta):

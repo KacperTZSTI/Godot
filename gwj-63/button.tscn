@@ -45,3 +45,4 @@ Button/styles/pressed = SubResource("StyleBoxFlat_ruqpi")
 theme = SubResource("Theme_cmwdc")
 theme_override_fonts/font = ExtResource("1_3d2c3")
 text = "Start"
+flat = true

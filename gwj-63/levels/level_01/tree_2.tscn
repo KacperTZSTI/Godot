@@ -45,10 +45,11 @@ _data = {
 size = Vector2(13, 22)
 
 [node name="Tree2" type="StaticBody2D"]
+position = Vector2(-1, -1)
 script = ExtResource("1_psf0m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2, -57)
+position = Vector2(-2, -6)
 scale = Vector2(2.3, 2.3)
 texture = ExtResource("1_0eajh")
 hframes = 2
@@ -59,5 +60,5 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -10)
+position = Vector2(1.5, 42)
 shape = SubResource("RectangleShape2D_g8mkx")
