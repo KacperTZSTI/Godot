@@ -710,7 +710,6 @@ position = Vector2(-58.1888, 67.4374)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="city/BusStop1/StaticBody2D"]
 position = Vector2(6.35364, 1.20083)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_73dwv")
 
 [node name="BusStop2" type="Sprite2D" parent="city"]
