@@ -21,13 +21,16 @@ var code = ''
 
 var time = MAX_TIME
 var game = true;
+var scene = null
 
 func _ready():
+	scene = preload("res://levels/koteł.tscn")
 	animation.active = true
 	time = MAX_TIME;
 	game = true;
 
 func teleport(x,y):
+	
 	position.x = x
 	position.y = y
 
@@ -86,6 +89,15 @@ func _process(delta):
 		MAX_SPEED =250
 		ACCELERATION = 40
 		code = ''
+		
+	if code == 'udrdul':
+		# kodzik z mrocznej uliczki
+		var instance = scene.instantiate()
+		instance.position = self.position
+		get_tree().root.get_node("level_01/world").add_child(instance)
+		code = ''
+	
+	get_tree().get_nodes_in_group("Global indicators")[1].text = "Cats: "+str(int(koteły))
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		if time>0 and game:
@@ -107,7 +119,7 @@ func _process(delta):
 	if game:
 		movement(delta)
 		get_tree().get_nodes_in_group("Global indicators")[0].text = "Time left: "+str(int(time))
-		get_tree().get_nodes_in_group("Global indicators")[1].text = "Cats: "+str(int(koteły))
+		
 		if has_key:
 			get_tree().get_nodes_in_group("Global indicators")[2].visible = true
 		else:
