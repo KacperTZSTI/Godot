@@ -36,12 +36,12 @@ jobs:
 
       - name: Move HTML5 templates into position
         run: |
-          mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+          mkdir -v -p ~/.local/share/godot/export_templates
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
       - name: Create staging directory
         run: mkdir -v -p gwj63/build/web
 
-      - name: test
+      - name: List export templates
         run: ls -lah ~/.local/share/godot/export_templates/
 
       - name: Build
