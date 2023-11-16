@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=48 format=3 uid="uid://37viv4qcybul"]
 
 [ext_resource type="Script" path="res://levels/level_01/scripts/world.gd" id="1_71vqr"]
 [ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="1_pvhon"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b1tq45skn0gjr" path="res://levels/straight_cat.tscn" id="25_uuwy2"]
 [ext_resource type="Texture2D" uid="uid://bko2khsnjay5r" path="res://levels/level_01/images/floor4.png" id="26_naud1"]
 [ext_resource type="Texture2D" uid="uid://c4tggor5jdemf" path="res://levels/level_01/images/smol_gate.png" id="26_syg0o"]
+[ext_resource type="Texture2D" uid="uid://dyuqgoe4wh84g" path="res://levels/level_01/images/key.png" id="27_08ahr"]
 [ext_resource type="PackedScene" uid="uid://b5xpryqll8p8f" path="res://levels/bored_cat.tscn" id="27_nkcqh"]
 [ext_resource type="Shader" path="res://menu/memu2.gdshader" id="27_pu214"]
 [ext_resource type="Texture2D" uid="uid://by76l70bi733y" path="res://menu/menu_clouds1.png" id="28_sqfvc"]
@@ -653,6 +654,15 @@ text = "Press <escape> to go back to stage select screen"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="cat_realtime" type="Label" parent="UI" groups=["Global indicators"]]
+offset_left = 2.0
+offset_top = 71.0
+offset_right = 330.0
+offset_bottom = 134.0
+theme_override_fonts/font = ExtResource("9_3xjb8")
+theme_override_font_sizes/font_size = 50
+text = "Cats: 0"
+
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
 offset_left = -12329.0
@@ -842,8 +852,13 @@ position = Vector2(799, 1262)
 [node name="Tree11" parent="." instance=ExtResource("34_utkey")]
 position = Vector2(805, 1603)
 
+[node name="public_key" type="Sprite2D" parent="."]
+position = Vector2(-85, -301)
+scale = Vector2(1.48535, 1.48535)
+texture = ExtResource("27_08ahr")
+
 [node name="SmolGate" type="Sprite2D" parent="."]
-position = Vector2(1157, 1263)
+position = Vector2(-267, -318)
 scale = Vector2(1.21875, 1.21875)
 texture = ExtResource("26_syg0o")
 

@@ -94,6 +94,8 @@ func _process(delta):
 	if game:
 		movement(delta)
 		get_tree().get_nodes_in_group("Global indicators")[0].text = "Time left: "+str(int(time))
+		get_tree().get_nodes_in_group("Global indicators")[1].text = "Cats: "+str(int(koteły))
+		
 		time -= delta
 	
 	
