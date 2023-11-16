@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=52 format=3 uid="uid://37viv4qcybul"]
 
 [ext_resource type="Script" path="res://levels/level_01/scripts/world.gd" id="1_71vqr"]
 [ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="1_pvhon"]
@@ -24,7 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://dyuqgoe4wh84g" path="res://levels/level_01/images/key.png" id="27_08ahr"]
 [ext_resource type="PackedScene" uid="uid://b5xpryqll8p8f" path="res://levels/bored_cat.tscn" id="27_nkcqh"]
 [ext_resource type="Shader" path="res://menu/memu2.gdshader" id="27_pu214"]
+[ext_resource type="Script" path="res://levels/level_01/scripts/key.gd" id="28_pdd8p"]
 [ext_resource type="Texture2D" uid="uid://by76l70bi733y" path="res://menu/menu_clouds1.png" id="28_sqfvc"]
+[ext_resource type="Script" path="res://levels/level_01/scripts/gate.gd" id="30_u1i0b"]
 [ext_resource type="PackedScene" uid="uid://c66lad12mixjt" path="res://levels/level_01/tree_2.tscn" id="34_utkey"]
 [ext_resource type="PackedScene" uid="uid://bvj8kymmvafey" path="res://levels/level_01/tree1.tscn" id="35_1n5wd"]
 [ext_resource type="Texture2D" uid="uid://dsr3ltm7rmdv0" path="res://levels/level_01/images/tilemap1.png" id="44_4q186"]
@@ -293,6 +295,12 @@ size = Vector2(236.34, 9.41171)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ebjgg"]
 shader = ExtResource("27_pu214")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goft8"]
+size = Vector2(47.1269, 25.5832)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfopf"]
+size = Vector2(51.6923, 47.5897)
 
 [node name="level_01" type="Node2D"]
 y_sort_enabled = true
@@ -665,6 +673,12 @@ theme_override_fonts/font = ExtResource("9_3xjb8")
 theme_override_font_sizes/font_size = 50
 text = "Cats: 0"
 
+[node name="Key" type="Sprite2D" parent="UI" groups=["Global indicators"]]
+visible = false
+position = Vector2(79, 173)
+scale = Vector2(2, 2)
+texture = ExtResource("27_08ahr")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
 offset_left = -12329.0
@@ -858,11 +872,25 @@ position = Vector2(805, 1603)
 position = Vector2(-85, -301)
 scale = Vector2(1.48535, 1.48535)
 texture = ExtResource("27_08ahr")
+script = ExtResource("28_pdd8p")
+
+[node name="Area2D" type="Area2D" parent="public_key"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="public_key/Area2D"]
+position = Vector2(-1.34648, 0.673233)
+shape = SubResource("RectangleShape2D_goft8")
 
 [node name="SmolGate" type="Sprite2D" parent="."]
-position = Vector2(-267, -318)
+position = Vector2(1155, 1263)
 scale = Vector2(1.21875, 1.21875)
 texture = ExtResource("26_syg0o")
+script = ExtResource("30_u1i0b")
+
+[node name="Area2D" type="Area2D" parent="SmolGate"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmolGate/Area2D"]
+position = Vector2(0.410233, -3.2821)
+shape = SubResource("RectangleShape2D_lfopf")
 
 [connection signal="body_entered" from="world/transitions/entrance/Area2D" to="world/transitions/entrance" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="world/transitions/floor2/Area2D" to="world/transitions/floor2" method="_on_area_2d_body_entered"]
@@ -876,5 +904,9 @@ texture = ExtResource("26_syg0o")
 [connection signal="body_entered" from="world/transitions/exit/Area2D" to="world/transitions/exit" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="world/transitions/alley1/Area2D" to="world/transitions/alley1" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="world/transitions/alley2/Area2D" to="world/transitions/alley2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="public_key/Area2D" to="public_key" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="public_key/Area2D" to="public_key" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="SmolGate/Area2D" to="SmolGate" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="SmolGate/Area2D" to="SmolGate" method="_on_area_2d_body_exited"]
 
 [editable path="Player"]

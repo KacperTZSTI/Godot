@@ -13,6 +13,8 @@ var MAX_TIME = 150
 var koteły = 0
 var MAX_CATS = 1
 var kotek = null
+var has_key = false
+var current_key = null # i don't quite know how i did this, so please dont touch it
 
 var time_since_last_interaction = 0;
 var code = ''
@@ -52,7 +54,10 @@ func _process(delta):
 		time_since_last_interaction = 0
 		if kotek:
 			kotek.delete()
-			koteły +=1
+			kotek.interact(self)
+		if current_key and has_key:
+			current_key.delete()
+			has_key = false
 			
 	if code == 'uuddlrlra':
 		# konami code, without the 'b'
@@ -103,6 +108,10 @@ func _process(delta):
 		movement(delta)
 		get_tree().get_nodes_in_group("Global indicators")[0].text = "Time left: "+str(int(time))
 		get_tree().get_nodes_in_group("Global indicators")[1].text = "Cats: "+str(int(koteły))
+		if has_key:
+			get_tree().get_nodes_in_group("Global indicators")[2].visible = true
+		else:
+			get_tree().get_nodes_in_group("Global indicators")[2].visible = false
 		
 		time -= delta
 	
