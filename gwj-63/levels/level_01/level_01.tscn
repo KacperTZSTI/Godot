@@ -237,7 +237,7 @@ texture_region_size = Vector2i(64, 64)
 27:21/0/physics_layer_0/angular_velocity = 0.0
 27:28/size_in_atlas = Vector2i(13, 2)
 27:28/0 = 0
-27:28/0/y_sort_origin = 20
+27:28/0/y_sort_origin = -20
 27:28/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 27:28/0/physics_layer_0/angular_velocity = 0.0
 27:28/0/physics_layer_0/polygon_0/points = PackedVector2Array(-394.985, -8.81944, 355.928, -8.81944, 354.668, 1.25992, -392.465, 2.51984)
@@ -261,7 +261,7 @@ texture_region_size = Vector2i(64, 64)
 0:13/0/physics_layer_0/angular_velocity = 0.0
 0:19/size_in_atlas = Vector2i(11, 2)
 0:19/0 = 0
-0:19/0/y_sort_origin = 6
+0:19/0/y_sort_origin = -30
 0:19/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:19/0/physics_layer_0/angular_velocity = 0.0
 
@@ -552,7 +552,7 @@ layer_0/tile_data = PackedInt32Array(-1572803, 458752, 0, -1572763, 917504, 0, -
 [node name="collisions_fix" type="StaticBody2D" parent="world"]
 
 [node name="upper1" type="CollisionPolygon2D" parent="world/collisions_fix"]
-polygon = PackedVector2Array(-3932, -1306, -3936, -1639, 1840, -1585, 3844, -1598, 3841, -1238, 2075, -1238, 2068, -37, 1604, -34, 1608, -1302, -522, -1295, -525, -1378, -593, -1378, -593, -1308, -597, -1296, -939, -1298, -1345, -1298, -1343, -1348, -1395, -1350, -1395, -1304, -1781, -1302, -1787, -372, -2311, -372, -2301, -1302)
+polygon = PackedVector2Array(-3932, -1306, -3936, -1639, 1840, -1585, 3844, -1598, 3841, -1238, 2075, -1238, 2068, -37, 1604, -34, 1608, -1302, -522, -1295, -525, -1378, -593, -1378, -593, -1308, -593, -1297, -939, -1298, -1345, -1298, -1343, -1348, -1395, -1350, -1395, -1304, -1781, -1302, -1787, -372, -2311, -372, -2301, -1302)
 
 [node name="upper2" type="CollisionPolygon2D" parent="world/collisions_fix"]
 polygon = PackedVector2Array(-1338, -372, -1331, -899, 1182, -901, 1174, -37, 841, -39, 836, -634, 836, -619, -1011, -627, -1006, -377)
@@ -605,7 +605,7 @@ shape = SubResource("RectangleShape2D_0m6d8")
 
 [node name="house_fence" type="CollisionPolygon2D" parent="world/collisions_fix"]
 position = Vector2(3913, 9221)
-polygon = PackedVector2Array(-2729, -7975, -2351, -7976, -2353, -7582, -2894, -7576, -2894, -7980, -2793, -7981, -2793, -7948, -2884, -7946, -2882, -7617, -2368, -7616, -2366, -7947, -2726, -7944)
+polygon = PackedVector2Array(-2729, -7975, -2351, -7976, -2352, -7575, -2894, -7576, -2894, -7980, -2795, -7980, -2795, -7949, -2884, -7946, -2884, -7600, -2363, -7600, -2366, -7947, -2729, -7943)
 
 [node name="Player" parent="." instance=ExtResource("1_pvhon")]
 position = Vector2(-145, -430)
@@ -883,7 +883,7 @@ position = Vector2(799, 1262)
 position = Vector2(805, 1603)
 
 [node name="public_key" type="Sprite2D" parent="."]
-position = Vector2(-85, -301)
+position = Vector2(-2476, 2232)
 scale = Vector2(1.48535, 1.48535)
 texture = ExtResource("27_08ahr")
 script = ExtResource("28_pdd8p")
