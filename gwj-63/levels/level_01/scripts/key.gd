@@ -1,22 +1,13 @@
-extends Node2D 
-# koteł :D :D :3
-
-@onready var anim = $AnimationPlayer
-
-func _ready():
-	anim.play("idle")
+extends Sprite2D
 
 
-func _process(delta):
-	pass
-	
 func delete():
 	hide()
 	get_tree().queue_delete(self)
 	
 func interact(node):
-	if 'koteły' in node:
-		node.koteły += 1
+	if 'has_key' in node:
+		node.has_key = true
 
 
 func _on_area_2d_body_entered(body):

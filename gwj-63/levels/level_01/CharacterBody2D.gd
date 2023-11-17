@@ -11,20 +11,26 @@ var input_vector = Vector2.ZERO
 var MAX_TIME = 150
 
 var koteły = 0
+var MAX_CATS = 1
 var kotek = null
+var has_key = false
+var current_key = null # i don't quite know how i did this, so please dont touch it
 
 var time_since_last_interaction = 0;
 var code = ''
 
 var time = MAX_TIME
 var game = true;
+var scene = null
 
 func _ready():
+	scene = preload("res://levels/koteł.tscn")
 	animation.active = true
 	time = MAX_TIME;
 	game = true;
 
 func teleport(x,y):
+	
 	position.x = x
 	position.y = y
 
@@ -51,7 +57,10 @@ func _process(delta):
 		time_since_last_interaction = 0
 		if kotek:
 			kotek.delete()
-			koteły +=1
+			kotek.interact(self)
+		if current_key and has_key:
+			current_key.delete()
+			has_key = false
 			
 	if code == 'uuddlrlra':
 		# konami code, without the 'b'
@@ -80,9 +89,18 @@ func _process(delta):
 		MAX_SPEED =250
 		ACCELERATION = 40
 		code = ''
+		
+	if code == 'udrdul':
+		# kodzik z mrocznej uliczki
+		var instance = scene.instantiate()
+		instance.position = self.position
+		get_tree().root.get_node("level_01/world").add_child(instance)
+		code = ''
+	
+	get_tree().get_nodes_in_group("Global indicators")[1].text = "Cats: "+str(int(koteły))
 	
 	if Input.is_action_just_pressed("ui_cancel"):
-		if time>0:
+		if time>0 and game:
 			time = -1
 		else:
 			get_tree().change_scene_to_file("res://menu/stage_select.tscn")
@@ -91,9 +109,22 @@ func _process(delta):
 		for item in get_tree().get_nodes_in_group("Game over items"):
 			item.visible = true
 		get_tree().get_nodes_in_group("Game over items")[1].text  = "Collected cats: "+str(int(koteły))
+	if koteły>=MAX_CATS:
+		game = false
+		for item in get_tree().get_nodes_in_group("Game over items"):
+			item.visible = true
+		get_tree().get_nodes_in_group("Game over items")[0].position.y = -100
+		get_tree().get_nodes_in_group("Game over items")[0].text  = "YOU CRAZY SON OF A BITCH\n YOU DID IT"
+		get_tree().get_nodes_in_group("Game over items")[1].text  = "ALL "+str(int(koteły)) + " CATS COLLECTED"
 	if game:
 		movement(delta)
 		get_tree().get_nodes_in_group("Global indicators")[0].text = "Time left: "+str(int(time))
+		
+		if has_key:
+			get_tree().get_nodes_in_group("Global indicators")[2].visible = true
+		else:
+			get_tree().get_nodes_in_group("Global indicators")[2].visible = false
+		
 		time -= delta
 	
 	

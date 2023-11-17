@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=54 format=3 uid="uid://37viv4qcybul"]
 
 [ext_resource type="Script" path="res://levels/level_01/scripts/world.gd" id="1_71vqr"]
 [ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="1_pvhon"]
@@ -21,9 +21,12 @@
 [ext_resource type="PackedScene" uid="uid://b1tq45skn0gjr" path="res://levels/straight_cat.tscn" id="25_uuwy2"]
 [ext_resource type="Texture2D" uid="uid://bko2khsnjay5r" path="res://levels/level_01/images/floor4.png" id="26_naud1"]
 [ext_resource type="Texture2D" uid="uid://c4tggor5jdemf" path="res://levels/level_01/images/smol_gate.png" id="26_syg0o"]
+[ext_resource type="Texture2D" uid="uid://dyuqgoe4wh84g" path="res://levels/level_01/images/key.png" id="27_08ahr"]
 [ext_resource type="PackedScene" uid="uid://b5xpryqll8p8f" path="res://levels/bored_cat.tscn" id="27_nkcqh"]
 [ext_resource type="Shader" path="res://menu/memu2.gdshader" id="27_pu214"]
+[ext_resource type="Script" path="res://levels/level_01/scripts/key.gd" id="28_pdd8p"]
 [ext_resource type="Texture2D" uid="uid://by76l70bi733y" path="res://menu/menu_clouds1.png" id="28_sqfvc"]
+[ext_resource type="Script" path="res://levels/level_01/scripts/gate.gd" id="30_u1i0b"]
 [ext_resource type="PackedScene" uid="uid://c66lad12mixjt" path="res://levels/level_01/tree_2.tscn" id="34_utkey"]
 [ext_resource type="PackedScene" uid="uid://bvj8kymmvafey" path="res://levels/level_01/tree1.tscn" id="35_1n5wd"]
 [ext_resource type="Texture2D" uid="uid://dsr3ltm7rmdv0" path="res://levels/level_01/images/tilemap1.png" id="44_4q186"]
@@ -234,7 +237,7 @@ texture_region_size = Vector2i(64, 64)
 27:21/0/physics_layer_0/angular_velocity = 0.0
 27:28/size_in_atlas = Vector2i(13, 2)
 27:28/0 = 0
-27:28/0/y_sort_origin = 20
+27:28/0/y_sort_origin = -20
 27:28/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 27:28/0/physics_layer_0/angular_velocity = 0.0
 27:28/0/physics_layer_0/polygon_0/points = PackedVector2Array(-394.985, -8.81944, 355.928, -8.81944, 354.668, 1.25992, -392.465, 2.51984)
@@ -258,7 +261,7 @@ texture_region_size = Vector2i(64, 64)
 0:13/0/physics_layer_0/angular_velocity = 0.0
 0:19/size_in_atlas = Vector2i(11, 2)
 0:19/0 = 0
-0:19/0/y_sort_origin = 6
+0:19/0/y_sort_origin = -30
 0:19/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:19/0/physics_layer_0/angular_velocity = 0.0
 
@@ -278,6 +281,9 @@ size = Vector2(88, 424)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_saob1"]
 size = Vector2(244, 68)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0m6d8"]
+size = Vector2(250, 172)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r1xk"]
 size = Vector2(128, 311.125)
 
@@ -292,6 +298,15 @@ size = Vector2(236.34, 9.41171)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ebjgg"]
 shader = ExtResource("27_pu214")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goft8"]
+size = Vector2(47.1269, 25.5832)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcr5x"]
+size = Vector2(69.7436, 48.4103)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5mb4"]
+size = Vector2(67.282, 13.9487)
 
 [node name="level_01" type="Node2D"]
 y_sort_enabled = true
@@ -537,7 +552,7 @@ layer_0/tile_data = PackedInt32Array(-1572803, 458752, 0, -1572763, 917504, 0, -
 [node name="collisions_fix" type="StaticBody2D" parent="world"]
 
 [node name="upper1" type="CollisionPolygon2D" parent="world/collisions_fix"]
-polygon = PackedVector2Array(-3932, -1306, -3936, -1639, 1840, -1585, 3844, -1598, 3841, -1238, 2075, -1238, 2068, -37, 1604, -34, 1608, -1302, -522, -1295, -525, -1378, -593, -1378, -593, -1308, -597, -1296, -939, -1298, -1345, -1298, -1343, -1348, -1395, -1350, -1395, -1304, -1781, -1302, -1787, -372, -2311, -372, -2301, -1302)
+polygon = PackedVector2Array(-3932, -1306, -3936, -1639, 1840, -1585, 3844, -1598, 3841, -1238, 2075, -1238, 2068, -37, 1604, -34, 1608, -1302, -522, -1295, -525, -1378, -593, -1378, -593, -1308, -593, -1297, -939, -1298, -1345, -1298, -1343, -1348, -1395, -1350, -1395, -1304, -1781, -1302, -1787, -372, -2311, -372, -2301, -1302)
 
 [node name="upper2" type="CollisionPolygon2D" parent="world/collisions_fix"]
 polygon = PackedVector2Array(-1338, -372, -1331, -899, 1182, -901, 1174, -37, 841, -39, 836, -634, 836, -619, -1011, -627, -1006, -377)
@@ -584,6 +599,14 @@ polygon = PackedVector2Array(-3626, -1657, -3626, 724, -5195, 743, -5163, -1689)
 [node name="right_border" type="CollisionPolygon2D" parent="world/collisions_fix"]
 polygon = PackedVector2Array(2748, 2251, 2752, -1633, 3820, -1633, 3820, 2228)
 
+[node name="house" type="CollisionShape2D" parent="world/collisions_fix"]
+position = Vector2(1414, 1425)
+shape = SubResource("RectangleShape2D_0m6d8")
+
+[node name="house_fence" type="CollisionPolygon2D" parent="world/collisions_fix"]
+position = Vector2(3913, 9221)
+polygon = PackedVector2Array(-2729, -7975, -2351, -7976, -2352, -7575, -2894, -7576, -2894, -7980, -2795, -7980, -2795, -7949, -2884, -7946, -2884, -7600, -2363, -7600, -2366, -7947, -2729, -7943)
+
 [node name="Player" parent="." instance=ExtResource("1_pvhon")]
 position = Vector2(-145, -430)
 
@@ -609,6 +632,8 @@ visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -25.0
+offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
@@ -641,8 +666,8 @@ visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 130.0
-offset_bottom = 130.0
+offset_top = 111.0
+offset_bottom = 111.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
@@ -653,12 +678,27 @@ text = "Press <escape> to go back to stage select screen"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="cat_realtime" type="Label" parent="UI" groups=["Global indicators"]]
+offset_left = 2.0
+offset_top = 71.0
+offset_right = 330.0
+offset_bottom = 134.0
+theme_override_fonts/font = ExtResource("9_3xjb8")
+theme_override_font_sizes/font_size = 50
+text = "Cats: 0"
+
+[node name="Key" type="Sprite2D" parent="UI" groups=["Global indicators"]]
+visible = false
+position = Vector2(79, 173)
+scale = Vector2(2, 2)
+texture = ExtResource("27_08ahr")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
-offset_left = -12329.0
-offset_top = -4330.0
-offset_right = 13724.0
-offset_bottom = 6278.0
+offset_left = -12138.0
+offset_top = -4092.0
+offset_right = 13915.0
+offset_bottom = 6516.0
 color = Color(1, 1, 0.101961, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
@@ -842,10 +882,35 @@ position = Vector2(799, 1262)
 [node name="Tree11" parent="." instance=ExtResource("34_utkey")]
 position = Vector2(805, 1603)
 
+[node name="public_key" type="Sprite2D" parent="."]
+position = Vector2(-2476, 2232)
+scale = Vector2(1.48535, 1.48535)
+texture = ExtResource("27_08ahr")
+script = ExtResource("28_pdd8p")
+
+[node name="Area2D" type="Area2D" parent="public_key"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="public_key/Area2D"]
+position = Vector2(-1.34648, 0.673233)
+shape = SubResource("RectangleShape2D_goft8")
+
 [node name="SmolGate" type="Sprite2D" parent="."]
-position = Vector2(1157, 1263)
+position = Vector2(1155, 1263)
 scale = Vector2(1.21875, 1.21875)
 texture = ExtResource("26_syg0o")
+script = ExtResource("30_u1i0b")
+
+[node name="Area2D" type="Area2D" parent="SmolGate"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmolGate/Area2D"]
+position = Vector2(-2.87183, -1.23096)
+shape = SubResource("RectangleShape2D_lcr5x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SmolGate"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmolGate/StaticBody2D"]
+position = Vector2(-2.46155, -2.87183)
+shape = SubResource("RectangleShape2D_u5mb4")
 
 [connection signal="body_entered" from="world/transitions/entrance/Area2D" to="world/transitions/entrance" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="world/transitions/floor2/Area2D" to="world/transitions/floor2" method="_on_area_2d_body_entered"]
@@ -859,5 +924,9 @@ texture = ExtResource("26_syg0o")
 [connection signal="body_entered" from="world/transitions/exit/Area2D" to="world/transitions/exit" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="world/transitions/alley1/Area2D" to="world/transitions/alley1" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="world/transitions/alley2/Area2D" to="world/transitions/alley2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="public_key/Area2D" to="public_key" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="public_key/Area2D" to="public_key" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="SmolGate/Area2D" to="SmolGate" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="SmolGate/Area2D" to="SmolGate" method="_on_area_2d_body_exited"]
 
 [editable path="Player"]
