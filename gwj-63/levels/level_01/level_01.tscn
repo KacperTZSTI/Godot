@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=55 format=3 uid="uid://37viv4qcybul"]
 
 [ext_resource type="Script" path="res://levels/level_01/scripts/world.gd" id="1_71vqr"]
 [ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="1_pvhon"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dpn8m21akcpl2" path="res://levels/sleep_cat.tscn" id="5_p48kh"]
 [ext_resource type="Texture2D" uid="uid://bcwg16pjcmkqi" path="res://levels/level_01/images/bus.png" id="6_avdft"]
 [ext_resource type="Texture2D" uid="uid://bypo8ux44m572" path="res://levels/level_01/images/1building.png" id="7_ateww"]
+[ext_resource type="Script" path="res://levels/cat_move.gd" id="8_4udc4"]
 [ext_resource type="Texture2D" uid="uid://butu6u6j3iaa4" path="res://levels/level_01/images/road.png" id="8_6a6ls"]
 [ext_resource type="FontFile" uid="uid://b4cn0jmcso7gx" path="res://fonts/joystix monospace.otf" id="9_3xjb8"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/bus.gd" id="10_81sux"]
@@ -351,6 +352,10 @@ position = Vector2(1145, 1499)
 
 [node name="cat4" parent="world" instance=ExtResource("27_nkcqh")]
 position = Vector2(-672, -9176)
+
+[node name="cat5" parent="world" instance=ExtResource("27_nkcqh")]
+position = Vector2(-308, -399)
+script = ExtResource("8_4udc4")
 
 [node name="transitions" type="Node2D" parent="world"]
 position = Vector2(-311, -38.0009)
