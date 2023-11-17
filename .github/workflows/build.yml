@@ -42,14 +42,11 @@ jobs:
       - name: Build
         run: cd gwj-63 && godot -v --headless --export-release "HTML5" build/web/index.html
 
-      - name: Compress build
-        run: cd gwj-63/build && zip -r ./web.zip ./web
-
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           # Upload entire repository
-          path: 'gwj-63/build/web.zip'
+          path: 'gwj-63/build/web'
 
