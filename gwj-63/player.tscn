@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://ds2ahvqrlklt"]
 
-[ext_resource type="Script" path="res://levels/level_01/CharacterBody2D.gd" id="1_fujts"]
+[ext_resource type="Script" path="res://levels/level_01/scripts/CharacterBody2D.gd" id="1_fujts"]
 [ext_resource type="Texture2D" uid="uid://cjdtaqmy7rqha" path="res://cat_guy.png" id="2_6x25b"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="3_y12fn"]
 

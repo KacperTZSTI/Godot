@@ -5,13 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://kk1s4gkevom8" path="res://levels/koteł.tscn" id="2_3mtuv"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/elevator.gd" id="2_tbe64"]
 [ext_resource type="Texture2D" uid="uid://b4a7652vkfhqo" path="res://levels/level_01/images/cat.png" id="3_tue0s"]
-[ext_resource type="Script" path="res://levels/level_01/look_cat.gd" id="4_cnvd3"]
+[ext_resource type="Script" path="res://levels/level_01/look_cat.gd" id="4_iobdo"]
 [ext_resource type="PackedScene" uid="uid://dpn8m21akcpl2" path="res://levels/sleep_cat.tscn" id="5_p48kh"]
 [ext_resource type="Texture2D" uid="uid://bcwg16pjcmkqi" path="res://levels/level_01/images/bus.png" id="6_avdft"]
 [ext_resource type="Texture2D" uid="uid://bypo8ux44m572" path="res://levels/level_01/images/1building.png" id="7_ateww"]
-[ext_resource type="Script" path="res://levels/level_01/bus.gd" id="7_xs1cg"]
 [ext_resource type="Texture2D" uid="uid://butu6u6j3iaa4" path="res://levels/level_01/images/road.png" id="8_6a6ls"]
 [ext_resource type="FontFile" uid="uid://b4cn0jmcso7gx" path="res://fonts/joystix monospace.otf" id="9_3xjb8"]
+[ext_resource type="Script" path="res://levels/level_01/scripts/bus.gd" id="10_81sux"]
 [ext_resource type="Texture2D" uid="uid://bngnyjsc2u2m3" path="res://levels/level_01/images/bus_stop1.png" id="11_q1dt2"]
 [ext_resource type="Texture2D" uid="uid://daxn6u5kae2vn" path="res://levels/level_01/images/bus_stop2.png" id="12_o8fub"]
 [ext_resource type="Texture2D" uid="uid://bnfsyskx1av02" path="res://levels/level_01/images/backalley.png" id="23_iee4g"]
@@ -335,7 +335,7 @@ scale = Vector2(4.26397, 4.26397)
 texture = ExtResource("3_tue0s")
 hframes = 41
 frame = 30
-script = ExtResource("4_cnvd3")
+script = ExtResource("4_iobdo")
 
 [node name="look_anim" type="AnimationPlayer" parent="world/cat1/look_cat"]
 libraries = {
@@ -533,7 +533,7 @@ position = Vector2(4723, 65)
 scale = Vector2(-6, 5.875)
 texture = ExtResource("6_avdft")
 hframes = 2
-script = ExtResource("7_xs1cg")
+script = ExtResource("10_81sux")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="world/bus"]
 libraries = {

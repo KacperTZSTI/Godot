@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy0jynva2type"]
+[gd_scene load_steps=6 format=3 uid="uid://dy0jynva2type"]
 
 [ext_resource type="Script" path="res://menu/level_select.gd" id="2_7qjaf"]
+[ext_resource type="Script" path="res://menu/label_opt.gd" id="3_4xl66"]
 [ext_resource type="FontFile" uid="uid://b4cn0jmcso7gx" path="res://fonts/joystix monospace.otf" id="4_q40ed"]
 [ext_resource type="Texture2D" uid="uid://dwfjvxkryoi51" path="res://levels/level_01/images/pink_back.png" id="5_6lsy4"]
 
@@ -16,14 +17,16 @@ texture = SubResource("CompressedTexture2D_ribkm")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+offset_top = 36.0
+offset_bottom = 36.0
 script = ExtResource("2_7qjaf")
 
 [node name="level-1" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 141.0
-offset_top = 145.0
+offset_top = 132.0
 offset_right = 245.0
-offset_bottom = 249.0
+offset_bottom = 236.0
 
 [node name="Label" type="Label" parent="Control/level-1"]
 layout_mode = 0
@@ -43,6 +46,7 @@ offset_bottom = 75.0
 theme_override_fonts/font = ExtResource("4_q40ed")
 theme_override_font_sizes/font_size = 30
 text = "Select stage"
+script = ExtResource("3_4xl66")
 
 [node name="PinkBack" type="Sprite2D" parent="."]
 z_index = -1

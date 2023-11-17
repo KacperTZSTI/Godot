@@ -42,7 +42,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8mkx"]
-size = Vector2(13, 22)
+size = Vector2(49, 18)
 
 [node name="Tree2" type="StaticBody2D"]
 position = Vector2(-1, -1)
@@ -60,5 +60,5 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 42)
+position = Vector2(-1.5, 44)
 shape = SubResource("RectangleShape2D_g8mkx")

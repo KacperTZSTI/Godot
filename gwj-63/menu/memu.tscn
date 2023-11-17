@@ -30,7 +30,7 @@ script = ExtResource("1_ygedg")
 [node name="MenuClouds1" type="Sprite2D" parent="."]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_5m850")
-position = Vector2(1369, 426)
+position = Vector2(1369, 334)
 scale = Vector2(2.58594, 2.58594)
 texture = ExtResource("3_s07af")
 
@@ -104,6 +104,7 @@ texture = ExtResource("9_eeyyo")
 
 [node name="Start" parent="VBoxContainer" instance=ExtResource("10_mdhwr")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
 
 [node name="Opt" parent="VBoxContainer" instance=ExtResource("10_mdhwr")]
 layout_mode = 2
@@ -111,6 +112,7 @@ text = "Options"
 
 [node name="Quit" parent="VBoxContainer" instance=ExtResource("10_mdhwr")]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../Start")
 text = "Quit"
 
 [node name="PinkBack" type="Sprite2D" parent="."]

@@ -1,16 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbw52brc363ty"]
+[gd_scene load_steps=7 format=3 uid="uid://bbw52brc363ty"]
 
 [ext_resource type="FontFile" uid="uid://b4cn0jmcso7gx" path="res://fonts/joystix monospace.otf" id="1_3d2c3"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7c4a"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12ft0"]
-bg_color = Color(0, 0, 0.427451, 1)
+bg_color = Color(0.905882, 0.364706, 0, 0.423529)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(0.686275, 0.529412, 0.0431373, 1)
+border_color = Color(0.905882, 0.364706, 0, 0.423529)
 shadow_color = Color(0, 0, 0, 0.23)
-shadow_size = 4
 shadow_offset = Vector2(3, 3)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4hc1"]
@@ -36,6 +47,25 @@ shadow_size = 1
 shadow_offset = Vector2(3, 3)
 
 [sub_resource type="Theme" id="Theme_cmwdc"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 2
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_3d2c3")
+Button/styles/disabled = SubResource("StyleBoxFlat_w7c4a")
 Button/styles/focus = SubResource("StyleBoxFlat_12ft0")
 Button/styles/hover = SubResource("StyleBoxFlat_12ft0")
 Button/styles/normal = SubResource("StyleBoxFlat_m4hc1")
