@@ -8,10 +8,10 @@ var FRICTION = 50
 var ACCELERATION = 40
 var MAX_SPEED = 250
 var input_vector = Vector2.ZERO
-var MAX_TIME = 150
+var MAX_TIME = 120
 
 var koteły = 0
-var MAX_CATS = 1
+var MAX_CATS = 5
 var kotek = null
 var has_key = false
 var current_key = null # i don't quite know how i did this, so please dont touch it

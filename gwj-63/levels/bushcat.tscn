@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=3 uid="uid://texasyw26akt"]
+
+[ext_resource type="Script" path="res://levels/level_01/koteł.gd" id="1_bipnd"]
+[ext_resource type="Texture2D" uid="uid://b1jv4hfldr4fh" path="res://levels/level_02/images/bush_cat.png" id="2_uae6v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ida00"]
+size = Vector2(268.954, 192.99)
+
+[sub_resource type="Animation" id="Animation_kmb54"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.84]
+}
+
+[sub_resource type="Animation" id="Animation_m18iv"]
+resource_name = "catch"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_1jfpi"]
+resource_name = "idle"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8, 1.9, 2, 2.1, 2.2, 3.19938, 3.3, 3.4, 3.5, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.7, 2.3, 3.04406, 3.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.84, 0.6, 1.84, 0.5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s52gs"]
+_data = {
+"RESET": SubResource("Animation_kmb54"),
+"catch": SubResource("Animation_m18iv"),
+"idle": SubResource("Animation_1jfpi")
+}
+
+[node name="idle_cat" type="Node2D"]
+position = Vector2(571, 368)
+scale = Vector2(0.487073, 0.487073)
+script = ExtResource("1_bipnd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5.13269, 51.3266)
+shape = SubResource("RectangleShape2D_ida00")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10.2654, 47.2208)
+scale = Vector2(4.07707, 4.07707)
+texture = ExtResource("2_uae6v")
+hframes = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 1.84
+libraries = {
+"": SubResource("AnimationLibrary_s52gs")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
