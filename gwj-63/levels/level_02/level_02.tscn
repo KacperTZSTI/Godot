@@ -1,11 +1,12 @@
-[gd_scene load_steps=28 format=3 uid="uid://bwwkn44wyykcr"]
+[gd_scene load_steps=30 format=3 uid="uid://bwwkn44wyykcr"]
 
+[ext_resource type="Script" path="res://levels/level_02/world2.gd" id="1_3t6kb"]
 [ext_resource type="Script" path="res://levels/level_02/background.gd" id="1_a47ok"]
 [ext_resource type="Texture2D" uid="uid://detrm6to8iib1" path="res://levels/level_02/images/tileset2.png" id="1_uu8e1"]
 [ext_resource type="Texture2D" uid="uid://jncsy1oqefv4" path="res://levels/level_02/images/map2.png" id="2_tln1e"]
 [ext_resource type="PackedScene" uid="uid://cab8yvm07d1yc" path="res://levels/straight_cat _orange.tscn" id="3_g8d0a"]
 [ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="3_lg55p"]
-[ext_resource type="PackedScene" path="res://ui.tscn" id="4_d17sx"]
+[ext_resource type="PackedScene" uid="uid://dtutdl1irqj1b" path="res://ui.tscn" id="4_d17sx"]
 [ext_resource type="PackedScene" uid="uid://texasyw26akt" path="res://levels/bushcat.tscn" id="4_krpae"]
 [ext_resource type="Texture2D" uid="uid://dspkf8nfhqmjr" path="res://levels/level_02/images/sewer1.png" id="5_i4ypf"]
 [ext_resource type="Texture2D" uid="uid://bjxa0305lr1mp" path="res://levels/level_02/images/sewer2.png" id="6_7ujcg"]
@@ -14,12 +15,13 @@
 [ext_resource type="Texture2D" uid="uid://r30fc6i7iv6f" path="res://levels/level_02/images/sewer5.png" id="9_fxgo2"]
 [ext_resource type="Texture2D" uid="uid://cutc1mfoditax" path="res://levels/level_02/images/sewer6.png" id="10_pufiu"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/elevator.gd" id="11_psbfm"]
+[ext_resource type="PackedScene" uid="uid://cw22g6larxyp4" path="res://levels/mobile_self_propelled_artillery_cat.tscn" id="13_o6215"]
 [ext_resource type="Texture2D" uid="uid://dyuqgoe4wh84g" path="res://levels/level_01/images/key.png" id="14_s8oiv"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/key.gd" id="15_vglci"]
 [ext_resource type="Texture2D" uid="uid://d141h3aiwkjqh" path="res://levels/level_02/images/smol_gate2.png" id="16_66nyh"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/gate.gd" id="17_ljbtb"]
-[ext_resource type="PackedScene" path="res://levels/level_02/river_1.tscn" id="18_0ing3"]
-[ext_resource type="PackedScene" path="res://levels/level_02/river_2.tscn" id="19_ai17b"]
+[ext_resource type="PackedScene" uid="uid://xolnpngqm2dv" path="res://levels/level_02/river_1.tscn" id="18_0ing3"]
+[ext_resource type="PackedScene" uid="uid://co5nwcke2ghvu" path="res://levels/level_02/river_2.tscn" id="19_ai17b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ew2yj"]
 texture = ExtResource("1_uu8e1")
@@ -185,6 +187,7 @@ y_sort_enabled = true
 
 [node name="world" type="Node2D" parent="."]
 y_sort_enabled = true
+script = ExtResource("1_3t6kb")
 
 [node name="ColorRect" type="ColorRect" parent="world"]
 z_index = -1
@@ -462,6 +465,15 @@ polygon = PackedVector2Array(609, 4982, 612, 5116, 614, 5117, 612, 5024, 1142, 5
 position = Vector2(2154, 3205)
 polygon = PackedVector2Array(609, 4982, 632, 5024, 607, 5026, 610, 5093, 641, 5101, 640, 5027, 1142, 5027, 1140, 4766, 1249, 4766, 1249, 5105, 660, 5104, 617, 5104, 615, 5267, 1379, 5273, 1353, 4703, 1065, 4704, 655, 4853)
 
+[node name="mobile_self_propelled_artillery_cat" parent="world" instance=ExtResource("13_o6215")]
+position = Vector2(1893, 1594)
+
+[node name="left_top" parent="world/mobile_self_propelled_artillery_cat" index="0"]
+position = Vector2(-245, 34)
+
+[node name="bottom_right" parent="world/mobile_self_propelled_artillery_cat" index="1"]
+position = Vector2(414, 357)
+
 [node name="Player" parent="." instance=ExtResource("3_lg55p")]
 position = Vector2(2008, 1774)
 
@@ -471,8 +483,8 @@ position = Vector2(4918, 9385)
 [node name="TopLeft" parent="Player/Camera2D/Limits" index="1"]
 position = Vector2(2, 587)
 
-[node name="music_player" parent="Player" index="6"]
-stream_paused = false
+[node name="sfx_player" parent="Player" index="5"]
+bus = &"SFX"
 
 [node name="UI" parent="." instance=ExtResource("4_d17sx")]
 
@@ -535,6 +547,7 @@ z_index = -1
 [connection signal="body_entered" from="SmolGate/Area2D" to="SmolGate" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="SmolGate/Area2D" to="SmolGate" method="_on_area_2d_body_exited"]
 
+[editable path="world/mobile_self_propelled_artillery_cat"]
 [editable path="Player"]
 [editable path="river1"]
 [editable path="river2"]

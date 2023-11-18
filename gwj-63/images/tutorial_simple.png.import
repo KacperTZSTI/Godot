@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co0g68atl06uc"
-path="res://.godot/imported/kotel2.png-a859bd17c8d79f997150145d876c253d.ctex"
+uid="uid://dyhf4fdyn2fct"
+path="res://.godot/imported/tutorial_simple.png-1956dbf59a2afc79893db6551a16910e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/kotel2.png"
-dest_files=["res://.godot/imported/kotel2.png-a859bd17c8d79f997150145d876c253d.ctex"]
+source_file="res://images/tutorial_simple.png"
+dest_files=["res://.godot/imported/tutorial_simple.png-1956dbf59a2afc79893db6551a16910e.ctex"]
 
 [params]
 

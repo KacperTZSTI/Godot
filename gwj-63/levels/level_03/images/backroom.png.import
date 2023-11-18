@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpyior50st7qf"
-path="res://.godot/imported/backroom.png-9f514cbec6fe3ccb6fcceda03d2ee685.ctex"
+path="res://.godot/imported/backroom.png-e809873c5d09af109dc69c5a01bf415b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/backroom.png"
-dest_files=["res://.godot/imported/backroom.png-9f514cbec6fe3ccb6fcceda03d2ee685.ctex"]
+source_file="res://levels/level_03/images/backroom.png"
+dest_files=["res://.godot/imported/backroom.png-e809873c5d09af109dc69c5a01bf415b.ctex"]
 
 [params]
 

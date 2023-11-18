@@ -11,8 +11,7 @@ func _process(delta):
 	pass
 	
 func delete():
-	hide()
-	get_tree().queue_delete(self)
+	queue_free()
 	
 func interact(node):
 	if 'koteły' in node:
