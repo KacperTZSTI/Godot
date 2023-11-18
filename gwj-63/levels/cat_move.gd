@@ -19,33 +19,33 @@ func _ready():
 
 
 func _process(delta):
-	if step == 0:
-		anim.play("right")
-		if $walk_cat.position.x < MAX_X:
-			$walk_cat.position.x += speed * delta
-		else:
-			step = 1
-	if step == 1:
-		anim.play("down")
-		if $walk_cat.position.y < MAX_Y:
-			$walk_cat.position.y += speed * delta
-		else:
-			step = 2
-	if step == 2:
-		anim.play("left")
-		if $walk_cat.position.x > MIN_X:
-			$walk_cat.position.x -= speed * delta
-		else:
-			step = 3
-	if step == 3:
-		anim.play("up")
-		if $walk_cat.position.y > MIN_Y:
-			$walk_cat.position.y -= speed * delta
 	if $walk_cat.collected == true:
 		anim.play("catch")
-		step = 0
 	else:
-		step = 0
+		if step == 0:
+			anim.play("right")
+			if $walk_cat.position.x < MAX_X:
+				$walk_cat.position.x += speed * delta
+			else:
+				step = 1
+		if step == 1:
+			anim.play("down")
+			if $walk_cat.position.y < MAX_Y:
+				$walk_cat.position.y += speed * delta
+			else:
+				step = 2
+		if step == 2:
+			anim.play("left")
+			if $walk_cat.position.x > MIN_X:
+				$walk_cat.position.x -= speed * delta
+			else:
+				step = 3
+		if step == 3:
+			anim.play("up")
+			if $walk_cat.position.y > MIN_Y:
+				$walk_cat.position.y -= speed * delta
+			else:
+				step = 0
 
 
 func _on_walk_cat_tree_exited():
