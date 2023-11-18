@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://clkx3wx0fi70l"]
 
-[ext_resource type="Script" path="res://levels/level_01/koteł.gd" id="1_n5vss"]
+[ext_resource type="Script" path="res://levels/koteł.gd" id="1_n5vss"]
 [ext_resource type="Texture2D" uid="uid://ds0uy3fa6maco" path="res://levels/cat_yellow.png" id="2_jva56"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ordry"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://texasyw26akt"]
 
-[ext_resource type="Script" path="res://levels/level_01/koteł.gd" id="1_bipnd"]
+[ext_resource type="Script" path="res://levels/koteł.gd" id="1_bipnd"]
 [ext_resource type="Texture2D" uid="uid://b1jv4hfldr4fh" path="res://levels/level_02/images/bush_cat.png" id="2_uae6v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ida00"]

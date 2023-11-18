@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b5xpryqll8p8f"]
 
-[ext_resource type="Script" path="res://levels/level_01/koteł.gd" id="1_a88pe"]
+[ext_resource type="Script" path="res://levels/koteł.gd" id="1_a88pe"]
 [ext_resource type="Texture2D" uid="uid://b4a7652vkfhqo" path="res://levels/level_01/images/cat.png" id="1_l6w2t"]
 
 [sub_resource type="Animation" id="Animation_h15kn"]

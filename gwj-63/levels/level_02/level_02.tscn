@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://bfjpsckowaelc"]
+[gd_scene load_steps=28 format=3 uid="uid://bwwkn44wyykcr"]
 
+[ext_resource type="Script" path="res://levels/level_02/background.gd" id="1_a47ok"]
 [ext_resource type="Texture2D" uid="uid://detrm6to8iib1" path="res://levels/level_02/images/tileset2.png" id="1_uu8e1"]
 [ext_resource type="Texture2D" uid="uid://jncsy1oqefv4" path="res://levels/level_02/images/map2.png" id="2_tln1e"]
 [ext_resource type="PackedScene" uid="uid://cab8yvm07d1yc" path="res://levels/straight_cat _orange.tscn" id="3_g8d0a"]
 [ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="3_lg55p"]
-[ext_resource type="PackedScene" uid="uid://dtutdl1irqj1b" path="res://ui.tscn" id="4_d17sx"]
+[ext_resource type="PackedScene" path="res://ui.tscn" id="4_d17sx"]
 [ext_resource type="PackedScene" uid="uid://texasyw26akt" path="res://levels/bushcat.tscn" id="4_krpae"]
 [ext_resource type="Texture2D" uid="uid://dspkf8nfhqmjr" path="res://levels/level_02/images/sewer1.png" id="5_i4ypf"]
 [ext_resource type="Texture2D" uid="uid://bjxa0305lr1mp" path="res://levels/level_02/images/sewer2.png" id="6_7ujcg"]
@@ -17,8 +18,8 @@
 [ext_resource type="Script" path="res://levels/level_01/scripts/key.gd" id="15_vglci"]
 [ext_resource type="Texture2D" uid="uid://d141h3aiwkjqh" path="res://levels/level_02/images/smol_gate2.png" id="16_66nyh"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/gate.gd" id="17_ljbtb"]
-[ext_resource type="PackedScene" uid="uid://xolnpngqm2dv" path="res://levels/level_02/river_1.tscn" id="18_0ing3"]
-[ext_resource type="PackedScene" uid="uid://co5nwcke2ghvu" path="res://levels/level_02/river_2.tscn" id="19_ai17b"]
+[ext_resource type="PackedScene" path="res://levels/level_02/river_1.tscn" id="18_0ing3"]
+[ext_resource type="PackedScene" path="res://levels/level_02/river_2.tscn" id="19_ai17b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ew2yj"]
 texture = ExtResource("1_uu8e1")
@@ -192,6 +193,7 @@ offset_top = -14686.0
 offset_right = 40767.0
 offset_bottom = 15027.0
 color = Color(0, 0.470588, 0.223529, 1)
+script = ExtResource("1_a47ok")
 
 [node name="TileMap" type="TileMap" parent="world"]
 y_sort_enabled = true
@@ -499,7 +501,6 @@ shape = SubResource("RectangleShape2D_1518a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SmolGate/StaticBody2D"]
 position = Vector2(-2.46143, 1.12366)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_udtif")
 
 [node name="river1" parent="." instance=ExtResource("18_0ing3")]

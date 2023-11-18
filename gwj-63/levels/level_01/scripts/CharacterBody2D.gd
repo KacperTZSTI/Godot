@@ -94,14 +94,15 @@ func _process(delta):
 		# kodzik z mrocznej uliczki
 		var instance = scene.instantiate()
 		instance.position = self.position
-		get_tree().root.get_node("level_01/world").add_child(instance)
+		get_tree().root.get_children()[0].get_node("world").add_child(instance)
 		code = ''
 	
 	get_tree().get_nodes_in_group("Global indicators")[1].text = "Cats: "+str(int(koteły))
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		if time>0 and game:
-			time = -1
+			# time = -1 # FOR DEBUG PURPOSES
+			pass
 		else:
 			get_tree().change_scene_to_file("res://menu/stage_select.tscn")
 	if time<0:

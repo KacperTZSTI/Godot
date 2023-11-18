@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=56 format=3 uid="uid://37viv4qcybul"]
 
 [ext_resource type="Script" path="res://levels/level_01/scripts/world.gd" id="1_71vqr"]
 [ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="1_pvhon"]
@@ -7,14 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://b4a7652vkfhqo" path="res://levels/level_01/images/cat.png" id="3_tue0s"]
 [ext_resource type="Script" path="res://levels/level_01/look_cat.gd" id="4_iobdo"]
 [ext_resource type="PackedScene" uid="uid://dpn8m21akcpl2" path="res://levels/sleep_cat.tscn" id="5_p48kh"]
+[ext_resource type="Script" path="res://levels/level_01/scripts/bus_cat.gd" id="6_0pmw1"]
 [ext_resource type="Texture2D" uid="uid://bcwg16pjcmkqi" path="res://levels/level_01/images/bus.png" id="6_avdft"]
 [ext_resource type="Texture2D" uid="uid://bypo8ux44m572" path="res://levels/level_01/images/1building.png" id="7_ateww"]
-[ext_resource type="Script" path="res://levels/cat_move.gd" id="8_4udc4"]
 [ext_resource type="Texture2D" uid="uid://butu6u6j3iaa4" path="res://levels/level_01/images/road.png" id="8_6a6ls"]
+[ext_resource type="PackedScene" uid="uid://cw22g6larxyp4" path="res://levels/mobile_self_propelled_artillery_cat.tscn" id="9_cncte"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/bus.gd" id="10_81sux"]
 [ext_resource type="Texture2D" uid="uid://bngnyjsc2u2m3" path="res://levels/level_01/images/bus_stop1.png" id="11_q1dt2"]
 [ext_resource type="Texture2D" uid="uid://daxn6u5kae2vn" path="res://levels/level_01/images/bus_stop2.png" id="12_o8fub"]
-[ext_resource type="PackedScene" uid="uid://dtutdl1irqj1b" path="res://ui.tscn" id="14_rp07i"]
+[ext_resource type="PackedScene" path="res://ui.tscn" id="14_rp07i"]
 [ext_resource type="Texture2D" uid="uid://bnfsyskx1av02" path="res://levels/level_01/images/backalley.png" id="23_iee4g"]
 [ext_resource type="Texture2D" uid="uid://2qy474t4n1yi" path="res://levels/level_01/images/floor1.png" id="23_nn6u3"]
 [ext_resource type="Texture2D" uid="uid://drmrahjxksdr8" path="res://levels/level_01/images/floor2.png" id="24_s3l6g"]
@@ -335,8 +336,10 @@ libraries = {
 }
 
 [node name="cat2" parent="world" instance=ExtResource("5_p48kh")]
+visible = false
 y_sort_enabled = true
 position = Vector2(-2705, 25)
+script = ExtResource("6_0pmw1")
 
 [node name="cat3" parent="world" instance=ExtResource("25_uuwy2")]
 position = Vector2(1145, 1499)
@@ -344,9 +347,7 @@ position = Vector2(1145, 1499)
 [node name="cat4" parent="world" instance=ExtResource("27_nkcqh")]
 position = Vector2(-672, -9176)
 
-[node name="cat5" parent="world" instance=ExtResource("27_nkcqh")]
-position = Vector2(-308, -399)
-script = ExtResource("8_4udc4")
+[node name="mobile_self_propelled_artillery_cat" parent="world" instance=ExtResource("9_cncte")]
 
 [node name="transitions" type="Node2D" parent="world"]
 position = Vector2(-311, -38.0009)
