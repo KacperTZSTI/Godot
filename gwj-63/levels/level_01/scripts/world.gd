@@ -4,10 +4,10 @@ extends Node2D
 var time = 0;
 var bus_exists = true;
 
-var BUS_EVENT_START = 100;
-var BUS_STOP = 121;
-var BUS_START_AGAIN = 128;
-var BUS_EVENT_END = 140
+var BUS_EVENT_START = 90-21;
+var BUS_STOP = 90;
+var BUS_START_AGAIN = 95;
+var BUS_EVENT_END = 180
 var BUS_SPEED = 350;
 
 func _ready():

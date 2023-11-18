@@ -618,6 +618,9 @@ position = Vector2(2801, 2509)
 [node name="TopLeft" parent="Player/Camera2D/Limits" index="1"]
 position = Vector2(-3927, -9600)
 
+[node name="music_player" parent="Player" index="6"]
+stream_paused = false
+
 [node name="UI" parent="." instance=ExtResource("14_rp07i")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
