@@ -10,6 +10,10 @@ var MAX_SPEED = 250
 var input_vector = Vector2.ZERO
 var MAX_TIME = 120
 
+#these are counted from end
+var START_FADE = 20
+var END_FADE = 0
+
 var koteły = 0
 var MAX_CATS = 5
 var kotek = null
@@ -26,8 +30,10 @@ var scene = null
 var sound = preload("res://sounds/step.mp3")
 var vt = 0;
 var sound_freq = 0.4
+var init_vol = 0
 
 func _ready():
+	init_vol = $music_player.volume_db
 	scene = preload("res://levels/koteł.tscn")
 	animation.active = true
 	time = MAX_TIME;
@@ -129,6 +135,11 @@ func _process(delta):
 			get_tree().get_nodes_in_group("Global indicators")[2].visible = true
 		else:
 			get_tree().get_nodes_in_group("Global indicators")[2].visible = false
+		
+		if time>END_FADE and time<START_FADE:
+			var FADE_DURATION = START_FADE - END_FADE
+			var factor = 1-(time-END_FADE)/FADE_DURATION
+			$music_player.volume_db = -60*factor
 		
 		time -= delta
 	

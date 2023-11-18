@@ -471,6 +471,9 @@ position = Vector2(4918, 9385)
 [node name="TopLeft" parent="Player/Camera2D/Limits" index="1"]
 position = Vector2(2, 587)
 
+[node name="music_player" parent="Player" index="6"]
+stream_paused = false
+
 [node name="UI" parent="." instance=ExtResource("4_d17sx")]
 
 [node name="public_key2" type="Sprite2D" parent="."]

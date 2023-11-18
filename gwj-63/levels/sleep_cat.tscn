@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dpn8m21akcpl2"]
 
 [ext_resource type="Texture2D" uid="uid://b4a7652vkfhqo" path="res://levels/level_01/images/cat.png" id="1_dvsnv"]
-[ext_resource type="Script" path="res://levels/level_01/koteł.gd" id="1_jvfi3"]
+[ext_resource type="Script" path="res://levels/koteł.gd" id="1_jvfi3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g77d2"]
 size = Vector2(100, 46)
