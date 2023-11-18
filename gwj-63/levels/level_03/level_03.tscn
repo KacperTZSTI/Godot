@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cq5gv1tr8bf6m" path="res://levels/koteł_yellow.tscn" id="5_6xuu6"]
 [ext_resource type="PackedScene" uid="uid://dtutdl1irqj1b" path="res://ui.tscn" id="5_cdb4e"]
 [ext_resource type="PackedScene" uid="uid://nnme7cyrjopf" path="res://levels/sleep_cat_yellow.tscn" id="6_ix3ul"]
-[ext_resource type="PackedScene" uid="uid://kk1s4gkevom8" path="res://levels/car_cat.tscn" id="6_liv0o"]
+[ext_resource type="PackedScene" uid="uid://kk1s4gkevom8" path="res://levels/koteł.tscn" id="6_liv0o"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/elevator.gd" id="7_p02ss"]
 [ext_resource type="Texture2D" uid="uid://bpyior50st7qf" path="res://levels/level_03/images/backroom.png" id="8_662fp"]
 
