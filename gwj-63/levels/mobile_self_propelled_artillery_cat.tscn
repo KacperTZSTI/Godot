@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw22g6larxyp4"]
+[gd_scene load_steps=3 format=3 uid="uid://cw22g6larxyp4"]
 
 [ext_resource type="Script" path="res://levels/cat_move.gd" id="1_1dg2h"]
-[ext_resource type="PackedScene" uid="uid://b5xpryqll8p8f" path="res://levels/bored_cat.tscn" id="2_hh2yk"]
-[ext_resource type="Script" path="res://levels/cat_move_child.gd" id="3_nif63"]
+[ext_resource type="PackedScene" uid="uid://cn3cb37eig60j" path="res://levels/walk_cat.tscn" id="2_dxhkn"]
 
 [node name="mobile_self_propelled_artillery_cat" type="Node2D"]
 position = Vector2(-315, -408)
 script = ExtResource("1_1dg2h")
 
-[node name="moving_cat" parent="." instance=ExtResource("2_hh2yk")]
-script = ExtResource("3_nif63")
-
 [node name="left_top" type="Node2D" parent="."]
 
 [node name="bottom_right" type="Node2D" parent="."]
 position = Vector2(354, 112)
+
+[node name="walk_cat" parent="." instance=ExtResource("2_dxhkn")]
+
+[connection signal="tree_exited" from="walk_cat" to="." method="_on_walk_cat_tree_exited"]

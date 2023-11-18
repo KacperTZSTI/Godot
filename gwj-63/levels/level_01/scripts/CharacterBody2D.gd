@@ -15,7 +15,7 @@ var START_FADE = 20
 var END_FADE = 0
 
 var koteły = 0
-var MAX_CATS = 5
+var MAX_CATS = 4
 var kotek = null
 var has_key = false
 var current_key = null # i don't quite know how i did this, so please dont touch it
@@ -33,7 +33,6 @@ var sound_freq = 0.4
 var init_vol = 0
 
 func _ready():
-	init_vol = $music_player.volume_db
 	scene = preload("res://levels/koteł.tscn")
 	animation.active = true
 	time = MAX_TIME;
@@ -72,25 +71,16 @@ func _process(delta):
 			current_key.delete()
 			has_key = false
 			
-	if code == 'uuddlrlra':
-		# konami code, without the 'b'
+	if code == 'drdrdu':
+		# map3 code
 		time += 999
-		code = ''
-	if code == 'ududa':
-		# simpler code
-		time = MAX_TIME
-		code = ''
-	if code == 'uudduudda':
-		# infinite cats
-		koteły = 999
-		time = -1
 		code = ''
 	if code == 'uaaa':
 		# spawn cat
 		koteły += 1
 		code = ''
-	if code == 'uuuulra':
-		# kodzik na szybkość
+	if code == 'ldrudl':
+		# map2 code1
 		MAX_SPEED *=2
 		ACCELERATION *=2
 		code = ''
@@ -99,9 +89,14 @@ func _process(delta):
 		MAX_SPEED =250
 		ACCELERATION = 40
 		code = ''
+	if code == 'uldlur':
+		# map2 code2
+		MAX_SPEED =250
+		ACCELERATION = 40
+		code = ''
 		
 	if code == 'udrdul':
-		# kodzik z mrocznej uliczki
+		# map1 code
 		var instance = scene.instantiate()
 		instance.position = self.position
 		get_tree().root.get_children()[0].get_node("world").add_child(instance)

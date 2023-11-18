@@ -11,7 +11,7 @@ var BUS_EVENT_END = 180
 var BUS_SPEED = 350;
 
 func _ready():
-	pass
+	Music.play_city()
 
 
 func _process(delta):

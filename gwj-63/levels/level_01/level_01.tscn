@@ -11,11 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://bcwg16pjcmkqi" path="res://levels/level_01/images/bus.png" id="6_avdft"]
 [ext_resource type="Texture2D" uid="uid://bypo8ux44m572" path="res://levels/level_01/images/1building.png" id="7_ateww"]
 [ext_resource type="Texture2D" uid="uid://butu6u6j3iaa4" path="res://levels/level_01/images/road.png" id="8_6a6ls"]
-[ext_resource type="PackedScene" uid="uid://cw22g6larxyp4" path="res://levels/mobile_self_propelled_artillery_cat.tscn" id="9_cncte"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/bus.gd" id="10_81sux"]
 [ext_resource type="Texture2D" uid="uid://bngnyjsc2u2m3" path="res://levels/level_01/images/bus_stop1.png" id="11_q1dt2"]
 [ext_resource type="Texture2D" uid="uid://daxn6u5kae2vn" path="res://levels/level_01/images/bus_stop2.png" id="12_o8fub"]
-[ext_resource type="PackedScene" path="res://ui.tscn" id="14_rp07i"]
+[ext_resource type="PackedScene" uid="uid://dtutdl1irqj1b" path="res://ui.tscn" id="14_rp07i"]
 [ext_resource type="Texture2D" uid="uid://bnfsyskx1av02" path="res://levels/level_01/images/backalley.png" id="23_iee4g"]
 [ext_resource type="Texture2D" uid="uid://2qy474t4n1yi" path="res://levels/level_01/images/floor1.png" id="23_nn6u3"]
 [ext_resource type="Texture2D" uid="uid://drmrahjxksdr8" path="res://levels/level_01/images/floor2.png" id="24_s3l6g"]
@@ -29,6 +28,7 @@
 [ext_resource type="Script" path="res://levels/level_01/scripts/key.gd" id="28_pdd8p"]
 [ext_resource type="Texture2D" uid="uid://by76l70bi733y" path="res://menu/menu_clouds1.png" id="28_sqfvc"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/gate.gd" id="30_u1i0b"]
+[ext_resource type="Texture2D" uid="uid://c5kxj854sykw3" path="res://levels/level_01/images/steps.png" id="32_45ycn"]
 [ext_resource type="PackedScene" uid="uid://c66lad12mixjt" path="res://levels/level_01/tree_2.tscn" id="34_utkey"]
 [ext_resource type="PackedScene" uid="uid://bvj8kymmvafey" path="res://levels/level_01/tree1.tscn" id="35_1n5wd"]
 [ext_resource type="Texture2D" uid="uid://dsr3ltm7rmdv0" path="res://levels/level_01/images/tilemap1.png" id="44_4q186"]
@@ -347,8 +347,6 @@ position = Vector2(1145, 1499)
 [node name="cat4" parent="world" instance=ExtResource("27_nkcqh")]
 position = Vector2(-672, -9176)
 
-[node name="mobile_self_propelled_artillery_cat" parent="world" instance=ExtResource("9_cncte")]
-
 [node name="transitions" type="Node2D" parent="world"]
 position = Vector2(-311, -38.0009)
 scale = Vector2(2.1583, 2.1583)
@@ -618,18 +616,18 @@ position = Vector2(2801, 2509)
 [node name="TopLeft" parent="Player/Camera2D/Limits" index="1"]
 position = Vector2(-3927, -9600)
 
-[node name="music_player" parent="Player" index="6"]
-stream_paused = false
+[node name="sfx_player" parent="Player" index="5"]
+bus = &"SFX"
 
 [node name="UI" parent="." instance=ExtResource("14_rp07i")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
-offset_left = -12138.0
-offset_top = -4092.0
-offset_right = 13915.0
-offset_bottom = 6516.0
-color = Color(1, 1, 0.101961, 1)
+offset_left = -12187.0
+offset_top = -4166.0
+offset_right = 13866.0
+offset_bottom = 6442.0
+color = Color(0.819608, 0.819608, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 z_index = -1
@@ -855,6 +853,12 @@ offset_top = -53.3334
 offset_right = 47.5897
 offset_bottom = -27.3334
 text = "KEY NEEDED"
+
+[node name="Steps" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-568, -1295)
+scale = Vector2(3.92742, 3.92742)
+texture = ExtResource("32_45ycn")
 
 [connection signal="body_entered" from="world/transitions/entrance/Area2D" to="world/transitions/entrance" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="world/transitions/floor2/Area2D" to="world/transitions/floor2" method="_on_area_2d_body_entered"]

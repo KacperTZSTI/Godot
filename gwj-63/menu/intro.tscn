@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxooplxgev1id"]
+
+[ext_resource type="Texture2D" uid="uid://dyhf4fdyn2fct" path="res://images/tutorial_simple.png" id="1_ibft4"]
+[ext_resource type="Texture2D" uid="uid://dwfjvxkryoi51" path="res://levels/level_01/images/pink_back.png" id="1_j57ge"]
+[ext_resource type="Script" path="res://menu/intro.gd" id="1_ye7hm"]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_ye7hm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(592, 366)
+scale = Vector2(1.548, 1.548)
+texture = ExtResource("1_ibft4")
+
+[node name="PinkBack" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(373, 241)
+scale = Vector2(269.1, 224.939)
+texture = ExtResource("1_j57ge")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://841mmxuqnoxb"
-path="res://.godot/imported/parking.png-023ea7f11df0edf8dd9997375a7eb8e3.ctex"
+uid="uid://dvylpstej3isw"
+path="res://.godot/imported/tileset3.png-4dd29344cc4205e8bbbda38e3da059a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/parking.png"
-dest_files=["res://.godot/imported/parking.png-023ea7f11df0edf8dd9997375a7eb8e3.ctex"]
+source_file="res://levels/level_03/images/tileset3.png"
+dest_files=["res://.godot/imported/tileset3.png-4dd29344cc4205e8bbbda38e3da059a3.ctex"]
 
 [params]
 

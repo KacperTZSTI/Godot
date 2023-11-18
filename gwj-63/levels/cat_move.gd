@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var anim = $walk_cat/AnimationPlayer
+
 var step = 0
 var MIN_X = 0
 var MIN_Y = 0
@@ -19,22 +21,30 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if step == 0:
-		if $moving_cat.position.x < MAX_X:
-			$moving_cat.position.x += speed * delta
+		anim.play("right")
+		if $walk_cat.position.x < MAX_X:
+			$walk_cat.position.x += speed * delta
 		else:
 			step = 1
 	if step == 1:
-		if $moving_cat.position.y < MAX_Y:
-			$moving_cat.position.y += speed * delta
+		anim.play("down")
+		if $walk_cat.position.y < MAX_Y:
+			$walk_cat.position.y += speed * delta
 		else:
 			step = 2
 	if step == 2:
-		if $moving_cat.position.x > MIN_X:
-			$moving_cat.position.x -= speed * delta
+		anim.play("left")
+		if $walk_cat.position.x > MIN_X:
+			$walk_cat.position.x -= speed * delta
 		else:
 			step = 3
 	if step == 3:
-		if $moving_cat.position.y > MIN_Y:
-			$moving_cat.position.y -= speed * delta
+		anim.play("up")
+		if $walk_cat.position.y > MIN_Y:
+			$walk_cat.position.y -= speed * delta
 		else:
 			step = 0
+
+
+func _on_walk_cat_tree_exited():
+	queue_free()

@@ -1,9 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://ds2ahvqrlklt"]
+[gd_scene load_steps=29 format=3 uid="uid://ds2ahvqrlklt"]
 
 [ext_resource type="Script" path="res://levels/level_01/scripts/CharacterBody2D.gd" id="1_fujts"]
 [ext_resource type="Texture2D" uid="uid://cjdtaqmy7rqha" path="res://cat_guy.png" id="2_6x25b"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="3_y12fn"]
-[ext_resource type="AudioStream" uid="uid://f7jq7o4bmghg" path="res://sounds/14-blues-progressions-and-left-hand-patterns.mp3" id="4_3jdby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmxiy"]
 size = Vector2(36, 39)
@@ -276,9 +275,3 @@ parameters/Idle/blend_position = Vector2(0, 1)
 parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="sfx_player" type="AudioStreamPlayer2D" parent="."]
-
-[node name="music_player" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_3jdby")
-autoplay = true
-stream_paused = true
-max_polyphony = 2
