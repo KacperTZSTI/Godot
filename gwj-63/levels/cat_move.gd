@@ -18,7 +18,6 @@ func _ready():
 	MAX_Y = $bottom_right.position.y
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if step == 0:
 		anim.play("right")
@@ -42,9 +41,13 @@ func _process(delta):
 		anim.play("up")
 		if $walk_cat.position.y > MIN_Y:
 			$walk_cat.position.y -= speed * delta
-		else:
-			step = 0
+	if $walk_cat.collected == true:
+		anim.play("catch")
+		step = 0
+	else:
+		step = 0
 
 
 func _on_walk_cat_tree_exited():
 	queue_free()
+

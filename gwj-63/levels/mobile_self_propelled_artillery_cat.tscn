@@ -14,4 +14,7 @@ position = Vector2(354, 112)
 
 [node name="walk_cat" parent="." instance=ExtResource("2_dxhkn")]
 
+[connection signal="renamed" from="walk_cat" to="." method="_on_walk_cat_renamed"]
 [connection signal="tree_exited" from="walk_cat" to="." method="_on_walk_cat_tree_exited"]
+
+[editable path="walk_cat"]

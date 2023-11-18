@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://burkne56r3blx"]
 
 [ext_resource type="Script" path="res://levels/level_03/world3.gd" id="1_jm6ev"]
-[ext_resource type="Texture2D" path="res://levels/level_03/images/tileset3.png" id="1_kuo6h"]
-[ext_resource type="Texture2D" path="res://levels/level_03/images/parking.png" id="2_ainmr"]
+[ext_resource type="Texture2D" uid="uid://dvylpstej3isw" path="res://levels/level_03/images/tileset3.png" id="1_kuo6h"]
+[ext_resource type="Texture2D" uid="uid://841mmxuqnoxb" path="res://levels/level_03/images/parking.png" id="2_ainmr"]
 [ext_resource type="PackedScene" uid="uid://clkx3wx0fi70l" path="res://levels/straight_cat _yellow.tscn" id="3_mx1p1"]
 [ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="4_qc6uy"]
 [ext_resource type="PackedScene" uid="uid://cq5gv1tr8bf6m" path="res://levels/koteł_yellow.tscn" id="5_6xuu6"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://nnme7cyrjopf" path="res://levels/sleep_cat_yellow.tscn" id="6_ix3ul"]
 [ext_resource type="PackedScene" uid="uid://kk1s4gkevom8" path="res://levels/koteł.tscn" id="6_liv0o"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/elevator.gd" id="7_p02ss"]
-[ext_resource type="Texture2D" path="res://levels/level_03/images/backroom.png" id="8_662fp"]
+[ext_resource type="Texture2D" uid="uid://bpyior50st7qf" path="res://levels/level_03/images/backroom.png" id="8_662fp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jlm71"]
 texture = ExtResource("1_kuo6h")
@@ -133,7 +133,7 @@ color = Color(0, 0, 0, 1)
 position = Vector2(568, -199)
 
 [node name="cat1" parent="world" instance=ExtResource("6_liv0o")]
-position = Vector2(721, 596)
+position = Vector2(718, 614)
 
 [node name="cat3" parent="world" instance=ExtResource("5_6xuu6")]
 position = Vector2(21, -1540)
