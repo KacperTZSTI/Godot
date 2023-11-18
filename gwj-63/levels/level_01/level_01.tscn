@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://levels/level_01/scripts/world.gd" id="1_71vqr"]
 [ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="1_pvhon"]
-[ext_resource type="PackedScene" uid="uid://kk1s4gkevom8" path="res://levels/koteł.tscn" id="2_3mtuv"]
+[ext_resource type="PackedScene" uid="uid://b4uq7orb0vefu" path="res://levels/cat.tscn" id="2_rkga2"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/elevator.gd" id="2_tbe64"]
 [ext_resource type="Texture2D" uid="uid://b4a7652vkfhqo" path="res://levels/level_01/images/cat.png" id="3_tue0s"]
 [ext_resource type="Script" path="res://levels/level_01/look_cat.gd" id="4_iobdo"]
@@ -318,19 +318,19 @@ y_sort_enabled = true
 script = ExtResource("1_71vqr")
 bus = NodePath("bus")
 
-[node name="cat1" parent="world" instance=ExtResource("2_3mtuv")]
-position = Vector2(-517, -2638)
+[node name="cat" parent="world" instance=ExtResource("2_rkga2")]
+position = Vector2(-535, -2673)
 
-[node name="look_cat" type="Sprite2D" parent="world/cat1"]
+[node name="look_cat" type="Sprite2D" parent="world/cat"]
 z_index = 1
-position = Vector2(110.866, 4017.88)
-scale = Vector2(4.26397, 4.26397)
+position = Vector2(74, 1992)
+scale = Vector2(2.07686, 2.07686)
 texture = ExtResource("3_tue0s")
 hframes = 41
 frame = 30
 script = ExtResource("4_iobdo")
 
-[node name="look_anim" type="AnimationPlayer" parent="world/cat1/look_cat"]
+[node name="look_anim" type="AnimationPlayer" parent="world/cat/look_cat"]
 libraries = {
 "": SubResource("AnimationLibrary_jvtf2")
 }
