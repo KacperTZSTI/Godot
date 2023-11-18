@@ -11,10 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://bypo8ux44m572" path="res://levels/level_01/images/1building.png" id="7_ateww"]
 [ext_resource type="Script" path="res://levels/cat_move.gd" id="8_4udc4"]
 [ext_resource type="Texture2D" uid="uid://butu6u6j3iaa4" path="res://levels/level_01/images/road.png" id="8_6a6ls"]
-[ext_resource type="FontFile" uid="uid://b4cn0jmcso7gx" path="res://fonts/joystix monospace.otf" id="9_3xjb8"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/bus.gd" id="10_81sux"]
 [ext_resource type="Texture2D" uid="uid://bngnyjsc2u2m3" path="res://levels/level_01/images/bus_stop1.png" id="11_q1dt2"]
 [ext_resource type="Texture2D" uid="uid://daxn6u5kae2vn" path="res://levels/level_01/images/bus_stop2.png" id="12_o8fub"]
+[ext_resource type="PackedScene" uid="uid://dtutdl1irqj1b" path="res://ui.tscn" id="14_rp07i"]
 [ext_resource type="Texture2D" uid="uid://bnfsyskx1av02" path="res://levels/level_01/images/backalley.png" id="23_iee4g"]
 [ext_resource type="Texture2D" uid="uid://2qy474t4n1yi" path="res://levels/level_01/images/floor1.png" id="23_nn6u3"]
 [ext_resource type="Texture2D" uid="uid://drmrahjxksdr8" path="res://levels/level_01/images/floor2.png" id="24_s3l6g"]
@@ -320,15 +320,6 @@ bus = NodePath("bus")
 [node name="cat1" parent="world" instance=ExtResource("2_3mtuv")]
 position = Vector2(-517, -2638)
 
-[node name="Label" type="Label" parent="world/cat1"]
-offset_left = -51.327
-offset_top = -160.14
-offset_right = 32.673
-offset_bottom = -129.14
-theme_override_font_sizes/font_size = 20
-text = "PRESS Z
-"
-
 [node name="look_cat" type="Sprite2D" parent="world/cat1"]
 z_index = 1
 position = Vector2(110.866, 4017.88)
@@ -621,82 +612,7 @@ position = Vector2(2801, 2509)
 [node name="TopLeft" parent="Player/Camera2D/Limits" index="1"]
 position = Vector2(-3927, -9600)
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Timer" type="Label" parent="UI" groups=["Global indicators"]]
-offset_left = 2.0
-offset_top = -2.0
-offset_right = 74.0
-offset_bottom = 24.0
-theme_override_fonts/font = ExtResource("9_3xjb8")
-theme_override_font_sizes/font_size = 50
-text = "adsgsadg"
-
-[node name="game over" type="Label" parent="UI" groups=["Game over items"]]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -25.0
-offset_bottom = -25.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("9_3xjb8")
-theme_override_font_sizes/font_size = 50
-text = "Game Over"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="cats" type="Label" parent="UI" groups=["Game over items"]]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("9_3xjb8")
-theme_override_font_sizes/font_size = 40
-text = "Collected cats: undefined"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="esc" type="Label" parent="UI" groups=["Game over items"]]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 111.0
-offset_bottom = 111.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("9_3xjb8")
-theme_override_font_sizes/font_size = 20
-text = "Press <escape> to go back to stage select screen"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="cat_realtime" type="Label" parent="UI" groups=["Global indicators"]]
-offset_left = 2.0
-offset_top = 71.0
-offset_right = 330.0
-offset_bottom = 134.0
-theme_override_fonts/font = ExtResource("9_3xjb8")
-theme_override_font_sizes/font_size = 50
-text = "Cats: 0"
-
-[node name="Key" type="Sprite2D" parent="UI" groups=["Global indicators"]]
-visible = false
-position = Vector2(79, 173)
-scale = Vector2(2, 2)
-texture = ExtResource("27_08ahr")
+[node name="UI" parent="." instance=ExtResource("14_rp07i")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
@@ -899,6 +815,13 @@ script = ExtResource("28_pdd8p")
 position = Vector2(-1.34648, 0.673233)
 shape = SubResource("RectangleShape2D_goft8")
 
+[node name="Label" type="Label" parent="public_key"]
+offset_left = -30.2959
+offset_top = -41.741
+offset_right = 30.7041
+offset_bottom = -15.741
+text = "PICK UP"
+
 [node name="SmolGate" type="Sprite2D" parent="."]
 position = Vector2(1155, 1263)
 scale = Vector2(1.21875, 1.21875)
@@ -916,6 +839,13 @@ shape = SubResource("RectangleShape2D_lcr5x")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SmolGate/StaticBody2D"]
 position = Vector2(-2.46155, -2.87183)
 shape = SubResource("RectangleShape2D_u5mb4")
+
+[node name="Label" type="Label" parent="SmolGate"]
+offset_left = -48.4103
+offset_top = -53.3334
+offset_right = 47.5897
+offset_bottom = -27.3334
+text = "KEY NEEDED"
 
 [connection signal="body_entered" from="world/transitions/entrance/Area2D" to="world/transitions/entrance" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="world/transitions/floor2/Area2D" to="world/transitions/floor2" method="_on_area_2d_body_entered"]

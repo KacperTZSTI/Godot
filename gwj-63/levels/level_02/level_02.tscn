@@ -1,0 +1,536 @@
+[gd_scene load_steps=27 format=3 uid="uid://bfjpsckowaelc"]
+
+[ext_resource type="Texture2D" uid="uid://detrm6to8iib1" path="res://levels/level_02/images/tileset2.png" id="1_uu8e1"]
+[ext_resource type="Texture2D" uid="uid://jncsy1oqefv4" path="res://levels/level_02/images/map2.png" id="2_tln1e"]
+[ext_resource type="PackedScene" uid="uid://cab8yvm07d1yc" path="res://levels/straight_cat _orange.tscn" id="3_g8d0a"]
+[ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="3_lg55p"]
+[ext_resource type="PackedScene" uid="uid://dtutdl1irqj1b" path="res://ui.tscn" id="4_d17sx"]
+[ext_resource type="PackedScene" uid="uid://texasyw26akt" path="res://levels/bushcat.tscn" id="4_krpae"]
+[ext_resource type="Texture2D" uid="uid://dspkf8nfhqmjr" path="res://levels/level_02/images/sewer1.png" id="5_i4ypf"]
+[ext_resource type="Texture2D" uid="uid://bjxa0305lr1mp" path="res://levels/level_02/images/sewer2.png" id="6_7ujcg"]
+[ext_resource type="Texture2D" uid="uid://bbv7ulic2ajob" path="res://levels/level_02/images/sewer3.png" id="7_2gool"]
+[ext_resource type="Texture2D" uid="uid://bh7n4qso0ha2j" path="res://levels/level_02/images/sewer4.png" id="8_o5q10"]
+[ext_resource type="Texture2D" uid="uid://r30fc6i7iv6f" path="res://levels/level_02/images/sewer5.png" id="9_fxgo2"]
+[ext_resource type="Texture2D" uid="uid://cutc1mfoditax" path="res://levels/level_02/images/sewer6.png" id="10_pufiu"]
+[ext_resource type="Script" path="res://levels/level_01/scripts/elevator.gd" id="11_psbfm"]
+[ext_resource type="Texture2D" uid="uid://dyuqgoe4wh84g" path="res://levels/level_01/images/key.png" id="14_s8oiv"]
+[ext_resource type="Script" path="res://levels/level_01/scripts/key.gd" id="15_vglci"]
+[ext_resource type="Texture2D" uid="uid://d141h3aiwkjqh" path="res://levels/level_02/images/smol_gate2.png" id="16_66nyh"]
+[ext_resource type="Script" path="res://levels/level_01/scripts/gate.gd" id="17_ljbtb"]
+[ext_resource type="PackedScene" uid="uid://xolnpngqm2dv" path="res://levels/level_02/river_1.tscn" id="18_0ing3"]
+[ext_resource type="PackedScene" uid="uid://co5nwcke2ghvu" path="res://levels/level_02/river_2.tscn" id="19_ai17b"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ew2yj"]
+texture = ExtResource("1_uu8e1")
+0:1/size_in_atlas = Vector2i(10, 15)
+0:1/0 = 0
+0:1/0/y_sort_origin = 75
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.625, 69.25, 11.875, 69, 12.125, 101.25, -6.625, 101.25)
+12:3/size_in_atlas = Vector2i(8, 13)
+12:3/0 = 0
+12:3/0/y_sort_origin = 60
+12:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+12:3/0/physics_layer_0/angular_velocity = 0.0
+12:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.96185, 43.776, 8.875, 43.75, 8.66206, 78.4889, -10.4298, 78.4889)
+22:3/size_in_atlas = Vector2i(10, 13)
+22:3/0 = 0
+22:3/0/y_sort_origin = 60
+22:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+22:3/0/physics_layer_0/angular_velocity = 0.0
+22:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.12, 46.5822, 9.40062, 46.5822, 9.68123, 86.149, -8.83939, 86.149)
+32:3/size_in_atlas = Vector2i(7, 13)
+32:3/0 = 0
+32:3/0/y_sort_origin = 60
+32:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+32:3/0/physics_layer_0/angular_velocity = 0.0
+32:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.8118, 39.0576, 6.4571, 39.3725, 6.01357, 81.0718, -12.1267, 80.9499)
+41:3/size_in_atlas = Vector2i(8, 13)
+41:3/0 = 0
+41:3/0/y_sort_origin = 60
+41:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+41:3/0/physics_layer_0/angular_velocity = 0.0
+41:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.25223, 37.7976, 13.3867, 38.1126, 14.0166, 81.8949, -3.30729, 81.8949)
+53:2/size_in_atlas = Vector2i(12, 13)
+53:2/0 = 0
+53:2/0/y_sort_origin = 70
+53:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+53:2/0/physics_layer_0/angular_velocity = 0.0
+53:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.13171, 37.4177, 18.9316, 37.4177, 29.1769, 90.4262, -13.1408, 91.3171)
+68:2/size_in_atlas = Vector2i(13, 13)
+68:2/0 = 0
+68:2/0/y_sort_origin = 70
+68:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+68:2/0/physics_layer_0/angular_velocity = 0.0
+68:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-19.8225, 40.5359, 9.13171, 40.0904, 14.0317, 93.5444, -33.186, 90.8717)
+0:16/size_in_atlas = Vector2i(27, 6)
+0:16/0 = 0
+0:16/0/y_sort_origin = 10
+0:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:16/0/physics_layer_0/angular_velocity = 0.0
+0:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-176.507, 13.4695, 92.8078, 12.3744, 93.445, 26.9391, -175.946, 26.3779)
+0:16/0/physics_layer_0/polygon_1/points = PackedVector2Array(162.104, 12.7279, 162.104, 25.8094, 187.207, 25.8094, 186.499, 12.3744)
+28:16/size_in_atlas = Vector2i(5, 6)
+28:16/0 = 0
+28:16/0/y_sort_origin = 20
+28:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+28:16/0/physics_layer_0/angular_velocity = 0.0
+28:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.54074, 16.2635, 22.8042, 16.2635, 22.8042, 31.4663, -6.89429, 31.1127)
+34:16/size_in_atlas = Vector2i(5, 6)
+34:16/0 = 0
+34:16/0/y_sort_origin = 10
+34:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+34:16/0/physics_layer_0/angular_velocity = 0.0
+34:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25.6326, 1.76777, 17.8544, 2.12132, 18.5616, 31.1127, -25.6326, 30.4056)
+40:16/size_in_atlas = Vector2i(5, 6)
+40:16/0 = 0
+40:16/0/y_sort_origin = 10
+40:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+40:16/0/physics_layer_0/angular_velocity = 0.0
+40:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-18.9151, 1.76777, 22.4506, 2.12132, 22.8042, 30.7591, -19.6222, 30.052)
+46:16/size_in_atlas = Vector2i(5, 6)
+46:16/0 = 0
+46:16/0/y_sort_origin = 15
+46:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+46:16/0/physics_layer_0/angular_velocity = 0.0
+46:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20.6829, 12.3744, 22.4506, 12.3744, 22.8042, 30.7591, -21.39, 31.4663)
+52:16/size_in_atlas = Vector2i(4, 6)
+52:16/0 = 0
+52:16/0/y_sort_origin = 10
+52:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+52:16/0/physics_layer_0/angular_velocity = 0.0
+52:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3.18198, 18.9151, 3.18198, 18.9151, 30.7591, -7.6014, 31.8198)
+60:16/size_in_atlas = Vector2i(8, 8)
+60:16/0 = 0
+60:16/0/y_sort_origin = 10
+60:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+60:16/0/physics_layer_0/angular_velocity = 0.0
+60:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.75, 3.5, 29.25, 3, 28.75, 45, -14.25, 45.5)
+72:17/size_in_atlas = Vector2i(8, 7)
+72:17/0 = 0
+72:17/0/y_sort_origin = 10
+72:17/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+72:17/0/physics_layer_0/angular_velocity = 0.0
+72:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.75, 8.5, 8, 8, 8.25, 32, -16.75, 32)
+82:17/size_in_atlas = Vector2i(7, 7)
+82:17/0 = 0
+82:17/0/y_sort_origin = 10
+82:17/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+82:17/0/physics_layer_0/angular_velocity = 0.0
+82:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5.5, 21.75, 7, 22.25, 30, -8.75, 29)
+91:16/size_in_atlas = Vector2i(8, 8)
+91:16/0 = 0
+91:16/0/y_sort_origin = 10
+91:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+91:16/0/physics_layer_0/angular_velocity = 0.0
+91:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.75, 10, 21.25, 10, 20.75, 34.5, -12.75, 34.5)
+100:16/size_in_atlas = Vector2i(7, 9)
+100:16/0 = 0
+100:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+100:16/0/physics_layer_0/angular_velocity = 0.0
+100:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.75, 10, 21.25, 10, 20.75, 34.5, -12.75, 34.5)
+0:23/size_in_atlas = Vector2i(19, 8)
+0:23/0 = 0
+0:23/0/z_index = 1
+0:23/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:23/0/physics_layer_0/angular_velocity = 0.0
+0:23/0/physics_layer_0/polygon_0/points = PackedVector2Array(-121.719, 35.4132, 127.488, 36.1134, 127.064, 51.6721, -121.942, 51.8948)
+21:25/size_in_atlas = Vector2i(5, 4)
+21:25/0 = 0
+21:25/0/z_index = -1
+21:25/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+21:25/0/physics_layer_0/angular_velocity = 0.0
+29:24/size_in_atlas = Vector2i(19, 7)
+29:24/0 = 0
+29:24/0/y_sort_origin = -49
+29:24/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+29:24/0/physics_layer_0/angular_velocity = 0.0
+29:24/0/physics_layer_0/polygon_0/points = PackedVector2Array(-130.739, 31.1815, 123.213, 33.234, 122.153, 42.78, -130.739, 43.2086)
+83:1/size_in_atlas = Vector2i(8, 14)
+83:1/0 = 0
+83:1/0/y_sort_origin = 70
+83:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+83:1/0/physics_layer_0/angular_velocity = 0.0
+83:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.73239, 77.8001, 5.19717, 73.0754, 3.93725, 95.124, -1.41741, 95.124)
+97:1/size_in_atlas = Vector2i(7, 14)
+97:1/0 = 0
+97:1/0/y_sort_origin = 70
+97:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+97:1/0/physics_layer_0/angular_velocity = 0.0
+97:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.9065, 75.2803, 20.9462, 74.3353, 21.5761, 96.069, 17.1664, 96.384)
+
+[sub_resource type="TileSet" id="TileSet_sguqm"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ew2yj")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1h5f"]
+size = Vector2(25.0197, 24.0933)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eaeur"]
+size = Vector2(25.0197, 24.0933)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fagrw"]
+size = Vector2(47.1269, 25.5832)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1518a"]
+size = Vector2(69.7436, 48.4103)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udtif"]
+size = Vector2(67.282, 27.4187)
+
+[node name="Level_02" type="Node2D"]
+y_sort_enabled = true
+
+[node name="world" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="world"]
+z_index = -1
+offset_left = -34255.0
+offset_top = -14686.0
+offset_right = 40767.0
+offset_bottom = 15027.0
+color = Color(0, 0.470588, 0.223529, 1)
+
+[node name="TileMap" type="TileMap" parent="world"]
+y_sort_enabled = true
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_sguqm")
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(3473440, 4456448, 2, 4980798, 3473408, 2, 1966119, 3473408, 2, 4980775, 3473408, 2, 4194329, 2686976, 3, 3604520, 2097152, 3, 2687001, 1441792, 3, 3080227, 786432, 3, 3407895, 0, 1, 1638433, 0, 1, 2359363, 0, 1, 5177400, 786432, 3, 5242916, 2097152, 3, 4456516, 2097152, 3, 4587578, 2686976, 3, 1835064, 2686976, 3, 1704006, 786432, 3, 2687030, 2686976, 3, 1835072, 5373952, 17, 2228281, 5963776, 16, 2555970, 6553600, 16, 2424875, 5963776, 16, 1900588, 4718592, 17, 1769503, 3932160, 16, 2097188, 5373952, 17, 4128802, 5373952, 17, 2949148, 5373952, 17, 3735576, 5373952, 17, 3735588, 6553600, 16, 4456472, 6553600, 16, 2621463, 6553600, 16, 2490396, 6553600, 16, 3211303, 4718592, 17, 3670095, 1376256, 25, 3670109, 1376256, 25, 4522063, 1376256, 25, 4522077, 1376256, 25, 5308495, 1376256, 25, 5308509, 1376256, 25, 1900624, 2621440, 16, 2097243, 2621440, 16, 2490450, 2228224, 16, 2752600, 1835008, 16, 2424925, 3407872, 16, 2228310, 2621440, 16, 2752573, 2621440, 16, 1835079, 3407872, 16, 5242949, 5963776, 16, 4718646, 5373952, 17, 5373983, 5373952, 17, 4915243, 5963776, 16, 3276852, 5439488, 1, 3276870, 6356992, 1, 3014744, 0, 16, 2162695, 1900544, 24, 2424838, 0, 23, 2359299, 2621440, 16, 2490373, 3014656, 16, 2359302, 3407872, 16, 2424834, 2228224, 16, 2228230, 2228224, 16, 2228227, 2228224, 16)
+
+[node name="TextureRect" type="TextureRect" parent="world"]
+z_index = -1
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 4059.0
+offset_bottom = 3653.0
+texture = ExtResource("2_tln1e")
+
+[node name="cat2" parent="world" instance=ExtResource("3_g8d0a")]
+position = Vector2(2825, 1145)
+
+[node name="cat3" parent="world" instance=ExtResource("4_krpae")]
+position = Vector2(2018, 1075)
+
+[node name="cat4" parent="world" instance=ExtResource("4_krpae")]
+position = Vector2(2222, 2417)
+
+[node name="Sewers" type="Node2D" parent="world"]
+
+[node name="Sewer1" type="Sprite2D" parent="world/Sewers"]
+position = Vector2(938, 4937)
+scale = Vector2(1.69, 1.69)
+texture = ExtResource("5_i4ypf")
+
+[node name="Sewer2" type="Sprite2D" parent="world/Sewers"]
+position = Vector2(2992, 4947)
+scale = Vector2(1.825, 1.825)
+texture = ExtResource("6_7ujcg")
+
+[node name="Sewer3" type="Sprite2D" parent="world/Sewers"]
+position = Vector2(981, 6553)
+scale = Vector2(1.82, 1.82)
+texture = ExtResource("7_2gool")
+
+[node name="Sewer4" type="Sprite2D" parent="world/Sewers"]
+position = Vector2(3006.5, 6579.5)
+scale = Vector2(1.8825, 1.8825)
+texture = ExtResource("8_o5q10")
+
+[node name="Sewer5" type="Sprite2D" parent="world/Sewers"]
+position = Vector2(1033, 8137)
+scale = Vector2(1.8275, 1.8275)
+texture = ExtResource("9_fxgo2")
+
+[node name="Sewer6" type="Sprite2D" parent="world/Sewers"]
+position = Vector2(3080.75, 8127.25)
+scale = Vector2(1.74625, 1.74625)
+texture = ExtResource("10_pufiu")
+
+[node name="ColorRect" type="ColorRect" parent="world/Sewers"]
+z_index = -1
+offset_left = -1472.0
+offset_top = 3624.0
+offset_right = 5651.0
+offset_bottom = 9442.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="transitions" type="Node2D" parent="world"]
+
+[node name="entrance1" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(2550, 1826)
+script = ExtResource("11_psbfm")
+dest = NodePath("../sewer1/dest")
+
+[node name="Area2D" type="Area2D" parent="world/transitions/entrance1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/entrance1/Area2D"]
+position = Vector2(1.15833, -0.463327)
+shape = SubResource("RectangleShape2D_e1h5f")
+
+[node name="dest" type="Node2D" parent="world/transitions/entrance1"]
+position = Vector2(-7.58171e-05, -73)
+
+[node name="entrance2" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(2998, 1816)
+script = ExtResource("11_psbfm")
+dest = NodePath("../sewer2/dest")
+
+[node name="Area2D" type="Area2D" parent="world/transitions/entrance2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/entrance2/Area2D"]
+position = Vector2(1.15833, -0.463327)
+shape = SubResource("RectangleShape2D_e1h5f")
+
+[node name="dest" type="Node2D" parent="world/transitions/entrance2"]
+position = Vector2(-2.00008, -57)
+
+[node name="entrance3" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(2553, 2245)
+script = ExtResource("11_psbfm")
+dest = NodePath("../sewer3/dest")
+
+[node name="Area2D" type="Area2D" parent="world/transitions/entrance3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/entrance3/Area2D"]
+position = Vector2(1.15833, -0.463327)
+shape = SubResource("RectangleShape2D_e1h5f")
+
+[node name="dest" type="Node2D" parent="world/transitions/entrance3"]
+position = Vector2(-8.00008, -70)
+
+[node name="entrance4" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(2994, 2239)
+script = ExtResource("11_psbfm")
+dest = NodePath("../sewer4/dest")
+
+[node name="Area2D" type="Area2D" parent="world/transitions/entrance4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/entrance4/Area2D"]
+position = Vector2(1.15833, -0.463327)
+shape = SubResource("RectangleShape2D_e1h5f")
+
+[node name="dest" type="Node2D" parent="world/transitions/entrance4"]
+position = Vector2(4.99992, -57)
+
+[node name="entrance5" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(2550, 2617)
+script = ExtResource("11_psbfm")
+dest = NodePath("../sewer5/dest")
+
+[node name="Area2D" type="Area2D" parent="world/transitions/entrance5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/entrance5/Area2D"]
+position = Vector2(1.15833, -0.463327)
+shape = SubResource("RectangleShape2D_e1h5f")
+
+[node name="dest" type="Node2D" parent="world/transitions/entrance5"]
+position = Vector2(-7.58171e-05, -67)
+
+[node name="entrance6" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(3001, 2626)
+script = ExtResource("11_psbfm")
+dest = NodePath("../sewer6/dest")
+
+[node name="Area2D" type="Area2D" parent="world/transitions/entrance6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/entrance6/Area2D"]
+position = Vector2(1.15833, -0.463327)
+shape = SubResource("RectangleShape2D_e1h5f")
+
+[node name="dest" type="Node2D" parent="world/transitions/entrance6"]
+position = Vector2(-2.00008, -60)
+
+[node name="sewer1" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(1201, 4850)
+script = ExtResource("11_psbfm")
+dest = NodePath("../entrance1/dest")
+
+[node name="Area2D" type="Area2D" parent="world/transitions/sewer1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/sewer1/Area2D"]
+position = Vector2(-7.87659, -0.463379)
+shape = SubResource("RectangleShape2D_eaeur")
+
+[node name="dest" type="Node2D" parent="world/transitions/sewer1"]
+position = Vector2(-6.99995, 67.0001)
+
+[node name="sewer2" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(3271, 4866)
+script = ExtResource("11_psbfm")
+dest = NodePath("../entrance2/dest")
+
+[node name="Area2D" type="Area2D" parent="world/transitions/sewer2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/sewer2/Area2D"]
+position = Vector2(-7.87659, -0.463379)
+shape = SubResource("RectangleShape2D_eaeur")
+
+[node name="dest" type="Node2D" parent="world/transitions/sewer2"]
+position = Vector2(-6.99995, 67.0001)
+
+[node name="sewer3" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(1269, 6489)
+script = ExtResource("11_psbfm")
+dest = NodePath("../entrance3/dest")
+
+[node name="Area2D" type="Area2D" parent="world/transitions/sewer3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/sewer3/Area2D"]
+position = Vector2(-7.87659, -0.463379)
+shape = SubResource("RectangleShape2D_eaeur")
+
+[node name="dest" type="Node2D" parent="world/transitions/sewer3"]
+position = Vector2(-6.99995, 67.0001)
+
+[node name="sewer4" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(3289, 6511)
+script = ExtResource("11_psbfm")
+dest = NodePath("../entrance4/dest")
+
+[node name="Area2D" type="Area2D" parent="world/transitions/sewer4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/sewer4/Area2D"]
+position = Vector2(-7.87659, -0.463379)
+shape = SubResource("RectangleShape2D_eaeur")
+
+[node name="dest" type="Node2D" parent="world/transitions/sewer4"]
+position = Vector2(-6.99995, 67.0001)
+
+[node name="sewer5" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(1322, 8069)
+script = ExtResource("11_psbfm")
+dest = NodePath("../entrance5/dest")
+
+[node name="Area2D" type="Area2D" parent="world/transitions/sewer5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/sewer5/Area2D"]
+position = Vector2(-7.87659, -0.463379)
+shape = SubResource("RectangleShape2D_eaeur")
+
+[node name="dest" type="Node2D" parent="world/transitions/sewer5"]
+position = Vector2(-6.99995, 67.0001)
+
+[node name="sewer6" type="Node2D" parent="world/transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(3354, 8050)
+script = ExtResource("11_psbfm")
+dest = NodePath("../entrance6/dest")
+
+[node name="Area2D" type="Area2D" parent="world/transitions/sewer6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/transitions/sewer6/Area2D"]
+position = Vector2(-7.87659, -0.463379)
+shape = SubResource("RectangleShape2D_eaeur")
+
+[node name="dest" type="Node2D" parent="world/transitions/sewer6"]
+position = Vector2(-6.99995, 67.0001)
+
+[node name="collisions" type="StaticBody2D" parent="world"]
+
+[node name="fence" type="CollisionPolygon2D" parent="world/collisions"]
+position = Vector2(1, 0)
+polygon = PackedVector2Array(2467, 1530, 2470, 824, 3180, 824, 3183, 1527, 3197, 1527, 3190.37, 821.848, 3190, 782, 2453, 783, 2455, 1534)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world/collisions"]
+polygon = PackedVector2Array(468, 1137, 161, 1136, 472, 637, 3188, 641, 3192, 2944, 471, 2948, 472, 1302, 155, 1302, 214, 3243, 3595, 3230, 3398, 397, 187, 451, 165, 1007, 471, 637)
+
+[node name="sewer" type="CollisionPolygon2D" parent="world/collisions"]
+polygon = PackedVector2Array(655, 4975, 651, 5113, 679, 5109, 682, 5025, 1142, 5027, 1140, 4766, 1249, 4766, 1250, 5110, 651, 5110, 649, 5264, 1379, 5273, 1353, 4703, 1065, 4704, 655, 4853)
+
+[node name="sewer2" type="CollisionPolygon2D" parent="world/collisions"]
+position = Vector2(64, 1635)
+polygon = PackedVector2Array(609, 4982, 612, 5116, 614, 5117, 612, 5024, 1142, 5027, 1140, 4766, 1249, 4766, 1251, 5107, 614, 5106, 615, 5267, 1379, 5273, 1353, 4703, 1065, 4704, 655, 4853)
+
+[node name="sewer3" type="CollisionPolygon2D" parent="world/collisions"]
+position = Vector2(2072, 29)
+polygon = PackedVector2Array(609, 4982, 612, 5116, 614, 5110, 612, 5024, 1142, 5027, 1140, 4766, 1249, 4766, 1251, 5105, 617, 5105, 615, 5267, 1379, 5273, 1353, 4703, 1065, 4704, 655, 4853)
+
+[node name="sewer4" type="CollisionPolygon2D" parent="world/collisions"]
+position = Vector2(2100, 1656)
+polygon = PackedVector2Array(592, 4984, 591, 5117, 595, 5117, 595, 5028, 1142, 5027, 1140, 4766, 1249, 4766, 1251, 5117, 595, 5116, 599, 5266, 1379, 5273, 1353, 4703, 1065, 4704, 655, 4853)
+
+[node name="sewer5" type="CollisionPolygon2D" parent="world/collisions"]
+position = Vector2(118, 3212)
+polygon = PackedVector2Array(609, 4982, 612, 5116, 614, 5117, 612, 5024, 1142, 5027, 1140, 4766, 1249, 4766, 1250, 5110, 615, 5110, 615, 5267, 1379, 5273, 1353, 4703, 1065, 4704, 655, 4853)
+
+[node name="sewer6" type="CollisionPolygon2D" parent="world/collisions"]
+position = Vector2(2154, 3205)
+polygon = PackedVector2Array(609, 4982, 632, 5024, 607, 5026, 610, 5093, 641, 5101, 640, 5027, 1142, 5027, 1140, 4766, 1249, 4766, 1249, 5105, 660, 5104, 617, 5104, 615, 5267, 1379, 5273, 1353, 4703, 1065, 4704, 655, 4853)
+
+[node name="Player" parent="." instance=ExtResource("3_lg55p")]
+position = Vector2(2008, 1774)
+
+[node name="BottomRight" parent="Player/Camera2D/Limits" index="0"]
+position = Vector2(4918, 9385)
+
+[node name="TopLeft" parent="Player/Camera2D/Limits" index="1"]
+position = Vector2(2, 587)
+
+[node name="UI" parent="." instance=ExtResource("4_d17sx")]
+
+[node name="public_key2" type="Sprite2D" parent="."]
+position = Vector2(2756, 6728)
+scale = Vector2(1.48535, 1.48535)
+texture = ExtResource("14_s8oiv")
+script = ExtResource("15_vglci")
+
+[node name="Area2D" type="Area2D" parent="public_key2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="public_key2/Area2D"]
+position = Vector2(-1.34648, 0.673233)
+shape = SubResource("RectangleShape2D_fagrw")
+
+[node name="SmolGate" type="Sprite2D" parent="."]
+position = Vector2(3073, 1499)
+scale = Vector2(2.22476, 2.22476)
+texture = ExtResource("16_66nyh")
+script = ExtResource("17_ljbtb")
+
+[node name="Area2D" type="Area2D" parent="SmolGate"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmolGate/Area2D"]
+position = Vector2(-2.87183, -1.23096)
+shape = SubResource("RectangleShape2D_1518a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SmolGate"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmolGate/StaticBody2D"]
+position = Vector2(-2.46143, 1.12366)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_udtif")
+
+[node name="river1" parent="." instance=ExtResource("18_0ing3")]
+z_index = -1
+position = Vector2(2272, 3292)
+scale = Vector2(2, 2)
+
+[node name="river2" parent="." instance=ExtResource("19_ai17b")]
+position = Vector2(283, 1936)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" parent="river2" index="0"]
+z_index = -1
+
+[connection signal="body_entered" from="world/transitions/entrance1/Area2D" to="world/transitions/entrance1" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/entrance2/Area2D" to="world/transitions/entrance2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/entrance3/Area2D" to="world/transitions/entrance3" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/entrance4/Area2D" to="world/transitions/entrance4" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/entrance5/Area2D" to="world/transitions/entrance5" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/entrance6/Area2D" to="world/transitions/entrance6" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/sewer1/Area2D" to="world/transitions/sewer1" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/sewer2/Area2D" to="world/transitions/sewer2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/sewer3/Area2D" to="world/transitions/sewer3" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/sewer4/Area2D" to="world/transitions/sewer4" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/sewer5/Area2D" to="world/transitions/sewer5" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="world/transitions/sewer6/Area2D" to="world/transitions/sewer6" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="public_key2/Area2D" to="public_key2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="public_key2/Area2D" to="public_key2" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="SmolGate/Area2D" to="SmolGate" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="SmolGate/Area2D" to="SmolGate" method="_on_area_2d_body_exited"]
+
+[editable path="Player"]
+[editable path="river1"]
+[editable path="river2"]
