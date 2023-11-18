@@ -88,4 +88,4 @@ texture = ExtResource("5_6lsy4")
 
 [connection signal="button_down" from="Control/level-1" to="Control" method="_on_l1_pressed"]
 [connection signal="pressed" from="Control/level-2" to="Control" method="_on_level_2_pressed"]
-[connection signal="pressed" from="Control/level-3" to="Control" method="_on_level_2_pressed"]
+[connection signal="pressed" from="Control/level-3" to="Control" method="_on_level_3_pressed"]

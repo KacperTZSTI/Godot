@@ -17,3 +17,6 @@ func _on_l1_pressed():
 
 func _on_level_2_pressed():
 	get_tree().change_scene_to_file("res://levels/level_02/level_02.tscn")
+
+func _on_level_3_pressed():
+	get_tree().change_scene_to_file("res://levels/level_03/level_03.tscn")

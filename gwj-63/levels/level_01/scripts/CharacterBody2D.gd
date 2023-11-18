@@ -111,6 +111,8 @@ func _process(delta):
 			get_tree().change_scene_to_file("res://menu/stage_select.tscn")
 	if time<0:
 		game = false
+		Music.set_volume(1)
+		Music.play_menu()
 		for item in get_tree().get_nodes_in_group("Game over items"):
 			item.visible = true
 		get_tree().get_nodes_in_group("Game over items")[1].text  = "Collected cats: "+str(int(koteły))
