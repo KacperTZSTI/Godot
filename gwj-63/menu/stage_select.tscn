@@ -21,6 +21,17 @@ offset_top = 36.0
 offset_bottom = 36.0
 script = ExtResource("2_7qjaf")
 
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 30.0
+offset_right = 421.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("4_q40ed")
+theme_override_font_sizes/font_size = 30
+text = "Select stage"
+script = ExtResource("3_4xl66")
+
 [node name="level-1" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 141.0
@@ -69,16 +80,21 @@ text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="Control"]
+[node name="level-4" type="Button" parent="Control"]
+visible = false
+offset_left = 630.0
+offset_top = 133.0
+offset_right = 734.0
+offset_bottom = 237.0
+
+[node name="Label" type="Label" parent="Control/level-4"]
 layout_mode = 0
-offset_left = 126.0
-offset_top = 30.0
-offset_right = 421.0
-offset_bottom = 75.0
-theme_override_fonts/font = ExtResource("4_q40ed")
-theme_override_font_sizes/font_size = 30
-text = "Select stage"
-script = ExtResource("3_4xl66")
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 60
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PinkBack" type="Sprite2D" parent="."]
 z_index = -1
@@ -89,3 +105,4 @@ texture = ExtResource("5_6lsy4")
 [connection signal="button_down" from="Control/level-1" to="Control" method="_on_l1_pressed"]
 [connection signal="pressed" from="Control/level-2" to="Control" method="_on_level_2_pressed"]
 [connection signal="pressed" from="Control/level-3" to="Control" method="_on_level_3_pressed"]
+[connection signal="pressed" from="Control/level-4" to="Control" method="_on_level_4_pressed"]
