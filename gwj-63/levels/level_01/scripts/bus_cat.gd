@@ -1,7 +1,7 @@
 extends "res://levels/koteł.gd"
 
 var time = 0;
-var TIME_VISIBLE = 122
+var TIME_VISIBLE = 91
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

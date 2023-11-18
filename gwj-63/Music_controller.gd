@@ -6,6 +6,8 @@ extends Node
 @onready var mall = load("res://music/MALL.mp3")
 @onready var what = load("res://music/CITY.mp3")
 
+func set_volume(vol):
+	$AudioStreamPlayer.volume_db = vol
 
 func play_menu():
 	$AudioStreamPlayer.stream = menu

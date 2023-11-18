@@ -3,15 +3,24 @@ extends Node2D
 
 @onready var anim = $AnimationPlayer
 
+var collected = false
+var collected_time = 0
+var MAX_TIME = 0.5
+
 func _ready():
 	anim.play("idle")
 
 
 func _process(delta):
-	pass
+	if collected:
+		if collected_time>MAX_TIME:
+			queue_free()
+		collected_time += delta
 	
 func delete():
-	queue_free()
+	collected = true
+	anim.play("catch")
+	print("collected")
 	
 func interact(node):
 	if 'koteły' in node:
