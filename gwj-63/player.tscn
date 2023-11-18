@@ -273,3 +273,5 @@ parameters/conditions/idle = false
 parameters/conditions/moving = false
 parameters/Idle/blend_position = Vector2(0, 1)
 parameters/Walk/blend_position = Vector2(0, 0)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

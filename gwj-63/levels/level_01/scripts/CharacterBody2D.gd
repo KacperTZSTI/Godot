@@ -23,6 +23,10 @@ var time = MAX_TIME
 var game = true;
 var scene = null
 
+var sound = preload("res://sounds/step.mp3")
+var vt = 0;
+var sound_freq = 0.4
+
 func _ready():
 	scene = preload("res://levels/koteł.tscn")
 	animation.active = true
@@ -137,6 +141,11 @@ func movement(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
+		vt += delta
+		if vt>sound_freq:
+			$AudioStreamPlayer2D.stream = sound
+			$AudioStreamPlayer2D.play()
+			vt = 0
 		animation.set("parameters/Idle/blend_position", input_vector)
 		animation.set("parameters/Walk/blend_position", input_vector)
 		animation["parameters/conditions/moving"] = true
