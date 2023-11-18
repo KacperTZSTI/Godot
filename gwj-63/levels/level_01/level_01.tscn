@@ -612,6 +612,11 @@ shape = SubResource("RectangleShape2D_0m6d8")
 position = Vector2(3913, 9221)
 polygon = PackedVector2Array(-2729, -7975, -2351, -7976, -2352, -7575, -2894, -7576, -2894, -7980, -2795, -7980, -2795, -7949, -2884, -7946, -2884, -7600, -2363, -7600, -2366, -7947, -2729, -7943)
 
+[node name="house_fence2" type="CollisionPolygon2D" parent="world/collisions_fix"]
+position = Vector2(-10335, 2733)
+rotation = -4.44498
+polygon = PackedVector2Array(-2611.36, -8123.72, -2599.72, -8069.88, -2458.96, -7548.55, -2418.73, -7420.63, -2412.65, -7398.45, -2703.48, -7320.84, -2870.12, -7925.29, -2883.7, -7990, -2670.12, -8050.59, -2668.18, -8039.72, -2855.02, -7987.49, -2679.65, -7339.81, -2433.54, -7410.35, -2609.61, -8056.8, -2628.02, -8120.19)
+
 [node name="Player" parent="." instance=ExtResource("1_pvhon")]
 position = Vector2(-145, -430)
 
