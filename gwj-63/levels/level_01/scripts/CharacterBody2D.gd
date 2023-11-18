@@ -143,8 +143,8 @@ func movement(delta):
 	if input_vector != Vector2.ZERO:
 		vt += delta
 		if vt>sound_freq:
-			$AudioStreamPlayer2D.stream = sound
-			$AudioStreamPlayer2D.play()
+			$sfx_player.stream = sound
+			$sfx_player.play()
 			vt = 0
 		animation.set("parameters/Idle/blend_position", input_vector)
 		animation.set("parameters/Walk/blend_position", input_vector)
