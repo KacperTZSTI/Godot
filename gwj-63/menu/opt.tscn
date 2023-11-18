@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://e0ar5qrufxf7"]
+[gd_scene load_steps=10 format=3 uid="uid://e0ar5qrufxf7"]
 
 [ext_resource type="Script" path="res://menu/opt.gd" id="1_734qp"]
 [ext_resource type="Script" path="res://menu/options.gd" id="2_cjh0d"]
 [ext_resource type="PackedScene" uid="uid://bbw52brc363ty" path="res://button.tscn" id="3_s7x0p"]
 [ext_resource type="FontFile" uid="uid://b4cn0jmcso7gx" path="res://fonts/joystix monospace.otf" id="4_wy2jc"]
 [ext_resource type="Texture2D" uid="uid://dwfjvxkryoi51" path="res://levels/level_01/images/pink_back.png" id="5_7q17q"]
-[ext_resource type="Texture2D" uid="uid://eou7pakhnpv2" path="res://images/kotel1.png" id="6_tln5u"]
 [ext_resource type="Script" path="res://menu/label_opt.gd" id="8_gpjwv"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kvhvi"]
@@ -55,13 +54,6 @@ offset_right = 270.0
 offset_bottom = 236.0
 focus_neighbor_top = NodePath("../CheckButton")
 text = "BACK"
-
-[node name="Kotel4" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(81, 72)
-rotation = 2.74101
-scale = Vector2(0.0893185, 0.0893185)
-texture = ExtResource("6_tln5u")
 
 [node name="PinkBack" type="Sprite2D" parent="."]
 z_index = -1

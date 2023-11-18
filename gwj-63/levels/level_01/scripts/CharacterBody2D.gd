@@ -91,8 +91,7 @@ func _process(delta):
 		code = ''
 	if code == 'uldlur':
 		# map2 code2
-		MAX_SPEED =250
-		ACCELERATION = 40
+		has_key = true
 		code = ''
 		
 	if code == 'udrdul':
@@ -134,7 +133,7 @@ func _process(delta):
 		if time>END_FADE and time<START_FADE:
 			var FADE_DURATION = START_FADE - END_FADE
 			var factor = 1-(time-END_FADE)/FADE_DURATION
-			$music_player.volume_db = -60*factor
+			Music.set_volume(-60*factor)
 		
 		time -= delta
 	

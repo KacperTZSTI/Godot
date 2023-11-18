@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtutdl1irqj1b"]
+[gd_scene load_steps=3 format=3 uid="uid://bevhuohravqki"]
 
 [ext_resource type="FontFile" uid="uid://b4cn0jmcso7gx" path="res://fonts/joystix monospace.otf" id="1_o6gou"]
 [ext_resource type="Texture2D" uid="uid://dyuqgoe4wh84g" path="res://levels/level_01/images/key.png" id="2_t4mtc"]

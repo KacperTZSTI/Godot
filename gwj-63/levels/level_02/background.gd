@@ -3,8 +3,8 @@ extends ColorRect
 var time  = 0
 
 # level 2 lasts 120s
-var TRANSITION_START = 95
-var TRANSITION_DURATION = 110
+var TRANSITION_START = 10
+var TRANSITION_DURATION = 20
 
 var R_START = 0
 var G_START = 0.47

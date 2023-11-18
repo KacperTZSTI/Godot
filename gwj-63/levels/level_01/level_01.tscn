@@ -14,7 +14,7 @@
 [ext_resource type="Script" path="res://levels/level_01/scripts/bus.gd" id="10_81sux"]
 [ext_resource type="Texture2D" uid="uid://bngnyjsc2u2m3" path="res://levels/level_01/images/bus_stop1.png" id="11_q1dt2"]
 [ext_resource type="Texture2D" uid="uid://daxn6u5kae2vn" path="res://levels/level_01/images/bus_stop2.png" id="12_o8fub"]
-[ext_resource type="PackedScene" uid="uid://dtutdl1irqj1b" path="res://ui.tscn" id="14_rp07i"]
+[ext_resource type="PackedScene" path="res://ui.tscn" id="14_rp07i"]
 [ext_resource type="Texture2D" uid="uid://bnfsyskx1av02" path="res://levels/level_01/images/backalley.png" id="23_iee4g"]
 [ext_resource type="Texture2D" uid="uid://2qy474t4n1yi" path="res://levels/level_01/images/floor1.png" id="23_nn6u3"]
 [ext_resource type="Texture2D" uid="uid://drmrahjxksdr8" path="res://levels/level_01/images/floor2.png" id="24_s3l6g"]
