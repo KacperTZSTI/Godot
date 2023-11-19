@@ -17,12 +17,12 @@
 [ext_resource type="Script" path="res://levels/level_01/scripts/elevator.gd" id="11_psbfm"]
 [ext_resource type="PackedScene" uid="uid://cw22g6larxyp4" path="res://levels/mobile_self_propelled_artillery_cat.tscn" id="13_o6215"]
 [ext_resource type="Texture2D" uid="uid://dyuqgoe4wh84g" path="res://levels/level_01/images/key.png" id="14_s8oiv"]
-[ext_resource type="PackedScene" uid="uid://2lt1osarfapt" path="res://hugo.tscn" id="15_ajy0h"]
+[ext_resource type="PackedScene" uid="uid://boy0djkbvweyc" path="res://hugo.tscn" id="15_ajy0h"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/key.gd" id="15_vglci"]
 [ext_resource type="Texture2D" uid="uid://d141h3aiwkjqh" path="res://levels/level_03/images/smol_gate2.png" id="16_66nyh"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/gate.gd" id="17_ljbtb"]
-[ext_resource type="PackedScene" uid="uid://xolnpngqm2dv" path="res://levels/level_03/river_1.tscn" id="18_0ing3"]
-[ext_resource type="PackedScene" uid="uid://co5nwcke2ghvu" path="res://levels/level_03/river_2.tscn" id="19_ai17b"]
+[ext_resource type="PackedScene" path="res://levels/level_03/river_1.tscn" id="18_0ing3"]
+[ext_resource type="PackedScene" path="res://levels/level_03/river_2.tscn" id="19_ai17b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ew2yj"]
 texture = ExtResource("1_uu8e1")
@@ -491,6 +491,12 @@ position = Vector2(2, 587)
 bus = &"SFX"
 
 [node name="UI" parent="." instance=ExtResource("4_d17sx")]
+scale = Vector2(1, 1)
+transform = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="game over" parent="UI" index="1"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="public_key2" type="Sprite2D" parent="."]
 position = Vector2(2756, 6728)

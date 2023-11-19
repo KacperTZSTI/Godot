@@ -71,6 +71,11 @@ func _process(delta):
 			current_key.delete()
 			has_key = false
 			
+			
+	if code == 'aa':
+		# temporary, debug
+		time = 20
+		code = ''
 	if code == 'drdrdu':
 		# map3 code
 		time += 999

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://2lt1osarfapt"]
+[gd_scene load_steps=4 format=3 uid="uid://boy0djkbvweyc"]
 
 [ext_resource type="Texture2D" uid="uid://dq6wta150dx2g" path="res://levels/level_01/hugo.png" id="1_2n4pb"]
 [ext_resource type="Script" path="res://hugo.gd" id="1_dbd63"]
@@ -7,6 +7,7 @@
 size = Vector2(463, 444)
 
 [node name="hugo" type="Node2D"]
+visible = false
 script = ExtResource("1_dbd63")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
