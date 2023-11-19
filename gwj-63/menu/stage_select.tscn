@@ -82,6 +82,7 @@ vertical_alignment = 1
 
 [node name="level-4" type="Button" parent="Control"]
 visible = false
+layout_mode = 0
 offset_left = 630.0
 offset_top = 133.0
 offset_right = 734.0

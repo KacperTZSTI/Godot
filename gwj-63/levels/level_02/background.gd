@@ -4,7 +4,7 @@ var time  = 0
 
 # level 2 lasts 120s
 var TRANSITION_START = 100
-var TRANSITION_DURATION = 110
+var TRANSITION_DURATION = 10
 
 var R_START = 0
 var G_START = 0.47
