@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bwwkn44wyykcr"]
+[gd_scene load_steps=33 format=3 uid="uid://bwwkn44wyykcr"]
 
 [ext_resource type="Script" path="res://levels/level_02/world2.gd" id="1_3t6kb"]
 [ext_resource type="Script" path="res://levels/level_02/background.gd" id="1_a47ok"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dyuqgoe4wh84g" path="res://levels/level_01/images/key.png" id="14_s8oiv"]
 [ext_resource type="PackedScene" uid="uid://boy0djkbvweyc" path="res://hugo.tscn" id="15_ajy0h"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/key.gd" id="15_vglci"]
+[ext_resource type="AudioStream" uid="uid://bdurn0qnjqkys" path="res://sound/sfx/night.mp3" id="16_4osrw"]
 [ext_resource type="Texture2D" uid="uid://d141h3aiwkjqh" path="res://levels/level_03/images/smol_gate2.png" id="16_66nyh"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/gate.gd" id="17_ljbtb"]
 [ext_resource type="PackedScene" uid="uid://xolnpngqm2dv" path="res://levels/level_03/river_1.tscn" id="18_0ing3"]
@@ -468,6 +469,7 @@ position = Vector2(2154, 3205)
 polygon = PackedVector2Array(609, 4982, 632, 5024, 607, 5026, 610, 5093, 641, 5101, 640, 5027, 1142, 5027, 1140, 4766, 1249, 4766, 1249, 5105, 660, 5104, 617, 5104, 615, 5267, 1379, 5273, 1353, 4703, 1065, 4704, 655, 4853)
 
 [node name="mobile_self_propelled_artillery_cat" parent="world" instance=ExtResource("13_o6215")]
+y_sort_enabled = true
 position = Vector2(1893, 1594)
 
 [node name="left_top" parent="world/mobile_self_propelled_artillery_cat" index="0"]
@@ -490,6 +492,11 @@ position = Vector2(2, 587)
 
 [node name="sfx_player" parent="Player" index="5"]
 bus = &"SFX"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2(-2008, -1774)
+stream = ExtResource("16_4osrw")
+autoplay = true
 
 [node name="UI" parent="." instance=ExtResource("4_d17sx")]
 scale = Vector2(1, 1)

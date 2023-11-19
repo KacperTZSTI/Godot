@@ -20,6 +20,7 @@ func _ready():
 
 
 func _process(delta):
+	
 	time += delta
 	# myślałem nad tym algorytmem przez ponad godzinę
 	# następne trzy linijki zawierają *naprawdę* ciężką matematykę

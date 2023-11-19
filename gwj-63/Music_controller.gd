@@ -5,6 +5,7 @@ extends Node
 @onready var park = load("res://sound/music/PARK.mp3")
 @onready var mall = load("res://sound/music/MALL.mp3")
 @onready var what = load("res://sound/music/OUT 0003 [2023-11-18 144823]-1.mp3")
+@onready var night = load("res://sound/sfx/night.mp3")
 
 func set_volume(vol):
 	$AudioStreamPlayer.volume_db = vol
@@ -23,6 +24,11 @@ func play_park():
 	
 func play_mall():
 	$AudioStreamPlayer.stream = mall
+	$AudioStreamPlayer.play()
+	
+	
+func play_night():
+	$AudioStreamPlayer.stream = night
 	$AudioStreamPlayer.play()
 	
 func play_w():

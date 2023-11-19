@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://lr8iyudjcnj1"]
+
+[ext_resource type="Texture2D" uid="uid://bn4v5744f2uk8" path="res://images/credits2.png" id="1_0te8j"]
+[ext_resource type="Script" path="res://menu/credits.gd" id="1_hktwl"]
+[ext_resource type="Texture2D" uid="uid://dwfjvxkryoi51" path="res://levels/level_01/images/pink_back.png" id="1_ldojv"]
+[ext_resource type="Texture2D" uid="uid://oiitwabd7tt5" path="res://images/credits.png" id="4_fv6ia"]
+
+[node name="credits" type="Node2D"]
+script = ExtResource("1_hktwl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577.625, 339.625)
+scale = Vector2(1.5815, 1.5815)
+texture = ExtResource("1_0te8j")
+
+[node name="PinkBack" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(377, 143)
+scale = Vector2(269.1, 224.939)
+texture = ExtResource("1_ldojv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(578, 340)
+scale = Vector2(1.582, 1.582)
+texture = ExtResource("4_fv6ia")
