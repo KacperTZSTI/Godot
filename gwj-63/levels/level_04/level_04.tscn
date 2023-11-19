@@ -1,11 +1,597 @@
-[gd_scene format=3 uid="uid://bgdiymbqafclf"]
+[gd_scene load_steps=16 format=3 uid="uid://bgdiymbqafclf"]
+
+[ext_resource type="Script" path="res://levels/level_04/level_04.gd" id="1_2v615"]
+[ext_resource type="Texture2D" uid="uid://cvmi053r666lg" path="res://levels/level_04/map99.png" id="1_qika6"]
+[ext_resource type="Texture2D" uid="uid://c3ed2hojlt657" path="res://levels/level_04/hous.png" id="2_imxxp"]
+[ext_resource type="Texture2D" uid="uid://cedgwev8cwuh5" path="res://levels/level_04/enviroment.png" id="3_u031b"]
+[ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="4_8d23r"]
+[ext_resource type="Script" path="res://player2.gd" id="6_hmjin"]
+[ext_resource type="Script" path="res://levels/level_01/scripts/elevator.gd" id="6_x1wgh"]
+[ext_resource type="PackedScene" uid="uid://bevhuohravqki" path="res://ui.tscn" id="7_d2wqn"]
+[ext_resource type="PackedScene" uid="uid://cw22g6larxyp4" path="res://levels/mobile_self_propelled_artillery_cat.tscn" id="8_arybn"]
+[ext_resource type="PackedScene" uid="uid://b4uq7orb0vefu" path="res://levels/cat.tscn" id="8_dirpc"]
+[ext_resource type="PackedScene" uid="uid://b1tq45skn0gjr" path="res://levels/straight_cat.tscn" id="9_4vm3t"]
+[ext_resource type="PackedScene" uid="uid://b5xpryqll8p8f" path="res://levels/bored_cat.tscn" id="9_jkmii"]
+[ext_resource type="PackedScene" uid="uid://dpn8m21akcpl2" path="res://levels/sleep_cat.tscn" id="10_xqdwf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddra5"]
+size = Vector2(51, 33.51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecg53"]
+size = Vector2(11.625, 9.375)
 
 [node name="level_04" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_2v615")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 196.0
-offset_top = 133.0
-offset_right = 236.0
-offset_bottom = 156.0
-text = "lewel
-sztery"
+[node name="Node2D" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Map99" type="Sprite2D" parent="Node2D"]
+z_index = -2
+position = Vector2(329, 206)
+texture = ExtResource("1_qika6")
+
+[node name="Hous" type="Sprite2D" parent="Node2D"]
+position = Vector2(-2, 138)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous2" type="Sprite2D" parent="Node2D"]
+position = Vector2(-486, 140)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous3" type="Sprite2D" parent="Node2D"]
+position = Vector2(14, -231)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous4" type="Sprite2D" parent="Node2D"]
+position = Vector2(-494, -234)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous5" type="Sprite2D" parent="Node2D"]
+position = Vector2(16, -690)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous6" type="Sprite2D" parent="Node2D"]
+position = Vector2(-470, -720)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous7" type="Sprite2D" parent="Node2D"]
+position = Vector2(48, -1141)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous8" type="Sprite2D" parent="Node2D"]
+position = Vector2(-454, -1131)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous9" type="Sprite2D" parent="Node2D"]
+position = Vector2(-11, 594)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous10" type="Sprite2D" parent="Node2D"]
+position = Vector2(-465, 567)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous11" type="Sprite2D" parent="Node2D"]
+position = Vector2(-27, 1053)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous12" type="Sprite2D" parent="Node2D"]
+position = Vector2(-481, 1042)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous13" type="Sprite2D" parent="Node2D"]
+position = Vector2(790, 1021)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous14" type="Sprite2D" parent="Node2D"]
+position = Vector2(1212, 1037)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous15" type="Sprite2D" parent="Node2D"]
+position = Vector2(747, 589)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous16" type="Sprite2D" parent="Node2D"]
+position = Vector2(1217, 589)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous17" type="Sprite2D" parent="Node2D"]
+position = Vector2(785, 145)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous18" type="Sprite2D" parent="Node2D"]
+position = Vector2(1207, 135)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous19" type="Sprite2D" parent="Node2D"]
+position = Vector2(774, -228)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous20" type="Sprite2D" parent="Node2D"]
+position = Vector2(1196, -239)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous21" type="Sprite2D" parent="Node2D"]
+position = Vector2(742, -682)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous22" type="Sprite2D" parent="Node2D"]
+position = Vector2(1207, -704)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous23" type="Sprite2D" parent="Node2D"]
+position = Vector2(699, -1120)
+texture = ExtResource("2_imxxp")
+
+[node name="Hous24" type="Sprite2D" parent="Node2D"]
+position = Vector2(1185, -1109)
+texture = ExtResource("2_imxxp")
+
+[node name="Node2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D2"]
+polygon = PackedVector2Array(-774, -1248, -742, -1237, -732, 1416, 1394, 1411, 1388, -1350, -710, -1323, -710, -1633, 1810, -1472, 1714, 1528, -1031, 1518, -972, -1542, -790, -1472, -732, -1408)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Node2D2"]
+position = Vector2(-1213.4, 371)
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(2401, -154, 2402, -308, 2723, -305, 2723, -162, 2451, -162, 2451, -113, 2776, -125, 2751, -463, 2427.56, -446.865, 2310, -441, 2355, -73)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Node2D2"]
+position = Vector2(-3419.4, 155.2)
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(5075, -92, 5075, -249, 5345, -249, 5347, -278, 5385, -276, 5384, -249, 5395, -249, 5396, -103, 5122, -103, 5123, -44, 5468, -33, 5466, -376, 4997, -369, 5022, -29)
+
+[node name="Enviroment" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(3907.6, -138)
+scale = Vector2(2, 2)
+texture = ExtResource("3_u031b")
+
+[node name="Enviroment2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(7048.6, -248.8)
+scale = Vector2(2, 2)
+texture = ExtResource("3_u031b")
+
+[node name="Player" parent="." instance=ExtResource("4_8d23r")]
+position = Vector2(368, 11)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("6_hmjin")
+
+[node name="BottomRight" parent="Player/Camera2D/Limits" index="0"]
+position = Vector2(8844, 1758)
+
+[node name="TopLeft" parent="Player/Camera2D/Limits" index="1"]
+position = Vector2(-748, -1456)
+
+[node name="transitions" type="Node2D" parent="."]
+
+[node name="door1" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(-477, -1023)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door1/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door1"]
+position = Vector2(0.999985, 63)
+
+[node name="door2" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(679, -1014)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door2/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door2"]
+position = Vector2(0.999985, 63)
+
+[node name="door3" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(1164, -998)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door3/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door3"]
+position = Vector2(0.999985, 63)
+
+[node name="door4" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(-493, -611)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door4/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door4"]
+position = Vector2(0.999985, 63)
+
+[node name="door5" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(-9, -587)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door5/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door5"]
+position = Vector2(0.999985, 63)
+
+[node name="door6" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(717, -577)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door6/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door6"]
+position = Vector2(0.999985, 63)
+
+[node name="door7" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(1183, -595)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door7/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door7"]
+position = Vector2(0.999985, 63)
+
+[node name="door8" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(-522, -131)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door8/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door8"]
+position = Vector2(0.999985, 63)
+
+[node name="door9" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(-10, -131)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door9/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door9"]
+position = Vector2(0.999985, 63)
+
+[node name="door10" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(746, -123)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door10/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door10"]
+position = Vector2(0.999985, 63)
+
+[node name="door11" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(1173, -131)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door11/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door11"]
+position = Vector2(0.999985, 63)
+
+[node name="door12" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(-514, 248)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door12/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door12"]
+position = Vector2(0.999985, 63)
+
+[node name="door13" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(-31, 232)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door13/Area2D"]
+position = Vector2(-0.500002, 4.24501)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door13"]
+position = Vector2(0.999985, 63)
+
+[node name="door14" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(24, -1031)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door14/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door14"]
+position = Vector2(0.999985, 63)
+
+[node name="door15" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(-510, 1147)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door15/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door15"]
+position = Vector2(0.999985, 63)
+
+[node name="door22" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(1201, 1134)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door22"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door22/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door22"]
+position = Vector2(0.999985, 63)
+
+[node name="door23" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(-39, 1156)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door23"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door23/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door23"]
+position = Vector2(0.999985, 63)
+
+[node name="door24" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(779, 1125)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door24"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door24/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door24"]
+position = Vector2(0.999985, 63)
+
+[node name="door16" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(1194, 687)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door16"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door16/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door16"]
+position = Vector2(0.999985, 63)
+
+[node name="door17" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(726, 694)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door17"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door17/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door17"]
+position = Vector2(0.999985, 63)
+
+[node name="door18" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(-36, 698)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door18"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door18/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door18"]
+position = Vector2(0.999985, 63)
+
+[node name="home" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(-486, 668)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env2/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/home"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/home/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/home"]
+position = Vector2(0.999985, 63)
+
+[node name="door20" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(1179, 230)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door20"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door20/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door20"]
+position = Vector2(0.999985, 63)
+
+[node name="door21" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(760, 245)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../env1/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/door21"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/door21/Area2D"]
+position = Vector2(-4, -2.755)
+shape = SubResource("RectangleShape2D_ddra5")
+
+[node name="dest" type="Node2D" parent="transitions/door21"]
+position = Vector2(0.999985, 63)
+
+[node name="env1" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(3670, 87)
+scale = Vector2(2, 2)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../door10/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/env1"]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/env1/Area2D"]
+position = Vector2(-8.5, -0.463379)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_ecg53")
+
+[node name="dest" type="Node2D" parent="transitions/env1"]
+position = Vector2(-8.99995, -61)
+scale = Vector2(2, 2)
+
+[node name="env2" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
+position = Vector2(6920.6, -129.8)
+scale = Vector2(2, 2)
+script = ExtResource("6_x1wgh")
+dest = NodePath("../home/dest")
+
+[node name="Area2D" type="Area2D" parent="transitions/env2"]
+position = Vector2(0, 4.5)
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transitions/env2/Area2D"]
+position = Vector2(-36.125, 26.375)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_ecg53")
+
+[node name="dest" type="Node2D" parent="transitions/env2"]
+position = Vector2(-64, -12.5)
+scale = Vector2(2, 2)
+
+[node name="UI" parent="." instance=ExtResource("7_d2wqn")]
+
+[node name="mobile_self_propelled_artillery_cat" parent="." instance=ExtResource("8_arybn")]
+position = Vector2(7011, -357)
+
+[node name="left_top" parent="mobile_self_propelled_artillery_cat" index="0"]
+position = Vector2(-203, 50)
+
+[node name="bottom_right" parent="mobile_self_propelled_artillery_cat" index="1"]
+position = Vector2(210, 220)
+
+[node name="straight_cat" parent="." instance=ExtResource("9_4vm3t")]
+position = Vector2(7099, -236)
+
+[node name="cat" parent="." instance=ExtResource("8_dirpc")]
+position = Vector2(7279.6, -179.8)
+
+[node name="bored_cat" parent="." instance=ExtResource("9_jkmii")]
+position = Vector2(6769, -350)
+
+[node name="sleep_cat" parent="." instance=ExtResource("10_xqdwf")]
+position = Vector2(7305, -394)
+
+[connection signal="body_entered" from="transitions/door1/Area2D" to="transitions/door1" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door2/Area2D" to="transitions/door2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door3/Area2D" to="transitions/door3" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door4/Area2D" to="transitions/door4" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door5/Area2D" to="transitions/door5" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door6/Area2D" to="transitions/door6" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door7/Area2D" to="transitions/door7" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door8/Area2D" to="transitions/door8" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door9/Area2D" to="transitions/door9" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door10/Area2D" to="transitions/door10" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door11/Area2D" to="transitions/door11" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door12/Area2D" to="transitions/door12" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door13/Area2D" to="transitions/door13" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door14/Area2D" to="transitions/door14" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door15/Area2D" to="transitions/door15" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door22/Area2D" to="transitions/door22" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door23/Area2D" to="transitions/door23" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door24/Area2D" to="transitions/door24" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door16/Area2D" to="transitions/door16" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door17/Area2D" to="transitions/door17" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door18/Area2D" to="transitions/door18" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/home/Area2D" to="transitions/home" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door20/Area2D" to="transitions/door20" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/door21/Area2D" to="transitions/door21" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/env1/Area2D" to="transitions/env1" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="transitions/env2/Area2D" to="transitions/env2" method="_on_area_2d_body_entered"]
+
+[editable path="Player"]
+[editable path="UI"]
+[editable path="mobile_self_propelled_artillery_cat"]
+[editable path="mobile_self_propelled_artillery_cat/walk_cat"]

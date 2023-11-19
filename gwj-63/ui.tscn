@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dyuqgoe4wh84g" path="res://levels/level_01/images/key.png" id="2_t4mtc"]
 
 [node name="UI" type="CanvasLayer"]
+scale = Vector2(0.7, 0.7)
+transform = Transform2D(0.7, 0, 0, 0.7, 0, 0)
 
 [node name="Timer" type="Label" parent="." groups=["Global indicators"]]
 offset_left = 2.0

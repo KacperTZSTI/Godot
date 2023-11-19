@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cab8yvm07d1yc"]
+[gd_scene load_steps=9 format=3 uid="uid://cab8yvm07d1yc"]
 
 [ext_resource type="Script" path="res://levels/koteł.gd" id="1_n5vss"]
 [ext_resource type="Texture2D" uid="uid://canammmeknwsw" path="res://levels/cat_orange.png" id="2_qf6x2"]
+[ext_resource type="AudioStream" uid="uid://c54btndgi1gxx" path="res://sound/sfx/meow1.mp3" id="3_vtllq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ordry"]
 size = Vector2(32, 58)
@@ -81,6 +82,9 @@ shape = SubResource("RectangleShape2D_ordry")
 libraries = {
 "": SubResource("AnimationLibrary_8ejei")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vtllq")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
