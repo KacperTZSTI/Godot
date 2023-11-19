@@ -13,7 +13,7 @@ offset_top = -2.0
 offset_right = 74.0
 offset_bottom = 24.0
 theme_override_fonts/font = ExtResource("1_o6gou")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "adsgsadg"
 
 [node name="game over" type="Label" parent="." groups=["Game over items"]]
@@ -28,7 +28,7 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_o6gou")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -45,7 +45,7 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_o6gou")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 20
 text = "Collected cats: undefined"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -62,18 +62,18 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_o6gou")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 10
 text = "Press <escape> to go back to stage select screen"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="cat_realtime" type="Label" parent="." groups=["Global indicators"]]
 offset_left = 2.0
-offset_top = 71.0
+offset_top = 41.0
 offset_right = 330.0
-offset_bottom = 134.0
+offset_bottom = 104.0
 theme_override_fonts/font = ExtResource("1_o6gou")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "Cats: 0"
 
 [node name="Key" type="Sprite2D" parent="." groups=["Global indicators"]]

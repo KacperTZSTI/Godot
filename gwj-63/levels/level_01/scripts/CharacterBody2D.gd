@@ -123,8 +123,6 @@ func _process(delta):
 		get_tree().get_nodes_in_group("Game over items")[1].text  = "Collected cats: "+str(int(koteły))
 	if koteły>=MAX_CATS:
 		game = false
-		Music.set_volume(1)
-		Music.play_menu()
 		for item in get_tree().get_nodes_in_group("Game over items"):
 			item.visible = true
 		get_tree().get_nodes_in_group("Game over items")[0].position.y = -100
