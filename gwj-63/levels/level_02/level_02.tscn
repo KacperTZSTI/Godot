@@ -21,9 +21,9 @@
 [ext_resource type="Script" path="res://levels/level_01/scripts/key.gd" id="15_vglci"]
 [ext_resource type="Texture2D" uid="uid://d141h3aiwkjqh" path="res://levels/level_03/images/smol_gate2.png" id="16_66nyh"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/gate.gd" id="17_ljbtb"]
-[ext_resource type="PackedScene" path="res://levels/level_03/river_1.tscn" id="18_0ing3"]
+[ext_resource type="PackedScene" uid="uid://xolnpngqm2dv" path="res://levels/level_03/river_1.tscn" id="18_0ing3"]
 [ext_resource type="FontFile" uid="uid://b4cn0jmcso7gx" path="res://fonts/joystix monospace.otf" id="18_dqhsb"]
-[ext_resource type="PackedScene" path="res://levels/level_03/river_2.tscn" id="19_ai17b"]
+[ext_resource type="PackedScene" uid="uid://co5nwcke2ghvu" path="res://levels/level_03/river_2.tscn" id="19_ai17b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ew2yj"]
 texture = ExtResource("1_uu8e1")
