@@ -33,7 +33,7 @@ var sound_freq = 0.4
 var init_vol = 0
 
 func _ready():
-	scene = preload("res://levels/koteł.tscn")
+	scene = preload("res://levels/cat.tscn")
 	animation.active = true
 	time = MAX_TIME;
 	game = true;
@@ -103,7 +103,7 @@ func _process(delta):
 		# map1 code
 		var instance = scene.instantiate()
 		instance.position = self.position
-		get_tree().root.get_children()[0].get_node("world").add_child(instance)
+		get_tree().root.get_children()[0].add_child(instance)
 		code = ''
 	
 	get_tree().get_nodes_in_group("Global indicators")[1].text = "Cats: "+str(int(koteły))
