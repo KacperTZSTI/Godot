@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://37viv4qcybul"]
+[gd_scene load_steps=57 format=3 uid="uid://37viv4qcybul"]
 
 [ext_resource type="Script" path="res://levels/level_01/scripts/world.gd" id="1_71vqr"]
 [ext_resource type="PackedScene" uid="uid://ds2ahvqrlklt" path="res://player.tscn" id="1_pvhon"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://levels/level_01/scripts/bus.gd" id="10_81sux"]
 [ext_resource type="Texture2D" uid="uid://bngnyjsc2u2m3" path="res://levels/level_01/images/bus_stop1.png" id="11_q1dt2"]
 [ext_resource type="Texture2D" uid="uid://daxn6u5kae2vn" path="res://levels/level_01/images/bus_stop2.png" id="12_o8fub"]
+[ext_resource type="AudioStream" uid="uid://h5r5pp61fhy2" path="res://sound/sfx/bus.mp3" id="12_r38nf"]
 [ext_resource type="PackedScene" uid="uid://bevhuohravqki" path="res://ui.tscn" id="14_rp07i"]
 [ext_resource type="Texture2D" uid="uid://bnfsyskx1av02" path="res://levels/level_01/images/backalley.png" id="23_iee4g"]
 [ext_resource type="Texture2D" uid="uid://2qy474t4n1yi" path="res://levels/level_01/images/floor1.png" id="23_nn6u3"]
@@ -534,6 +535,11 @@ script = ExtResource("10_81sux")
 libraries = {
 "": SubResource("AnimationLibrary_wxa3n")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="world/bus"]
+stream = ExtResource("12_r38nf")
+autoplay = true
+bus = &"SFX"
 
 [node name="TileMap" type="TileMap" parent="world"]
 y_sort_enabled = true

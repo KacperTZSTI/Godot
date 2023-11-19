@@ -1,12 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://8ap6pysvfqm4"]
+[gd_scene load_steps=11 format=3 uid="uid://8ap6pysvfqm4"]
 
 [ext_resource type="Shader" path="res://menu/memu2.gdshader" id="1_kf7xq"]
 [ext_resource type="Script" path="res://menu/memu.gd" id="1_ygedg"]
 [ext_resource type="Shader" path="res://menu/memu.gdshader" id="3_4roty"]
 [ext_resource type="Texture2D" uid="uid://by76l70bi733y" path="res://menu/menu_clouds1.png" id="3_s07af"]
 [ext_resource type="Texture2D" uid="uid://c167atal1yniu" path="res://menu/menu_clouds2.png" id="5_uu7qc"]
-[ext_resource type="Texture2D" uid="uid://dllntpbqrmo25" path="res://images/GWJ-Half-Logo-Orange.svg" id="6_82p4b"]
-[ext_resource type="FontFile" uid="uid://rns72cc0te0r" path="res://fonts/Oswald-SemiBold.ttf" id="7_kvi2l"]
+[ext_resource type="Texture2D" uid="uid://bojh3grtxinur" path="res://images/logo.png" id="7_e7dtg"]
 [ext_resource type="PackedScene" uid="uid://bbw52brc363ty" path="res://button.tscn" id="10_mdhwr"]
 [ext_resource type="Texture2D" uid="uid://dwfjvxkryoi51" path="res://levels/level_01/images/pink_back.png" id="11_dhnaw"]
 
@@ -53,34 +52,12 @@ anchor_left = 0.522
 anchor_top = 0.475
 anchor_right = 0.522
 anchor_bottom = 0.475
-offset_left = -92.344
-offset_top = 180.2
-offset_right = 53.656
-offset_bottom = 443.2
+offset_left = -77.344
+offset_top = 63.2
+offset_right = 68.656
+offset_bottom = 326.2
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Icon" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(73, -351)
-texture = ExtResource("6_82p4b")
-
-[node name="Label" type="Label" parent="VBoxContainer/Icon"]
-z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -170.5
-offset_top = -20.0
-offset_right = 42.5
-offset_bottom = 107.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_kvi2l")
-theme_override_font_sizes/font_size = 120
-text = "Cats!"
-horizontal_alignment = 1
 
 [node name="Start" parent="VBoxContainer" instance=ExtResource("10_mdhwr")]
 layout_mode = 2
@@ -90,10 +67,19 @@ focus_neighbor_top = NodePath("../Quit")
 layout_mode = 2
 text = "Options"
 
+[node name="Credits" parent="VBoxContainer" instance=ExtResource("10_mdhwr")]
+layout_mode = 2
+text = "Credits"
+
 [node name="Quit" parent="VBoxContainer" instance=ExtResource("10_mdhwr")]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Start")
 text = "Quit"
+
+[node name="Logo" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(71, -156)
+scale = Vector2(1.81132, 1.81132)
+texture = ExtResource("7_e7dtg")
 
 [node name="PinkBack" type="Sprite2D" parent="."]
 z_index = -2
@@ -103,4 +89,5 @@ texture = ExtResource("11_dhnaw")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Opt" to="." method="_on_opt_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

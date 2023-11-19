@@ -108,7 +108,7 @@ func _process(delta):
 			# time = -1 # FOR DEBUG PURPOSES
 			pass
 		else:
-			get_tree().change_scene_to_file("res://menu/stage_select.tscn")
+			get_tree().quit()
 	if time<0:
 		game = false
 		Music.set_volume(1)

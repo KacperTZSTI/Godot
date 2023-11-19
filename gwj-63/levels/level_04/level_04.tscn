@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bgdiymbqafclf"]
+[gd_scene load_steps=17 format=3 uid="uid://bgdiymbqafclf"]
 
 [ext_resource type="Script" path="res://levels/level_04/level_04.gd" id="1_2v615"]
 [ext_resource type="Texture2D" uid="uid://cvmi053r666lg" path="res://levels/level_04/map99.png" id="1_qika6"]
@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://levels/level_01/scripts/elevator.gd" id="6_x1wgh"]
 [ext_resource type="PackedScene" uid="uid://bevhuohravqki" path="res://ui.tscn" id="7_d2wqn"]
 [ext_resource type="PackedScene" uid="uid://cw22g6larxyp4" path="res://levels/mobile_self_propelled_artillery_cat.tscn" id="8_arybn"]
-[ext_resource type="PackedScene" path="res://levels/cat.tscn" id="8_dirpc"]
+[ext_resource type="PackedScene" uid="uid://b4uq7orb0vefu" path="res://levels/cat.tscn" id="8_dirpc"]
 [ext_resource type="PackedScene" uid="uid://b1tq45skn0gjr" path="res://levels/straight_cat.tscn" id="9_4vm3t"]
 [ext_resource type="PackedScene" uid="uid://b5xpryqll8p8f" path="res://levels/bored_cat.tscn" id="9_jkmii"]
 [ext_resource type="PackedScene" uid="uid://dpn8m21akcpl2" path="res://levels/sleep_cat.tscn" id="10_xqdwf"]
@@ -19,6 +19,9 @@ size = Vector2(51, 33.51)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecg53"]
 size = Vector2(11.625, 9.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmlra"]
+size = Vector2(91, 76)
 
 [node name="level_04" type="Node2D"]
 y_sort_enabled = true
@@ -519,7 +522,7 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_ecg53")
 
 [node name="dest" type="Node2D" parent="transitions/env1"]
-position = Vector2(-8.99995, -61)
+position = Vector2(-15.4999, -45)
 scale = Vector2(2, 2)
 
 [node name="env2" type="Node2D" parent="transitions" node_paths=PackedStringArray("dest")]
@@ -538,10 +541,14 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_ecg53")
 
 [node name="dest" type="Node2D" parent="transitions/env2"]
-position = Vector2(-64, -12.5)
+position = Vector2(-69.3, 9.4)
 scale = Vector2(2, 2)
 
 [node name="UI" parent="." instance=ExtResource("7_d2wqn")]
+
+[node name="esc" parent="UI" index="3"]
+text = "Press <escape> to quit
+"
 
 [node name="mobile_self_propelled_artillery_cat" parent="." instance=ExtResource("8_arybn")]
 position = Vector2(7011, -357)
@@ -563,6 +570,12 @@ position = Vector2(6769, -350)
 
 [node name="sleep_cat" parent="." instance=ExtResource("10_xqdwf")]
 position = Vector2(7305, -394)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(6777.5, -89)
+shape = SubResource("RectangleShape2D_hmlra")
 
 [connection signal="body_entered" from="transitions/door1/Area2D" to="transitions/door1" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="transitions/door2/Area2D" to="transitions/door2" method="_on_area_2d_body_entered"]
@@ -590,6 +603,7 @@ position = Vector2(7305, -394)
 [connection signal="body_entered" from="transitions/door21/Area2D" to="transitions/door21" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="transitions/env1/Area2D" to="transitions/env1" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="transitions/env2/Area2D" to="transitions/env2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 
 [editable path="Player"]
 [editable path="UI"]
