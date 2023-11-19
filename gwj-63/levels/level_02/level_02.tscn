@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bwwkn44wyykcr"]
+[gd_scene load_steps=32 format=3 uid="uid://bwwkn44wyykcr"]
 
 [ext_resource type="Script" path="res://levels/level_02/world2.gd" id="1_3t6kb"]
 [ext_resource type="Script" path="res://levels/level_02/background.gd" id="1_a47ok"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://d141h3aiwkjqh" path="res://levels/level_03/images/smol_gate2.png" id="16_66nyh"]
 [ext_resource type="Script" path="res://levels/level_01/scripts/gate.gd" id="17_ljbtb"]
 [ext_resource type="PackedScene" path="res://levels/level_03/river_1.tscn" id="18_0ing3"]
+[ext_resource type="FontFile" uid="uid://b4cn0jmcso7gx" path="res://fonts/joystix monospace.otf" id="18_dqhsb"]
 [ext_resource type="PackedScene" path="res://levels/level_03/river_2.tscn" id="19_ai17b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ew2yj"]
@@ -497,6 +498,23 @@ transform = Transform2D(1, 0, 0, 1, 0, 0)
 [node name="game over" parent="UI" index="1"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="hugo" type="Label" parent="UI" groups=["Game over items"]]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -25.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("18_dqhsb")
+theme_override_font_sizes/font_size = 30
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="public_key2" type="Sprite2D" parent="."]
 position = Vector2(2756, 6728)
