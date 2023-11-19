@@ -65,8 +65,8 @@ func _process(delta):
 		code += 'a'
 		time_since_last_interaction = 0
 		if kotek:
-			kotek.delete()
 			kotek.interact(self)
+			kotek.delete()
 		if current_key and has_key:
 			current_key.delete()
 			has_key = false
@@ -121,8 +121,8 @@ func _process(delta):
 		for item in get_tree().get_nodes_in_group("Game over items"):
 			item.visible = true
 		get_tree().get_nodes_in_group("Game over items")[0].position.y = -100
-		get_tree().get_nodes_in_group("Game over items")[0].text  = "CONGRATULATIONS	"
-		get_tree().get_nodes_in_group("Game over items")[1].text  = "YOU CURED YOUR LONELINESS\n BY ADOPTING A BUNCH OF HOMELESS CATS!"
+		get_tree().get_nodes_in_group("Game over items")[0].text  = "CONGRATULATIONS"
+		get_tree().get_nodes_in_group("Game over items")[1].text  = "YOU CURED YOUR LONELINESS\nBY ADOPTING A BUNCH OF\nHOMELESS CATS!"
 	if game:
 		movement(delta)
 		get_tree().get_nodes_in_group("Global indicators")[0].text = "Time left: "+str(int(time))

@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://levels/level_01/scripts/elevator.gd" id="6_x1wgh"]
 [ext_resource type="PackedScene" uid="uid://bevhuohravqki" path="res://ui.tscn" id="7_d2wqn"]
 [ext_resource type="PackedScene" uid="uid://cw22g6larxyp4" path="res://levels/mobile_self_propelled_artillery_cat.tscn" id="8_arybn"]
-[ext_resource type="PackedScene" uid="uid://b4uq7orb0vefu" path="res://levels/cat.tscn" id="8_dirpc"]
+[ext_resource type="PackedScene" path="res://levels/cat.tscn" id="8_dirpc"]
 [ext_resource type="PackedScene" uid="uid://b1tq45skn0gjr" path="res://levels/straight_cat.tscn" id="9_4vm3t"]
 [ext_resource type="PackedScene" uid="uid://b5xpryqll8p8f" path="res://levels/bored_cat.tscn" id="9_jkmii"]
 [ext_resource type="PackedScene" uid="uid://dpn8m21akcpl2" path="res://levels/sleep_cat.tscn" id="10_xqdwf"]
@@ -545,8 +545,15 @@ position = Vector2(-69.3, 9.4)
 scale = Vector2(2, 2)
 
 [node name="UI" parent="." instance=ExtResource("7_d2wqn")]
+scale = Vector2(1, 1)
+transform = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="cats" parent="UI" index="2"]
+theme_override_font_sizes/font_size = 30
 
 [node name="esc" parent="UI" index="3"]
+offset_top = 130.0
+offset_bottom = 130.0
 text = "Press <escape> to quit
 "
 
