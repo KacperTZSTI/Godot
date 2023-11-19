@@ -65,8 +65,8 @@ func _process(delta):
 		code += 'a'
 		time_since_last_interaction = 0
 		if kotek:
-			kotek.delete()
 			kotek.interact(self)
+			kotek.delete()
 		if current_key and has_key:
 			current_key.delete()
 			has_key = false

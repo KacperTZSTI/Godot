@@ -8,7 +8,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func tick_process(delta):
 	time += delta;
 	if time > TIME_VISIBLE:
 		$Area2D/CollisionShape2D.disabled = false

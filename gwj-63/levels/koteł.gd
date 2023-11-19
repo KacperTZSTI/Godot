@@ -10,12 +10,15 @@ var MAX_TIME = 0.5
 func _ready():
 	anim.play("idle")
 
+func tick_process(delta):
+	pass
 
 func _process(delta):
 	if collected:
 		if collected_time>MAX_TIME:
 			queue_free()
 		collected_time += delta
+	tick_process(delta)
 	
 func delete():
 	collected = true
