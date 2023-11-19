@@ -54,20 +54,25 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           path: 'gwj-63/build/web'
+          name: 'web'
       - name: Upload Windows exe
         uses: actions/upload-artifact@v3
         with:
           path: 'gwj-63/build/game.exe'
+          name: 'windows'
       - name: Upload Linux game
         uses: actions/upload-artifact@v3
         with:
           path: 'gwj-63/build/game.x86_64'
+          name: 'linux'
       - name: upload package
         uses: actions/upload-artifact@v3
         with:
           path: 'gwj-63/build/game.pck'
+          name: 'pack'
       - name: temporary repo upload
         uses: actions/upload-artifact@v3
         with:
           path: 'gwj63/build'
+          name: 'temp'
 
