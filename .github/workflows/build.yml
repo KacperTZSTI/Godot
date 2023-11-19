@@ -42,9 +42,9 @@ jobs:
       - name: Build
         run: cd gwj-63 && godot -v --headless --export-release "HTML5" build/web/index.html
       - name: Build (Linux)
-        run: cd gwj-63 && godot -v --headless --export-release "Linux" build/game.x86_64
+        run: cd gwj-63 && godot -v --headless --export-release "Linux/X11" build/game.x86_64
       - name: Build (Windows)
-        run: cd gwj-63 && godot -v --headless --export-release "Windows" build/game.exe
+        run: cd gwj-63 && godot -v --headless --export-release "Windows Desktop" build/game.exe
 
 
 
@@ -53,7 +53,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          # Upload entire repository
           path: 'gwj-63/build/web'
       - name: Upload Windows exe
         uses: actions/upload-artifact@v3
@@ -67,4 +66,8 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           path: 'gwj-63/build/game.pck'
+      - name: temporary repo upload
+        uses: actions/upload-artifact@v3
+        with:
+          path: 'gwj63/build'
 
