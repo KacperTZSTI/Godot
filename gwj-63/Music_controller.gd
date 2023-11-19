@@ -1,10 +1,10 @@
 extends Node
 
-@onready var menu = load("res://music/MENU.mp3")
-@onready var city = load("res://music/CITY.mp3")
-@onready var park = load("res://music/PARK.mp3")
-@onready var mall = load("res://music/MALL.mp3")
-@onready var what = load("res://music/CITY.mp3")
+@onready var menu = load("res://sound/music/MENU.mp3")
+@onready var city = load("res://sound/music/CITY.mp3")
+@onready var park = load("res://sound/music/PARK.mp3")
+@onready var mall = load("res://sound/music/MALL.mp3")
+@onready var what = load("res://sound/music/OUT 0003 [2023-11-18 144823]-1.mp3")
 
 func set_volume(vol):
 	$AudioStreamPlayer.volume_db = vol

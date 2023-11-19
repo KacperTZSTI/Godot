@@ -4,9 +4,9 @@ extends Node2D
 var time = 0;
 var bus_exists = true;
 
-var BUS_EVENT_START = 90-21;
-var BUS_STOP = 90;
-var BUS_START_AGAIN = 95;
+var BUS_EVENT_START = 130-21;
+var BUS_STOP = 130;
+var BUS_START_AGAIN = 135;
 var BUS_EVENT_END = 180
 var BUS_SPEED = 350;
 

@@ -6,9 +6,9 @@ extends CharacterBody2D
 
 var FRICTION = 50
 var ACCELERATION = 40
-var MAX_SPEED = 280
+var MAX_SPEED = 250
 var input_vector = Vector2.ZERO
-var MAX_TIME = 160
+var MAX_TIME = 120
 
 #these are counted from end
 var START_FADE = 20
@@ -118,13 +118,11 @@ func _process(delta):
 		get_tree().get_nodes_in_group("Game over items")[1].text  = "Collected cats: "+str(int(koteły))
 	if koteły>=MAX_CATS:
 		game = false
-		Music.set_volume(1)
-		Music.play_menu()
 		for item in get_tree().get_nodes_in_group("Game over items"):
 			item.visible = true
 		get_tree().get_nodes_in_group("Game over items")[0].position.y = -100
-		get_tree().get_nodes_in_group("Game over items")[0].text  = "YOU DID IT!	"
-		get_tree().get_nodes_in_group("Game over items")[1].text  = "ALL "+str(int(koteły)) + " CATS COLLECTED"
+		get_tree().get_nodes_in_group("Game over items")[0].text  = "CONGRATULATIONS	"
+		get_tree().get_nodes_in_group("Game over items")[1].text  = "YOU CURED YOUR LONELINESS\n BY ADOPTING A BUNCH OF HOMELESS CATS!"
 	if game:
 		movement(delta)
 		get_tree().get_nodes_in_group("Global indicators")[0].text = "Time left: "+str(int(time))
@@ -175,3 +173,4 @@ func _input(event):
 				kotek.delete()
 				koteły += 1
 		
+

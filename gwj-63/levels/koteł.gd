@@ -18,13 +18,14 @@ func _process(delta):
 		collected_time += delta
 	
 func delete():
-	collected = true
+	$AudioStreamPlayer2D.play()
 	anim.play("catch")
 	print("collected")
 	
 func interact(node):
-	if 'koteły' in node:
+	if 'koteły' in node && collected == false:
 		node.koteły += 1
+		collected = true
 
 
 func _on_area_2d_body_entered(body):

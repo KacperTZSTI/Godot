@@ -133,7 +133,7 @@ color = Color(0, 0, 0, 1)
 position = Vector2(568, -199)
 
 [node name="cat1" parent="world" instance=ExtResource("6_liv0o")]
-position = Vector2(718, 614)
+position = Vector2(721, 612)
 
 [node name="cat3" parent="world" instance=ExtResource("5_6xuu6")]
 position = Vector2(21, -1540)
