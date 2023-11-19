@@ -18,6 +18,7 @@ func _process(delta):
 		collected_time += delta
 	
 func delete():
+	collected = true
 	$AudioStreamPlayer2D.play()
 	anim.play("catch")
 	print("collected")
