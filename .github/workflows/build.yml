@@ -73,6 +73,6 @@ jobs:
       - name: temporary repo upload
         uses: actions/upload-artifact@v3
         with:
-          path: 'gwj63/build'
+          path: 'gwj-63/build'
           name: 'temp'
 
