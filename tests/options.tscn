@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dr6hpnh53rik7"]
-
-[ext_resource type="Texture2D" uid="uid://s2ixh7qe84gw" path="res://menu/opt.aseprite" id="1_oahhh"]
-
-[node name="Options" type="Node2D"]
-
-[node name="Opt" type="Sprite2D" parent="."]
-position = Vector2(369, 181)
-texture = ExtResource("1_oahhh")
