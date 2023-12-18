@@ -1,4 +1,4 @@
-name: 'Publish to GitHub Pages'
+name: 'Build all Godot projects for Windows, Linux and web'
 
 env:
   GODOT_VERSION: 4.1.3 # Remember to manually set image to this version below.
@@ -15,7 +15,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "build"
   cancel-in-progress: false
 
 jobs:
@@ -57,25 +57,25 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           path: '${{matrix.project}}/build/web'
-          name: '${{matrix.project}}/web'
+          name: '${{matrix.project}}[web]'
       - name: Upload Windows exe
         uses: actions/upload-artifact@v3
         with:
           path: '${{matrix.project}}/build/game.exe'
-          name: '${{matrix.project}}/windows'
+          name: '${{matrix.project}}[windows]'
       - name: Upload Linux game
         uses: actions/upload-artifact@v3
         with:
           path: '${{matrix.project}}/build/game.x86_64'
-          name: '${{matrix.project}}/linux'
+          name: '${{matrix.project}}[linux]'
       - name: upload package
         uses: actions/upload-artifact@v3
         with:
           path: '${{matrix.project}}/build/game.pck'
-          name: '${{matrix.project}}/pack'
+          name: '${{matrix.project}}[pack]'
       - name: temporary repo upload
         uses: actions/upload-artifact@v3
         with:
           path: '${{matrix.project}}/build'
-          name: '${{matrix.project}}/temp'
+          name: '${{matrix.project}}[temp]'
 
