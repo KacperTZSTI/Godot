@@ -1,4 +1,4 @@
-name: 'Publish to GitHub Pages'
+name: 'Build all Godot projects for Windows, Linux and web'
 
 env:
   GODOT_VERSION: 4.1.3 # Remember to manually set image to this version below.
@@ -15,11 +15,14 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "build"
   cancel-in-progress: false
 
 jobs:
   deploy:
+    strategy:
+      matrix:
+        project: ["gwj-63"]
     runs-on: ubuntu-latest
 
     container:
@@ -34,17 +37,17 @@ jobs:
           mkdir -v -p ~/.local/share/godot/export_templates
           mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
       - name: Create staging directory
-        run: mkdir -v -p gwj-63/build/web
+        run: mkdir -v -p ${{matrix.project}}/build/web
 
       - name: List export templates
         run: ls -lah ~/.local/share/godot/export_templates/
 
       - name: Build
-        run: cd gwj-63 && godot -v --headless --export-release "HTML5" build/web/index.html
+        run: cd ${{matrix.project}} && godot -v --headless --export-release "HTML5" build/web/index.html
       - name: Build (Linux)
-        run: cd gwj-63 && godot -v --headless --export-release "Linux/X11" build/game.x86_64
+        run: cd ${{matrix.project}} && godot -v --headless --export-release "Linux/X11" build/game.x86_64
       - name: Build (Windows)
-        run: cd gwj-63 && godot -v --headless --export-release "Windows Desktop" build/game.exe
+        run: cd ${{matrix.project}} && godot -v --headless --export-release "Windows Desktop" build/game.exe
 
 
 
@@ -53,26 +56,26 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          path: 'gwj-63/build/web'
-          name: 'web'
+          path: '${{matrix.project}}/build/web'
+          name: '${{matrix.project}}[web]'
       - name: Upload Windows exe
         uses: actions/upload-artifact@v3
         with:
-          path: 'gwj-63/build/game.exe'
-          name: 'windows'
+          path: '${{matrix.project}}/build/game.exe'
+          name: '${{matrix.project}}[windows]'
       - name: Upload Linux game
         uses: actions/upload-artifact@v3
         with:
-          path: 'gwj-63/build/game.x86_64'
-          name: 'linux'
+          path: '${{matrix.project}}/build/game.x86_64'
+          name: '${{matrix.project}}[linux]'
       - name: upload package
         uses: actions/upload-artifact@v3
         with:
-          path: 'gwj-63/build/game.pck'
-          name: 'pack'
+          path: '${{matrix.project}}/build/game.pck'
+          name: '${{matrix.project}}[pack]'
       - name: temporary repo upload
         uses: actions/upload-artifact@v3
         with:
-          path: 'gwj-63/build'
-          name: 'temp'
+          path: '${{matrix.project}}/build'
+          name: '${{matrix.project}}[temp]'
 
