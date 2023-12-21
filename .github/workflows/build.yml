@@ -22,7 +22,7 @@ jobs:
   deploy:
     strategy:
       matrix:
-        project: ["gwj-63"]
+        project: ["gwj-63", "megaman 16"]
     runs-on: ubuntu-latest
 
     container:
